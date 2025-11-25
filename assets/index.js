@@ -5,7 +5,7 @@ const lectures = [
         title: "Intro + HTML Fundamentals: Structure and Basic Tags",
         description: "Introduction, Setup, HTML Introduction, HTML Syntax, Links and Anchor Elements, HTML Formatting and Spacing",
         image: "./assets/images/logos/html.webp",
-        status: "in-progress",
+        status: "completed",
         content: "HTML"
     },
     {
@@ -14,7 +14,7 @@ const lectures = [
         title: "Head Element, Text Elements, Multimedia",
         description: "Head Element, Text Elements, Text Formating, Multimedia",
         image: "./assets/images/logos/html.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "HTML"
     },
     {
