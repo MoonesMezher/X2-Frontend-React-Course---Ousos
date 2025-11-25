@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations | TravelScape</title>
+    <style>
+        /* All CSS from the first page is included here */
+        /* In a real implementation, this would be in a separate CSS file */
+        /* For this example, I'm including the same CSS as above */
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        :root {
+            --primary: #2a9d8f;
+            --secondary: #e9c46a;
+            --dark: #264653;
+            --light: #f8f9fa;
+            --accent: #e76f51;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Page 2 Styles */
+        .page-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400"><rect width="1200" height="400" fill="%23264653"/><path d="M0,200 Q300,100 600,200 T1200,200 L1200,400 L0,400 Z" fill="%23e76f51"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .destination-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .destination-img {
+            height: 200px !important;
+            overflow: hidden;
+            background-color: var(--primary);
+        }
+        
+        .destination-content {
+            padding: 20px;
+        }
+        
+        .destination-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .destination-content p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 2: Destinations Page -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Travel<span>Scape</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container hero-content">
+            <h1>Explore Our Destinations</h1>
+            <p>From tropical beaches to mountain retreats, discover the perfect location for your next adventure.</p>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="container">
+            <h2 class="section-title">Featured Destinations</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-img" style="background-color: #2a9d8f;">
+                        <!-- Image placeholder -->
+                        <div style="display:flex;align-items:center;justify-content:center;height:100%;color:white;">
+                            <img src="./assets/images/img-02.jpg" alt="destination item 1">
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Tropical Islands</h3>
+                        <p>Experience pristine beaches, crystal clear waters, and vibrant marine life in our tropical island destinations.</p>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-img" style="background-color: #e9c46a;">
+                        <div style="display:flex;align-items:center;justify-content:center;height:100%;color:white;">
+                            <img src="./assets/images/erol-ahmed-mfEeaOfacTQ-unsplash.jpg" alt="destination item 2">
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Mountain Escapes</h3>
+                        <p>Find peace and adventure in the mountains with breathtaking views and outdoor activities.</p>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-img" style="background-color: #e76f51;">
+                        <div style="display:flex;align-items:center;justify-content:center;height:100%;color:white;">
+                            <img src="./assets/images/img-01.jpg" alt="destination item 3">
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Cultural Cities</h3>
+                        <p>Immerse yourself in the history, art, and cuisine of vibrant cities around the world.</p>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TravelScape</h3>
+                    <p>Creating immersive travel experiences that connect you with the world in meaningful ways.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Email: info@travelscape.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li>Address: 123 Adventure St, Travel City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TravelScape. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../register.js"></script>
+</body>
+</html>
