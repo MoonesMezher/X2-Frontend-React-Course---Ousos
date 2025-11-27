@@ -7,127 +7,6 @@ const courseData = {
     },
     topics: [
         {
-            id: "html-formatting",
-            title: "HTML Formatting and Spacing",
-            content: `
-                <h3>Extra Spaces and Lines in HTML</h3>
-                <p>HTML collapses multiple spaces and line breaks into a single space. This is called "white space collapsing".</p>
-                
-                <h3>How HTML Handles White Space:</h3>
-                <ul>
-                    <li>Multiple spaces become one space</li>
-                    <li>Line breaks are treated as single spaces</li>
-                    <li>Tabs are treated as single spaces</li>
-                </ul>
-                
-                <h3>First Essential HTML Elements:</h3>
-                <ul>
-                    <li><strong>&lt;html&gt;</strong>: Root element of HTML document</li>
-                    <li><strong>&lt;head&gt;</strong>: Contains meta information (title, meta tags, links to CSS/JS)</li>
-                    <li><strong>&lt;body&gt;</strong>: Contains the visible content of the webpage</li>
-                </ul>
-                
-                <h3>Spacing and Formatting in HTML</h3>
-                <p>Proper spacing makes your code more readable and maintainable:</p>
-                <ul>
-                    <li>Use indentation to show parent-child relationships</li>
-                    <li>Add comments to explain complex sections</li>
-                    <li>Group related elements together</li>
-                </ul>
-
-                <br><hr><br>
-                <div dir="rtl">
-                    <h3>المسافات والأسطر الإضافية في HTML</h3>
-                    <p>يقوم HTML بضم المسافات المتعددة وفواصل الأسطر إلى مسافة واحدة. هذا يسمى "انهيار المساحة البيضاء".</p>
-                    
-                    <h3>كيف يتعامل HTML مع المساحة البيضاء:</h3>
-                    <ul>
-                        <li>تصبح المسافات المتعددة مسافة واحدة</li>
-                        <li>يتم التعامل مع فواصل الأسطر كمسافات مفردة</li>
-                        <li>يتم التعامل مع علامات التبويب كمسافات مفردة</li>
-                    </ul>
-                    
-                    <h3>أول عناصر HTML الأساسية:</h3>
-                    <ul>
-                        <li><strong>&lt;html&gt;</strong>: العنصر الجذر لمستند HTML</li>
-                        <li><strong>&lt;head&gt;</strong>: يحتوي على معلومات وصفية (العنوان، وسوم الوصف، روابط لـ CSS/JS)</li>
-                        <li><strong>&lt;body&gt;</strong>: يحتوي على المحتوى المرئي لصفحة الويب</li>
-                    </ul>
-                    
-                    <h3>المسافات والتنسيق في HTML</h3>
-                    <p>يجعل التباعد المناسب الكود الخاص بك أكثر قابلية للقراءة والصيانة:</p>
-                    <ul>
-                        <li>استخدم المسافة البادئة لإظهار العلاقات بين العناصر الرئيسية والفرعية</li>
-                        <li>أضف تعليقات لشرح الأقسام المعقدة</li>
-                        <li>اجمع العناصر ذات الصلة معًا</li>
-                    </ul>
-                </div>
-            `,
-            examples: [
-                {
-                    title: "White Space Example",
-                    content: `
-                        <p>This HTML:</p>
-                        <pre class="code-block">
-&lt;p&gt;Hello     World&lt;/p&gt;
-&lt;p&gt;Hello
-World&lt;/p&gt;
-                        </div>
-                        <p>Will display as:</p>
-                        <p>Hello World</p>
-                        <p>Hello World</p>
-                    `
-                },
-                {
-                    title: "Proper HTML Structure",
-                    content: `
-                        <pre class="code-block">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;My Website&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Welcome&lt;/h1&gt;
-    &lt;/header&gt;
-    &lt;main&gt;
-        &lt;p&gt;Content goes here&lt;/p&gt;
-    &lt;/main&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-                        </div>
-                    `
-                }
-            ],
-            practices: [
-                {
-                    title: "Formatting Practice",
-                    content: `
-                        <p>Practice proper HTML formatting:</p>
-                        <ol>
-                            <li>Create a well-structured HTML document with proper indentation</li>
-                            <li>Add multiple paragraphs with different spacing and observe the result</li>
-                            <li>Create nested elements with proper indentation</li>
-                            <li>Use comments to section your code</li>
-                        </ol>
-                    `
-                }
-            ],
-            questions: [
-                {
-                    question: "Why does HTML collapse multiple spaces?",
-                    answer: "HTML collapses multiple spaces to provide flexibility in how developers write code without affecting the final display. This allows developers to format their code for readability while maintaining consistent rendering. Use CSS if you need precise control over spacing."
-                },
-                {
-                    question: "What is the purpose of the DOCTYPE declaration?",
-                    answer: "The &lt;!DOCTYPE html&gt; declaration tells the browser which version of HTML the document is using. For HTML5, it ensures the browser renders the page in standards mode. It's not an HTML tag but important for proper rendering."
-                }
-            ]
-        },
-        {
             id: "head-element",
             title: "Head Element and Meta Tags",
             content: `
@@ -646,6 +525,164 @@ World&lt;/p&gt;
                 {
                     question: "When should you use ordered vs unordered lists?",
                     answer: "Use ordered lists (&lt;ol&gt;) when the sequence matters (steps, rankings). Use unordered lists (&lt;ul&gt;) for items without specific order (features, options). Use description lists (&lt;dl&gt;) for term-definition pairs."
+                }
+            ]
+        },
+        {
+            id: "tables",
+            title: "HTML Tables",
+            content: `
+                <h3>Table Structure</h3>
+                <p>Tables organize data into rows and columns:</p>
+                
+                <h3>Basic Table Elements:</h3>
+                <ul>
+                    <li><strong>&lt;table&gt;</strong>: The table container</li>
+                    <li><strong>&lt;thead&gt;</strong>: Table header section</li>
+                    <li><strong>&lt;tbody&gt;</strong>: Table body section</li>
+                    <li><strong>&lt;tfoot&gt;</strong>: Table footer section</li>
+                    <li><strong>&lt;tr&gt;</strong>: Table row</li>
+                    <li><strong>&lt;th&gt;</strong>: Table header cell</li>
+                    <li><strong>&lt;td&gt;</strong>: Table data cell</li>
+                </ul>
+                
+                <h3>Advanced Table Features:</h3>
+                <ul>
+                    <li><strong>colspan</strong>: Merge cells horizontally</li>
+                    <li><strong>rowspan</strong>: Merge cells vertically</li>
+                    <li><strong>caption</strong>: Table title/description</li>
+                    <li><strong>scope</strong>: Associate headers with cells (accessibility)</li>
+                </ul>
+                
+                <h3>Span Element: &lt;span&gt;&lt;/span&gt;</h3>
+                <p>The span element is an inline container for styling or scripting:</p>
+                <ul>
+                    <li>Inline element (doesn't break flow)</li>
+                    <li>No inherent meaning</li>
+                    <li>Used with CSS classes for styling</li>
+                </ul>
+                
+                <h3>Line Breaks and Rules:</h3>
+                <ul>
+                    <li><strong>&lt;br&gt;</strong>: Line break</li>
+                    <li><strong>&lt;hr&gt;</strong>: Horizontal rule (thematic break)</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>هيكل الجدول</h3>
+                    <p>تنظم الجداول البيانات في صفوف وأعمدة:</p>
+                    
+                    <h3>عناصر الجدول الأساسية:</h3>
+                    <ul>
+                        <li><strong>&lt;table&gt;</strong>: حاوية الجدول</li>
+                        <li><strong>&lt;thead&gt;</strong>: قسم رأس الجدول</li>
+                        <li><strong>&lt;tbody&gt;</strong>: قسم جسم الجدول</li>
+                        <li><strong>&lt;tfoot&gt;</strong>: قسم تذييل الجدول</li>
+                        <li><strong>&lt;tr&gt;</strong>: صف الجدول</li>
+                        <li><strong>&lt;th&gt;</strong>: خلية رأس الجدول</li>
+                        <li><strong>&lt;td&gt;</strong>: خلية بيانات الجدول</li>
+                    </ul>
+                    
+                    <h3>ميزات الجدول المتقدمة:</h3>
+                    <ul>
+                        <li><strong>colspan</strong>: دمج الخلايا أفقياً</li>
+                        <li><strong>rowspan</strong>: دمج الخلايا عمودياً</li>
+                        <li><strong>caption</strong>: عنوان/وصف الجدول</li>
+                        <li><strong>scope</strong>: ربط الرؤوس بالخلايا (إمكانية الوصول)</li>
+                    </ul>
+                    
+                    <h3>عنصر Span: &lt;span&gt;&lt;/span&gt;</h3>
+                    <p>عنصر span هو حاوية مضمنة للتنسيق أو البرمجة:</p>
+                    <ul>
+                        <li>عنصر مضمن (لا يكسر التدفق)</li>
+                        <li>بدون معنى متأصل</li>
+                        <li>يستخدم مع فئات CSS للتنسيق</li>
+                    </ul>
+                    
+                    <h3>فواصل الأسطر والقواعد:</h3>
+                    <ul>
+                        <li><strong>&lt;br&gt;</strong>: فاصل سطر</li>
+                        <li><strong>&lt;hr&gt;</strong>: قاعدة أفقية (فاصل موضوعي)</li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "Basic Table Structure",
+                    content: `
+                        <pre class="code-block">
+&lt;table&gt;
+    &lt;caption&gt;Monthly Sales Report&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Month&lt;/th&gt;
+            &lt;th&gt;Sales&lt;/th&gt;
+            &lt;th&gt;Profit&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;January&lt;/td&gt;
+            &lt;td&gt;$10,000&lt;/td&gt;
+            &lt;td&gt;$2,000&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;February&lt;/td&gt;
+            &lt;td&gt;$12,000&lt;/td&gt;
+            &lt;td&gt;$2,500&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+                        </pre>
+                    `
+                },
+                {
+                    title: "Advanced Table with Merged Cells",
+                    content: `
+                        <pre class="code-block">
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th rowspan="2"&gt;Name&lt;/th&gt;
+        &lt;th colspan="2"&gt;Contact&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Email&lt;/th&gt;
+        &lt;th&gt;Phone&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;john@example.com&lt;/td&gt;
+        &lt;td&gt;123-4567&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "Table Creation Practice",
+                    content: `
+                        <p>Practice creating tables:</p>
+                        <ol>
+                            <li>Create a simple contact list table</li>
+                            <li>Build a schedule table with time slots</li>
+                            <li>Create a table with merged cells using colspan and rowspan</li>
+                            <li>Add proper table headers and captions</li>
+                            <li>Use span elements to style specific parts of table cells</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "When should you use tables vs other HTML elements?",
+                    answer: "Use tables only for tabular data (data that has a natural row-column relationship). For page layout, use CSS Grid or Flexbox. Using tables for layout is outdated and creates accessibility issues. Tables should have semantic meaning, not just visual structure."
+                },
+                {
+                    question: "What's the difference between th and td elements?",
+                    answer: "&lt;th&gt; defines header cells (bold and centered by default), while &lt;td&gt; defines regular data cells. Use &lt;th&gt; for column/row headers. The scope attribute in &lt;th&gt; helps screen readers understand the header's association (scope='col' for column headers, scope='row' for row headers)."
                 }
             ]
         },

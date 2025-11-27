@@ -11,19 +11,19 @@ const lectures = [
     {
         id: "html-2",
         number: 2,
-        title: "Head Element, Text Elements, Multimedia",
-        description: "Head Element, Text Elements, Text Formating, Multimedia",
+        title: "Head Element, Text Elements, Multimedia, Tables",
+        description: "Head Element, Text Elements, Text Formating, Multimedia, Images, Lists, Tables",
         image: "./assets/images/logos/html.webp",
-        status: "in-progress",
+        status: "completed",
         content: "HTML"
     },
     {
         id: "html-3",
         number: 3,
-        title: "Images, Lists, Tables, Semantic Elements",
+        title: "Semantic Elements",
         description: "Images and Multimedia, Lists, HTML Tables, Container Elements and Layout, Advanced Multimedia, Preformatted Text Element, IFrame Element",
         image: "./assets/images/logos/html.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "HTML"
     },
     {
