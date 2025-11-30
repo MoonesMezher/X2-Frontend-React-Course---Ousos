@@ -21,9 +21,9 @@ const lectures = [
         id: "html-3",
         number: 3,
         title: "Semantic Elements",
-        description: "Images and Multimedia, Lists, HTML Tables, Container Elements and Layout, Advanced Multimedia, Preformatted Text Element, IFrame Element",
+        description: "Images and Multimedia, Lists, HTML Tables, Container Elements and Layout, Advanced Multimedia, Preformatted Text Element, IFrame Element, Intro to HTML Forms",
         image: "./assets/images/logos/html.webp",
-        status: "in-progress",
+        status: "completed",
         content: "HTML"
     },
     {
@@ -32,7 +32,7 @@ const lectures = [
         title: "HTML Forms",
         description: "HTML Forms, HTML Entities and Special Characters, HTML5 Semantic Elements Deep Dive, HTML Accessibility",
         image: "./assets/images/logos/html.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "HTML"
     },
     {
