@@ -29,19 +29,19 @@ const lectures = [
     {
         id: "html-4",
         number: 4,
-        title: "HTML Forms",
+        title: "HTML Forms, CSS Introduction, Selectors",
         description: "HTML Forms, HTML Entities and Special Characters, HTML5 Semantic Elements Deep Dive, HTML Accessibility",
         image: "./assets/images/logos/html.webp",
-        status: "in-progress",
+        status: "completed",
         content: "HTML"
     },
     {
         id: "css-1",
         number: 5,
-        title: "CSS Introduction, Selectors, Typography, Colors",
-        description: "CSS Introduction & Syntax, CSS Selectors & Specificity, Typography, Colors & CSS Variables",
+        title: "Typography, Colors, Icons, Box Model, Borders",
+        description: "CSS Introduction & Syntax, CSS Selectors & Specificity, Typography, Colors & CSS Variables, Google Fonts Integration, Working with Icons, CSS Box Model - Complete Layout Foundation, Borders",
         image: "./assets/images/logos/CSS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "CSS"
     },
     {
