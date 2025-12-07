@@ -38,19 +38,19 @@ const lectures = [
     {
         id: "css-1",
         number: 5,
-        title: "Typography, Colors, Icons, Box Model, Borders",
-        description: "CSS Introduction & Syntax, CSS Selectors & Specificity, Typography, Colors & CSS Variables, Google Fonts Integration, Working with Icons, CSS Box Model - Complete Layout Foundation, Borders",
+        title: "Typography, Colors, Icons, Box Model",
+        description: "CSS Introduction & Syntax, CSS Selectors & Specificity, Typography, Colors & CSS Variables, Google Fonts Integration, Working with Icons, CSS Box Model - Complete Layout Foundation",
         image: "./assets/images/logos/CSS.webp",
-        status: "in-progress",
+        status: "completed",
         content: "CSS"
     },
     {
         id: "css-2",
         number: 6,
-        title: "Icons, Box Model, Borders",
-        description: "Google Fonts Integration, Working with Icons, CSS Box Model - Complete Layout Foundation, Borders",
+        title: "Borders, Backgrounds, Display & Positioning",
+        description: "Borders, Backgrounds, Display, Position values (static, relative, absolute, fixed, sticky), top/right/bottom/left offsets, z-index stacking, float/clear properties, and when to avoid floats in modern layouts",
         image: "./assets/images/logos/CSS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "CSS"
     },
     {

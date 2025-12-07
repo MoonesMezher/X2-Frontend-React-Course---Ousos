@@ -7,314 +7,6 @@ const courseData = {
     },
     topics: [
         {
-            id: "google-fonts",
-            title: "Google Fonts Integration",
-            content: `
-                <h3>What are Google Fonts?</h3>
-                <p>Google Fonts is a free library of web fonts that you can use in your projects.</p>
-                
-                <h3>How to Use Google Fonts:</h3>
-                <ul>
-                    <li><strong>Method 1: Link in HTML</strong>: Add link tag in head</li>
-                    <li><strong>Method 2: @import in CSS</strong>: Import in CSS file</li>
-                    <li><strong>Method 3: Download & Self-host</strong>: For performance</li>
-                </ul>
-                
-                <h3>Best Practices:</h3>
-                <ul>
-                    <li>Limit number of font families (2-3 max)</li>
-                    <li>Choose font weights strategically</li>
-                    <li>Use font-display: swap for performance</li>
-                    <li>Consider self-hosting for production</li>
-                    <li>Use variable fonts when possible</li>
-                </ul>
-                
-                <h3>Performance Considerations:</h3>
-                <ul>
-                    <li>Preload critical fonts</li>
-                    <li>Use font-display property</li>
-                    <li>Limit character sets</li>
-                    <li>Consider system fonts as fallback</li>
-                </ul>
-
-                <br><hr><br>
-                <div dir="rtl">
-                    <h3>ما هي خطوط جوجل؟</h3>
-                    <p>خطوط جوجل هي مكتبة مجانية لخطوط الويب التي يمكنك استخدامها في مشاريعك.</p>
-                    
-                    <h3>كيفية استخدام خطوط جوجل:</h3>
-                    <ul>
-                        <li><strong>الطريقة 1: الرابط في HTML</strong>: أضف وسم الرابط في الرأس</li>
-                        <li><strong>الطريقة 2: @import في CSS</strong>: استيراد في ملف CSS</li>
-                        <li><strong>الطريقة 3: التنزيل والاستضافة الذاتية</strong>: للأداء</li>
-                    </ul>
-                    
-                    <h3>أفضل الممارسات:</h3>
-                    <ul>
-                        <li>حدد عدد عائلات الخطوط (2-3 كحد أقصى)</li>
-                        <li>اختر أوزان الخطوط بشكل استراتيجي</li>
-                        <li>استخدم font-display: swap للأداء</li>
-                        <li>فكر في الاستضافة الذاتية للإنتاج</li>
-                        <li>استخدم الخطوط المتغيرة عندما يكون ذلك ممكنًا</li>
-                    </ul>
-                    
-                    <h3>اعتبارات الأداء:</h3>
-                    <ul>
-                        <li>تمهيد الخطوط الحرجة مسبقًا</li>
-                        <li>استخدم خاصية font-display</li>
-                        <li>حدد مجموعات الأحرف</li>
-                        <li>فكر في خطوط النظام كاحتياطي</li>
-                    </ul>
-                </div>
-            `,
-            examples: [
-                {
-                    title: "Google Fonts Implementation",
-                    content: `
-                        <pre class="code-block">
-&lt;!-- Method 1: HTML Link --&gt;
-&lt;head&gt;
-    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
-    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
-    &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"&gt;
-&lt;/head&gt;
-
-&lt;!-- Method 2: CSS Import --&gt;
-&lt;style&gt;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-&lt;/style&gt;
-
-/* CSS Usage */
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
-.heading {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-}
-
-/* Performance optimization */
-.optimized-font {
-    font-family: 'Roboto', sans-serif;
-    font-display: swap;
-}
-
-/* Variable fonts */
-.variable-font {
-    font-family: 'Roboto Flex', sans-serif;
-    font-variation-settings: 'wght' 400, 'wdth' 100;
-}
-                        </pre>
-                    `
-                }
-            ],
-            practices: [
-                {
-                    title: "Google Fonts Practice",
-                    content: `
-                        <p>Practice integrating Google Fonts:</p>
-                        <ol>
-                            <li>Add 2-3 Google Fonts to a project using different methods</li>
-                            <li>Create a typographic scale using Google Fonts weights</li>
-                            <li>Implement font-display strategies for better performance</li>
-                            <li>Create a font pairing system with Google Fonts</li>
-                            <li>Experiment with variable fonts from Google Fonts</li>
-                        </ol>
-                    `
-                }
-            ],
-            questions: [
-                {
-                    question: "What's the difference between linking in HTML vs @import in CSS?",
-                    answer: "Linking in HTML allows browsers to discover fonts earlier and can be preloaded. @import in CSS might cause render-blocking and is discovered later. For performance, HTML link with preconnect is generally better. Also, @import can't be preloaded easily."
-                },
-                {
-                    question: "Why use font-display: swap?",
-                    answer: "font-display: swap tells the browser to use a fallback font immediately while the web font loads, then swap it in when ready. This prevents FOIT (Flash of Invisible Text) and ensures content remains readable, improving perceived performance and user experience."
-                }
-            ]
-        },
-        {
-            id: "icons",
-            title: "Working with Icons",
-            content: `
-                <h3>Icon Implementation Methods:</h3>
-                <ul>
-                    <li><strong>Icon Fonts</strong>: Font Awesome, Material Icons</li>
-                    <li><strong>SVG Icons</strong>: Inline, sprite sheets, or external files</li>
-                    <li><strong>CSS Icons</strong>: Created with pure CSS</li>
-                    <li><strong>Image Sprites</strong>: PNG/SVG sprite sheets</li>
-                </ul>
-                
-                <h3>Icon Fonts (Font Awesome):</h3>
-                <ul>
-                    <li>Easy to use and style with CSS</li>
-                    <li>Good browser support</li>
-                    <li>Can affect performance with many icons</li>
-                    <li>Limited customization</li>
-                </ul>
-                
-                <h3>SVG Icons (Recommended):</h3>
-                <ul>
-                    <li>Scalable without quality loss</li>
-                    <li>Small file sizes</li>
-                    <li>Full CSS control (colors, animations)</li>
-                    <li>Better accessibility</li>
-                    <li>Can be inline or external</li>
-                </ul>
-                
-                <h3>Best Practices:</h3>
-                <ul>
-                    <li>Use semantic icon names</li>
-                    <li>Provide accessible labels</li>
-                    <li>Optimize SVG files</li>
-                    <li>Use consistent sizing</li>
-                    <li>Consider loading strategies</li>
-                </ul>
-
-                <br><hr><br>
-                <div dir="rtl">
-                    <h3>طرق تنفيذ الأيقونات:</h3>
-                    <ul>
-                        <li><strong>خطوط الأيقونات</strong>: Font Awesome, Material Icons</li>
-                        <li><strong>أيقونات SVG</strong>: مضمنة، أوراق التجمع، أو ملفات خارجية</li>
-                        <li><strong>أيقونات CSS</strong>: تم إنشاؤها بـ CSS بحت</li>
-                        <li><strong>الصور المجمعة</strong>: أوراق تجمع PNG/SVG</li>
-                    </ul>
-                    
-                    <h3>خطوط الأيقونات (Font Awesome):</h3>
-                    <ul>
-                        <li>سهل الاستخدام والتنسيق بـ CSS</li>
-                        <li>دعم جيد للمتصفح</li>
-                        <li>يمكن أن يؤثر على الأداء مع العديد من الأيقونات</li>
-                        <li>تخصيص محدود</li>
-                    </ul>
-                    
-                    <h3>أيقونات SVG (موصى بها):</h3>
-                    <ul>
-                        <li>قابلة للتطوير دون فقدان الجودة</li>
-                        <li>أحجام ملفات صغيرة</li>
-                        <li>تحكم كامل في CSS (الألوان، الرسوم المتحركة)</li>
-                        <li>إمكانية وصول أفضل</li>
-                        <li>يمكن أن تكون مضمنة أو خارجية</li>
-                    </ul>
-                    
-                    <h3>أفضل الممارسات:</h3>
-                    <ul>
-                        <li>استخدم أسماء أيقونات دلالية</li>
-                        <li>وفر تسميات يمكن الوصول إليها</li>
-                        <li>حسن ملفات SVG</li>
-                        <li>استخدم أحجام متسقة</li>
-                        <li>فكر في استراتيجيات التحميل</li>
-                    </ul>
-                </div>
-            `,
-            examples: [
-                {
-                    title: "Icon Implementation Examples",
-                    content: `
-                        <pre class="code-block">
-/* Font Awesome Icons */
-&lt;i class="fas fa-user"&gt;&lt;/i&gt;
-&lt;i class="fas fa-search"&gt;&lt;/i&gt;
-&lt;i class="fab fa-twitter"&gt;&lt;/i&gt;
-
-.fa-user {
-    font-size: 24px;
-    color: #333;
-}
-
-.fa-search:hover {
-    color: #007bff;
-}
-
-/* SVG Inline Icons */
-&lt;button aria-label="Search"&gt;
-    &lt;svg class="icon search-icon" viewBox="0 0 24 24"&gt;
-        &lt;path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/&gt;
-    &lt;/svg&gt;
-&lt;/button&gt;
-
-.icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-}
-
-.search-icon {
-    color: #666;
-}
-
-.search-icon:hover {
-    color: #007bff;
-}
-
-/* SVG Sprite */
-&lt;svg style="display: none;"&gt;
-    &lt;symbol id="user-icon" viewBox="0 0 24 24"&gt;
-        &lt;path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/&gt;
-    &lt;/symbol&gt;
-&lt;/svg&gt;
-
-&lt;svg class="icon"&gt;&lt;use xlink:href="#user-icon"&gt;&lt;/use&gt;&lt;/svg&gt;
-
-/* CSS Only Icons */
-.menu-icon {
-    width: 24px;
-    height: 2px;
-    background: #333;
-    position: relative;
-}
-
-.menu-icon::before,
-.menu-icon::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background: #333;
-    left: 0;
-}
-
-.menu-icon::before {
-    top: -6px;
-}
-
-.menu-icon::after {
-    top: 6px;
-}
-                        </pre>
-                    `
-                }
-            ],
-            practices: [
-                {
-                    title: "Icons Practice",
-                    content: `
-                        <p>Practice working with different icon methods:</p>
-                        <ol>
-                            <li>Implement Font Awesome icons in a navigation bar</li>
-                            <li>Create custom SVG icons and style them with CSS</li>
-                            <li>Build an SVG sprite sheet for multiple icons</li>
-                            <li>Create simple icons using pure CSS</li>
-                            <li>Implement accessible icon buttons with proper labels</li>
-                        </ol>
-                    `
-                }
-            ],
-            questions: [
-                {
-                    question: "Why are SVG icons generally better than icon fonts?",
-                    answer: "SVG icons are vector-based so they scale perfectly, have smaller file sizes when optimized, can be styled with CSS (colors, strokes, filters), are more accessible (can add titles/descriptions), don't require external resources, and avoid issues with font loading and rendering inconsistencies."
-                },
-                {
-                    question: "How do you make icons accessible?",
-                    answer: "Use semantic HTML, provide text alternatives with aria-label or visually hidden text, ensure proper color contrast, maintain sufficient touch targets (min 44px), use focus indicators for interactive icons, and test with screen readers. For decorative icons, use aria-hidden='true' to hide from assistive tech."
-                }
-            ]
-        },
-        {
     id: "box-model",
     title: "CSS Box Model - Complete Layout Foundation",
     content: `
@@ -799,6 +491,458 @@ button:focus {
                 {
                     question: "When should you use outline instead of border?",
                     answer: "Use outline for focus indicators, temporary highlights, or when you don't want to affect layout (since outline doesn't take space). Use border for permanent visual boundaries that are part of the element's design. Outline is also better for accessibility focus states."
+                }
+            ]
+        },
+        {
+    id: "display-properties",
+    title: "Display Properties - Block, Inline & Inline-Block",
+    content: `
+        <h3>What are Display Properties?</h3>
+        <p>The display property defines how an element is rendered in the document flow and how it interacts with other elements.</p>
+        
+        <h3>Display Values:</h3>
+        <ul>
+            <li><strong>block</strong>: Takes full width, starts on new line</li>
+            <li><strong>inline</strong>: Takes only necessary width, flows with content</li>
+            <li><strong>inline-block</strong>: Hybrid - flows like inline but accepts box model properties</li>
+            <li><strong>none</strong>: Completely removed from document flow</li>
+            <li><strong>flex</strong>: Flexbox layout</li>
+            <li><strong>grid</strong>: CSS Grid layout</li>
+        </ul>
+        
+        <h3>Block Elements:</h3>
+        <ul>
+            <li>Start on a new line</li>
+            <li>Take full available width</li>
+            <li>Accept width, height, margin, padding</li>
+            <li>Examples: div, p, h1-h6, section, article</li>
+        </ul>
+        
+        <h3>Inline Elements:</h3>
+        <ul>
+            <li>Flow with text content</li>
+            <li>Take only necessary width</li>
+            <li>Ignore width, height, vertical margins</li>
+            <li>Examples: span, a, strong, em, img</li>
+        </ul>
+        
+        <h3>Inline-Block Elements:</h3>
+        <ul>
+            <li>Flow like inline elements</li>
+            <li>Accept box model properties like block</li>
+            <li>Perfect for navigation items, buttons, icons</li>
+            <li>Respects vertical-align property</li>
+        </ul>
+
+        <br><hr><br>
+        <div dir="rtl">
+            <h3>ما هي خصائص العرض؟</h3>
+            <p>تحدد خاصية العرض كيفية عرض العنصر في تدفق المستند وكيف يتفاعل مع العناصر الأخرى.</p>
+            
+            <h3>قيم العرض:</h3>
+            <ul>
+                <li><strong>block</strong>: يأخذ العرض الكامل، يبدأ في سطر جديد</li>
+                <li><strong>inline</strong>: يأخذ العرض الضروري فقط، يتدفق مع المحتوى</li>
+                <li><strong>inline-block</strong>: هجين - يتدفق مثل inline لكنه يقبل خصائص نموذج الصندوق</li>
+                <li><strong>none</strong>: يتم إزالته completamente من تدفق المستند</li>
+                <li><strong>flex</strong>: تخطيط Flexbox</li>
+                <li><strong>grid</strong>: تخطيط CSS Grid</li>
+            </ul>
+            
+            <h3>عناصر الكتلة:</h3>
+            <ul>
+                <li>تبدأ في سطر جديد</li>
+                <li>تأخذ العرض المتاح بالكامل</li>
+                <li>تقبل العرض، الارتفاع، الهامش، الحشو</li>
+                <li>أمثلة: div, p, h1-h6, section, article</li>
+            </ul>
+            
+            <h3>العناصر المضمنة:</h3>
+            <ul>
+                <li>تتدفق مع محتوى النص</li>
+                <li>تأخذ العرض الضروري فقط</li>
+                <li>تتجاهل العرض، الارتفاع، الهوامش العمودية</li>
+                <li>أمثلة: span, a, strong, em, img</li>
+            </ul>
+            
+            <h3>عناصر inline-block:</h3>
+            <ul>
+                <li>تتدفق مثل العناصر المضمنة</li>
+                <li>تقبل خصائص نموذج الصندوق مثل الكتلة</li>
+                <li>مثالية لعناصر التنقل، الأزرار، الأيقونات</li>
+                <li>تحترم خاصية vertical-align</li>
+            </ul>
+        </div>
+    `,
+    examples: [
+        {
+            title: "Display Property Examples",
+            content: `
+                <pre class="code-block">
+/* Block Elements */
+.block-element {
+    display: block;
+    width: 300px;
+    height: 100px;
+    margin: 20px;
+    padding: 15px;
+    background: #3498db;
+}
+
+/* Inline Elements */
+.inline-element {
+    display: inline;
+    /* width and height are ignored */
+    margin: 0 10px; /* Only horizontal margins work */
+    padding: 5px;
+    background: #e74c3c;
+}
+
+/* Inline-Block Elements */
+.inline-block-element {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    background: #2ecc71;
+    vertical-align: middle;
+}
+
+/* Practical Examples */
+.nav-item {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 0 5px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.button-group button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    background: white;
+    vertical-align: top;
+}
+
+.image-gallery img {
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    margin: 5px;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+/* Comparison Example */
+.compare-block {
+    display: block;
+    background: #3498db;
+    margin: 10px;
+    padding: 15px;
+}
+
+.compare-inline {
+    display: inline;
+    background: #e74c3c;
+    margin: 0 10px;
+    padding: 5px;
+}
+
+.compare-inline-block {
+    display: inline-block;
+    background: #2ecc71;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+}
+
+/* Navigation with inline-block */
+.nav-menu {
+    background: #2c3e50;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin: 0;
+}
+
+.nav-menu a {
+    display: inline-block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-menu a:hover {
+    background: #34495e;
+}
+
+/* Form elements with inline-block */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.form-group input,
+.form-group select {
+    display: inline-block;
+    width: 200px;
+    padding: 8px;
+}
+                </pre>
+            `
+        }
+    ],
+    practices: [
+        {
+            title: "Display Properties Practice",
+            content: `
+                <p>Practice with display properties:</p>
+                <ol>
+                    <li>Create a navigation menu using inline-block for horizontal layout</li>
+                    <li>Build a button group with inline-block elements</li>
+                    <li>Create an image gallery using inline-block with consistent spacing</li>
+                    <li>Convert block elements to inline and observe the differences</li>
+                    <li>Build a form with labels and inputs using inline-block alignment</li>
+                    <li>Create a pricing table with inline-block cards</li>
+                    <li>Experiment with vertical-align property on inline-block elements</li>
+                </ol>
+            `
+        }
+    ],
+    questions: [
+        {
+            question: "What's the main difference between inline and inline-block?",
+            answer: "Inline elements flow with text and ignore width/height properties, while inline-block elements flow like inline but accept all box model properties including width, height, margins, and padding. Inline-block allows you to set dimensions while maintaining the inline flow behavior."
+        },
+        {
+            question: "When should you use inline-block instead of float for layouts?",
+            answer: "Use inline-block for simple horizontal layouts where you need elements to flow naturally and respect text-align. It's easier to center and doesn't require clearfix. Use float when you need text to wrap around elements or for more complex layouts. However, for modern layouts, Flexbox and Grid are generally preferred over both."
+        },
+    ]
+},
+        {
+            id: "position-layout",
+            title: "Position, Z-index & Floats",
+            content: `
+                <h3>Position Values:</h3>
+                <ul>
+                    <li><strong>static</strong>: Default, normal document flow</li>
+                    <li><strong>relative</strong>: Positioned relative to normal position</li>
+                    <li><strong>absolute</strong>: Positioned relative to nearest positioned ancestor</li>
+                    <li><strong>fixed</strong>: Positioned relative to viewport</li>
+                    <li><strong>sticky</strong>: Hybrid of relative and fixed</li>
+                </ul>
+                
+                <h3>Offset Properties:</h3>
+                <ul>
+                    <li><strong>top, right, bottom, left</strong>: Positioning offsets</li>
+                    <li>Work with relative, absolute, fixed, sticky positions</li>
+                    <li>Negative values allowed</li>
+                </ul>
+                
+                <h3>Z-index Stacking:</h3>
+                <ul>
+                    <li>Controls stacking order of positioned elements</li>
+                    <li>Higher values appear in front</li>
+                    <li>Only works on positioned elements (non-static)</li>
+                    <li>Creates stacking context</li>
+                </ul>
+                
+                <h3>Float & Clear Properties:</h3>
+                <ul>
+                    <li><strong>float</strong>: left, right, none (wraps content around element)</li>
+                    <li><strong>clear</strong>: left, right, both, none (prevents floating)</li>
+                    <li>Originally for text wrapping around images</li>
+                </ul>
+                
+                <h3>Modern Layout Alternatives:</h3>
+                <ul>
+                    <li>Avoid floats for complex layouts</li>
+                    <li>Use Flexbox for 1D layouts</li>
+                    <li>Use CSS Grid for 2D layouts</li>
+                    <li>Floats still useful for simple text wrapping</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>قيم الموضع:</h3>
+                    <ul>
+                        <li><strong>static</strong>: افتراضي، تدفق المستند العادي</li>
+                        <li><strong>relative</strong>: يتم وضعه بالنسبة للموضع الطبيعي</li>
+                        <li><strong>absolute</strong>: يتم وضعه بالنسبة لأقرب سلف موضع</li>
+                        <li><strong>fixed</strong>: يتم وضعه بالنسبة لمنطقة العرض</li>
+                        <li><strong>sticky</strong>: هجين بين relative و fixed</li>
+                    </ul>
+                    
+                    <h3>خصائص الإزاحة:</h3>
+                    <ul>
+                        <li><strong>top, right, bottom, left</strong>: إزاحات الوضع</li>
+                        <li>تعمل مع المواضع النسبية، المطلقة، الثابتة، اللاصقة</li>
+                        <li>القيم السالبة مسموحة</li>
+                    </ul>
+                    
+                    <h3>ترتيب الطبقات Z-index:</h3>
+                    <ul>
+                        <li>يتحكم في ترتيب طبقات العناصر الموضوعة</li>
+                        <li>القيم الأعلى تظهر في المقدمة</li>
+                        <li>يعمل فقط على العناصر الموضوعة (غير static)</li>
+                        <li>ينشئ سياق تراص</li>
+                    </ul>
+                    
+                    <h3>خصائص Float و Clear:</h3>
+                    <ul>
+                        <li><strong>float</strong>: left, right, none (يلف المحتوى حول العنصر)</li>
+                        <li><strong>clear</strong>: left, right, both, none (يمنع الطفو)</li>
+                        <li>في الأصل لتفاف النص حول الصور</li>
+                    </ul>
+                    
+                    <h3>بدائل التخطيط الحديثة:</h3>
+                    <ul>
+                        <li>تجنب الطفو للتخطيطات المعقدة</li>
+                        <li>استخدم Flexbox للتخطيطات أحادية البعد</li>
+                        <li>استخدم CSS Grid للتخطيطات ثنائية البعد</li>
+                        <li>الطفو لا يزال مفيداً للتفاف النص البسيط</li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "Position Examples",
+                    content: `
+                        <pre class="code-block">
+/* Relative positioning */
+.relative-box {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+/* Absolute positioning */
+.parent {
+    position: relative; /* Creates positioning context */
+}
+.absolute-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Fixed header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Sticky navigation */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+}
+
+/* Z-index stacking */
+.back {
+    position: absolute;
+    z-index: 1;
+}
+.middle {
+    position: absolute;
+    z-index: 2;
+}
+.front {
+    position: absolute;
+    z-index: 3;
+}
+                        </pre>
+                    `
+                },
+                {
+                    title: "Float & Clear Examples",
+                    content: `
+                        <pre class="code-block">
+/* Image float */
+img {
+    float: left;
+    margin: 0 15px 15px 0;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Modern alternative to floats */
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Grid alternative */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Text wrapping with shape-outside */
+.circle {
+    float: left;
+    shape-outside: circle(50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "Positioning Practice",
+                    content: `
+                        <p>Practice with positioning and layout:</p>
+                        <ol>
+                            <li>Create a fixed navigation bar that stays at the top</li>
+                            <li>Build a modal dialog using absolute positioning</li>
+                            <li>Create a sticky sidebar that scrolls then sticks</li>
+                            <li>Experiment with z-index to create overlapping elements</li>
+                            <li>Create a simple layout using floats and clear them properly</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "When should you use position: sticky vs fixed?",
+                    answer: "Use sticky when you want an element to scroll normally until it reaches a certain point, then stick. Use fixed when you want an element to always stay in the same position relative to the viewport. Sticky requires a threshold (top, bottom, etc.) while fixed doesn't."
+                },
+                {
+                    question: "Why avoid floats for modern layouts?",
+                    answer: "Floats weren't designed for complex layouts, require clearfix hacks, can cause collapsing containers, have poor responsiveness, and are harder to maintain. Flexbox and Grid provide more predictable, flexible, and maintainable layout systems with better browser support for modern requirements."
                 }
             ]
         },
