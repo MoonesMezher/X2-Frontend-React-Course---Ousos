@@ -47,26 +47,26 @@ const lectures = [
     {
         id: "css-2",
         number: 6,
-        title: "Borders, Backgrounds, Display & Positioning",
-        description: "Borders, Backgrounds, Display, Position values (static, relative, absolute, fixed, sticky), top/right/bottom/left offsets, z-index stacking, float/clear properties, and when to avoid floats in modern layouts",
+        title: "Borders, Backgrounds, Display",
+        description: "Borders, Backgrounds, Box Shadow, Radius, Outline, Display",
         image: "./assets/images/logos/CSS.webp",
-        status: "in-progress",
+        status: "completed",
         content: "CSS"
     },
     {
         id: "css-3",
         number: 7,
-        title: "Backgrounds, Display & Positioning",
-        description: "Backgrounds, Display, Position values (static, relative, absolute, fixed, sticky), top/right/bottom/left offsets, z-index stacking, float/clear properties, and when to avoid floats in modern layouts",
+        title: "Positioning & Flexbox",
+        description: "Position values (static, relative, absolute, fixed, sticky), top/right/bottom/left offsets, z-index stacking, float/clear properties, and when to avoid floats in modern layouts, Flexbox overview, display: flex, main/cross axis, flex-direction (row/column), justify-content (flex-start, center, space-between), align-items (stretch, center, baseline), and flex-wrap",
         image: "./assets/images/logos/CSS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "CSS"
     },
     {
         id: "css-4",
         number: 8,
-        title: "CSS Flexbox & CSS Grid",
-        description: "Flexbox overview, display: flex, main/cross axis, flex-direction (row/column), justify-content (flex-start, center, space-between), align-items (stretch, center, baseline), and flex-wrap, Display: grid, grid-template-columns/rows (fixed, fr, auto), grid-gap (row/column), justify-items/align-items, and grid-auto-flow",
+        title: "CSS Grid",
+        description: "Display: grid, grid-template-columns/rows (fixed, fr, auto), grid-gap (row/column), justify-items/align-items, and grid-auto-flow",
         image: "./assets/images/logos/CSS.webp",
         status: "not-started",
         content: "CSS"
