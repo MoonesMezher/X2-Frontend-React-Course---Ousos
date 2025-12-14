@@ -65,19 +65,19 @@ const lectures = [
     {
         id: "css-4",
         number: 8,
-        title: "CSS Grid",
-        description: "Display: grid, grid-template-columns/rows (fixed, fr, auto), grid-gap (row/column), justify-items/align-items, and grid-auto-flow",
+        title: "CSS Grid, CSS Units, Small CSS Properties",
+        description: "Display: grid, grid-template-columns/rows (fixed, fr, auto), grid-gap (row/column), justify-items/align-items, and grid-auto-flow, CSS Units & Measurements - Complete Guide, Small but Powerful CSS Properties",
         image: "./assets/images/logos/CSS.webp",
-        status: "in-progress",
+        status: "completed",
         content: "CSS"
     },
     {
         id: "css-5",
         number: 9,
-        title: "CSS Units, Small CSS Properties",
-        description: "CSS Units & Measurements - Complete Guide, Small but Powerful CSS Properties",
+        title: "Pseudo-elements, CSS Transitions, CSS Transforms",
+        description: "Pseudo-elements & Pseudo-classes - Advanced Selectors, CSS Transitions - Smooth Animations, CSS Transforms - 2D & 3D Transformations",
         image: "./assets/images/logos/CSS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "CSS"
     },
     {

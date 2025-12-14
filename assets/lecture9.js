@@ -6,170 +6,297 @@ const courseData = {
         center: "Ousos"
     },
     topics: [
-{
-    id: "css-units",
-    title: "CSS Units & Measurements - Complete Guide",
+                 {
+    id: "pseudo-elements-classes",
+    title: "Pseudo-elements & Pseudo-classes - Advanced Selectors",
     content: `
-        <h3>Absolute Units:</h3>
+        <h3>Pseudo-classes (State-based):</h3>
+        <p>Select elements based on their state or position</p>
         <ul>
-            <li><strong>px</strong>: Pixels (1px = 1/96th of 1in)</li>
-            <li><strong>pt</strong>: Points (1pt = 1/72nd of 1in)</li>
-            <li><strong>pc</strong>: Picas (1pc = 12pt)</li>
-            <li><strong>in</strong>: Inches (1in = 96px = 2.54cm)</li>
-            <li><strong>cm</strong>: Centimeters</li>
-            <li><strong>mm</strong>: Millimeters</li>
+            <li><strong>:hover</strong> - When mouse is over element</li>
+            <li><strong>:focus</strong> - When element has keyboard focus</li>
+            <li><strong>:active</strong> - While element is being activated</li>
+            <li><strong>:visited</strong> - Links that have been visited</li>
+            <li><strong>:first-child</strong> - First child of its parent</li>
+            <li><strong>:last-child</strong> - Last child of its parent</li>
+            <li><strong>:nth-child(n)</strong> - nth child (2, 3, even, odd, 3n)</li>
+            <li><strong>:nth-of-type(n)</strong> - nth of specific type</li>
+            <li><strong>:not(selector)</strong> - Elements that don't match selector</li>
+            <li><strong>:checked</strong> - Checked radio/checkbox</li>
+            <li><strong>:disabled</strong> - Disabled form elements</li>
         </ul>
         
-        <h3>Relative Units:</h3>
+        <h3>Pseudo-elements (Virtual elements):</h3>
+        <p>Style specific parts of an element</p>
         <ul>
-            <li><strong>%</strong>: Percentage of parent element</li>
-            <li><strong>em</strong>: Relative to font-size of element</li>
-            <li><strong>rem</strong>: Relative to font-size of root element</li>
-            <li><strong>vw</strong>: 1% of viewport width</li>
-            <li><strong>vh</strong>: 1% of viewport height</li>
-            <li><strong>vmin</strong>: 1% of viewport's smaller dimension</li>
-            <li><strong>vmax</strong>: 1% of viewport's larger dimension</li>
-            <li><strong>ch</strong>: Width of the "0" character</li>
-            <li><strong>ex</strong>: Height of the "x" character</li>
+            <li><strong>::before</strong> - Insert content before element</li>
+            <li><strong>::after</strong> - Insert content after element</li>
+            <li><strong>::first-letter</strong> - Style first letter of text</li>
+            <li><strong>::first-line</strong> - Style first line of text</li>
+            <li><strong>::selection</strong> - Style highlighted text</li>
+            <li><strong>::placeholder</strong> - Style input placeholder text</li>
         </ul>
         
-        <h3>When to Use Which Unit:</h3>
+        <h3>Common Use Cases:</h3>
         <ul>
-            <li><strong>px</strong>: Borders, fixed-size elements</li>
-            <li><strong>rem</strong>: Font sizes, padding, margins (recommended)</li>
-            <li><strong>em</strong>: Components that should scale with their context</li>
-            <li><strong>%</strong>: Layout containers, widths</li>
-            <li><strong>vw/vh</strong>: Full-screen layouts, hero sections</li>
-            <li><strong>ch</strong>: Typography, code blocks, reading measures</li>
-        </ul>
-        
-        <h3>Best Practices:</h3>
-        <ul>
-            <li>Use rem for most sizing (prevents compounding issues)</li>
-            <li>Set root font-size to 62.5% for easier rem calculations (1rem = 10px)</li>
-            <li>Use em for properties that should scale with font-size</li>
-            <li>Combine vw/vh with clamp() for fluid typography</li>
-            <li>Use ch units for optimal line lengths (45-75 characters)</li>
+            <li>Interactive states (hover, focus)</li>
+            <li>Styling lists and tables</li>
+            <li>Creating decorative elements</li>
+            <li>Typography enhancements</li>
+            <li>Form styling</li>
         </ul>
 
         <br><hr><br>
         <div dir="rtl">
-            <h3>الوحدات المطلقة:</h3>
+            <h3>الفئات الزائفة (مبنية على الحالة):</h3>
+            <p>تحديد العناصر بناءً على حالتها أو موقعها</p>
             <ul>
-                <li><strong>px</strong>: البكسل (1px = 1/96 من 1 بوصة)</li>
-                <li><strong>pt</strong>: النقاط (1pt = 1/72 من 1 بوصة)</li>
-                <li><strong>pc</strong>: البيكا (1pc = 12pt)</li>
-                <li><strong>in</strong>: البوصة (1in = 96px = 2.54cm)</li>
-                <li><strong>cm</strong>: السنتيمتر</li>
-                <li><strong>mm</strong>: المليمتر</li>
+                <li><strong>:hover</strong> - عندما يكون الفأرة فوق العنصر</li>
+                <li><strong>:focus</strong> - عندما يكون العنصر لديه تركيز لوحة المفاتيح</li>
+                <li><strong>:active</strong> - أثناء تنشيط العنصر</li>
+                <li><strong>:visited</strong> - الروابط التي تمت زيارتها</li>
+                <li><strong>:first-child</strong> - الابن الأول لوالده</li>
+                <li><strong>:last-child</strong> - الابن الأخير لوالده</li>
+                <li><strong>:nth-child(n)</strong> - الابن النوني (2, 3, even, odd, 3n)</li>
+                <li><strong>:nth-of-type(n)</strong> - النوني من نوع محدد</li>
+                <li><strong>:not(selector)</strong> - العناصر التي لا تطابق المحدد</li>
+                <li><strong>:checked</strong> - زر الراديو/مربع الاختيار المحدد</li>
+                <li><strong>:disabled</strong> - عناصر النموذج المعطلة</li>
             </ul>
             
-            <h3>الوحدات النسبية:</h3>
+            <h3>العناصر الزائفة (عناصر افتراضية):</h3>
+            <p>تنسيق أجزاء محددة من العنصر</p>
             <ul>
-                <li><strong>%</strong>: النسبة المئوية للعنصر الأب</li>
-                <li><strong>em</strong>: نسبة إلى حجم خط العنصر</li>
-                <li><strong>rem</strong>: نسبة إلى حجم خط العنصر الجذر</li>
-                <li><strong>vw</strong>: 1% من عرض منطقة العرض</li>
-                <li><strong>vh</strong>: 1% من ارتفاع منطقة العرض</li>
-                <li><strong>vmin</strong>: 1% من البعد الأصغر لمنطقة العرض</li>
-                <li><strong>vmax</strong>: 1% من البعد الأكبر لمنطقة العرض</li>
-                <li><strong>ch</strong>: عرض حرف "0"</li>
-                <li><strong>ex</strong>: ارتفاع حرف "x"</li>
+                <li><strong>::before</strong> - إدراج محتوى قبل العنصر</li>
+                <li><strong>::after</strong> - إدراج محتوى بعد العنصر</li>
+                <li><strong>::first-letter</strong> - تنسيق الحرف الأول للنص</li>
+                <li><strong>::first-line</strong> - تنسيق السطر الأول للنص</li>
+                <li><strong>::selection</strong> - تنسيق النص المحدد</li>
+                <li><strong>::placeholder</strong> - تنسيق نص العنصر النائب للإدخال</li>
             </ul>
             
-            <h3>متى تستخدم كل وحدة:</h3>
+            <h3>حالات الاستخدام الشائعة:</h3>
             <ul>
-                <li><strong>px</strong>: الحدود، العناصر ذات الحجم الثابت</li>
-                <li><strong>rem</strong>: أحجام الخطوط، الحشو، الهوامش (موصى به)</li>
-                <li><strong>em</strong>: المكونات التي يجب أن تتطابق مع سياقها</li>
-                <li><strong>%</strong>: حاويات التخطيط، الأعرض</li>
-                <li><strong>vw/vh</strong>: تخطيطات كاملة الشاشة، أقسام البطل</li>
-                <li><strong>ch</strong>: الطباعة، كتل الكود، مقاييس القراءة</li>
-            </ul>
-            
-            <h3>أفضل الممارسات:</h3>
-            <ul>
-                <li>استخدم rem لمعظم الأحجام (يمنع مشاكل التراكم)</li>
-                <li>اضبط حجم الخط الجذري على 62.5% لسهولة حساب rem (1rem = 10px)</li>
-                <li>استخدم em للخصائص التي يجب أن تتطابق مع حجم الخط</li>
-                <li>اجمع vw/vh مع clamp() للطباعة السائلة</li>
-                <li>استخدم وحدات ch لأطوال الأسطر المثلى (75-45 حرفًا)</li>
+                <li>الحالات التفاعلية (hover, focus)</li>
+                <li>تنسيق القوائم والجداول</li>
+                <li>إنشاء عناصر زخرفية</li>
+                <li>تحسينات الطباعة</li>
+                <li>تنسيق النماذج</li>
             </ul>
         </div>
     `,
     examples: [
         {
-            title: "CSS Units Implementation",
+            title: "Pseudo-class Examples",
             content: `
                 <pre class="code-block">
-/* Root font-size trick for easy rem calculations */
-html {
-    font-size: 62.5%; /* 1rem = 10px */
+/* Interactive states */
+.button {
+    background: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-body {
-    font-size: 1.6rem; /* 16px */
+.button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Using different units */
-.container {
-    width: 90%; /* Percentage of parent */
-    max-width: 120rem; /* 1200px */
-    margin: 0 auto;
-    padding: 2rem; /* 20px */
+.button:active {
+    transform: translateY(0);
 }
 
-.heading {
-    font-size: 3.2rem; /* 32px */
-    margin-bottom: 1.6rem; /* 16px */
+.button:focus {
+    outline: 3px solid rgba(0,123,255,0.3);
+    outline-offset: 2px;
 }
 
-.paragraph {
-    font-size: 1.8rem; /* 18px */
-    line-height: 1.6; /* Unitless - multiplies font-size */
-    max-width: 60ch; /* Optimal reading width */
+/* Link states */
+a {
+    color: #007bff;
+    text-decoration: none;
 }
 
-/* Fluid typography with clamp() */
-.fluid-heading {
-    font-size: clamp(2.4rem, 5vw, 4.8rem);
+a:visited {
+    color: #6f42c1;
 }
 
-/* Viewport units for full-screen sections */
-.hero-section {
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
-    padding: 5vmin; /* Uses smaller viewport dimension */
+a:hover {
+    text-decoration: underline;
 }
 
-/* Em units for scalable components */
-.card {
-    font-size: 1.6rem;
-    padding: 1em; /* 16px - scales with font-size */
+/* Child selectors */
+.list-item:first-child {
+    font-weight: bold;
+    border-top: 2px solid #007bff;
 }
 
-.card--large {
-    font-size: 2rem; /* Now padding becomes 20px */
+.list-item:last-child {
+    border-bottom: 2px solid #007bff;
 }
 
-/* Complex unit combinations */
-.responsive-container {
-    width: min(90%, 120rem); /* Uses smaller value */
-    height: max(50vh, 40rem); /* Uses larger value */
-    padding: clamp(2rem, 4vw, 4rem);
+.list-item:nth-child(odd) {
+    background: #f8f9fa;
 }
 
-/* ch units for typography */
-.article-content {
-    max-width: 65ch; /* Optimal line length for reading */
-    line-height: 1.7;
+.list-item:nth-child(even) {
+    background: white;
 }
 
-/* ex units for vertical rhythm */
-.icon-button::before {
-    content: "↑";
-    font-size: 2ex; /* Relative to font's x-height */
-    vertical-align: middle;
+.list-item:nth-child(3n) {
+    color: #e74c3c;
+}
+
+/* Form states */
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+input:disabled {
+    background: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+input:checked + label {
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Negation */
+.card:not(.featured) {
+    opacity: 0.7;
+}
+
+.button:not(:last-child) {
+    margin-right: 10px;
+}
+                </pre>
+            `
+        },
+        {
+            title: "Pseudo-element Examples",
+            content: `
+                <pre class="code-block">
+/* Before and After */
+.decorative-heading {
+    position: relative;
+    text-align: center;
+}
+
+.decorative-heading::before,
+.decorative-heading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 2px;
+    background: #007bff;
+}
+
+.decorative-heading::before {
+    left: 0;
+}
+
+.decorative-heading::after {
+    right: 0;
+}
+
+/* Icon with ::before */
+.button-with-icon::before {
+    content: "→";
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Tooltip with ::after */
+.tooltip {
+    position: relative;
+}
+
+.tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+/* First letter styling */
+.article-intro::first-letter {
+    font-size: 3em;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* First line styling */
+.article-lead::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+/* Selection styling */
+::selection {
+    background: #007bff;
+    color: white;
+}
+
+::-moz-selection {
+    background: #007bff;
+    color: white;
+}
+
+/* Placeholder styling */
+input::placeholder {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Custom bullets with ::before */
+.custom-list {
+    list-style: none;
+    padding: 0;
+}
+
+.custom-list li::before {
+    content: "▸";
+    color: #007bff;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Quote styling with ::before and ::after */
+.blockquote::before {
+    content: "“";
+    font-size: 4em;
+    color: #007bff;
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 10px;
+}
+
+.blockquote::after {
+    content: "”";
+    font-size: 4em;
+    color: #007bff;
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-left: 10px;
 }
                 </pre>
             `
@@ -177,274 +304,373 @@ body {
     ],
     practices: [
         {
-            title: "CSS Units Practice",
+            title: "Pseudo-classes & Elements Practice",
             content: `
-                <p>Practice with CSS units and measurements:</p>
+                <p>Practice with pseudo-classes and pseudo-elements:</p>
                 <ol>
-                    <li>Create a responsive layout using rem units for all spacing</li>
-                    <li>Build a full-screen hero section using vw and vh units</li>
-                    <li>Implement fluid typography with clamp() function</li>
-                    <li>Create a reading-optimized layout using ch units</li>
-                    <li>Build a component that scales using em units</li>
-                    <li>Experiment with viewport units for responsive containers</li>
-                    <li>Create a grid system using percentage and rem units</li>
-                    <li>Implement a spacing scale using CSS custom properties with rem</li>
+                    <li>Create interactive buttons with hover, focus, and active states</li>
+                    <li>Style a navigation menu with different states for current page</li>
+                    <li>Build a striped table using nth-child selectors</li>
+                    <li>Create decorative headings with ::before and ::after</li>
+                    <li>Style form elements with :focus, :valid, and :invalid states</li>
+                    <li>Add custom icons to buttons using ::before</li>
+                    <li>Create a custom-styled blockquote with quotation marks</li>
+                    <li>Build a tooltip system using ::after</li>
                 </ol>
             `
         }
     ],
     questions: [
         {
-            question: "What's the difference between em and rem units?",
-            answer: "em is relative to the font-size of the current element (can compound), while rem is relative to the root element's font-size (consistent across all elements). Use em for properties that should scale with their local context, and rem for consistent spacing and sizing throughout your application to avoid compounding issues."
+            question: "What's the difference between pseudo-classes and pseudo-elements?",
+            answer: "Pseudo-classes (single colon) select elements based on their state (:hover, :focus, :first-child). Pseudo-elements (double colon) style specific parts of an element (::before, ::after, ::first-letter). Pseudo-classes target existing elements in specific states, while pseudo-elements create virtual elements that don't exist in the DOM."
         },
         {
-            question: "When should you use viewport units vs percentage units?",
-            answer: "Use viewport units (vw, vh) when you want elements to scale relative to the browser window size. Use percentage units when you want elements to scale relative to their parent container. Viewport units are great for full-screen layouts, while percentage units are better for component-level responsive design within their containers."
-        },
-        {
-            question: "Why is the 62.5% font-size trick useful?",
-            answer: "Setting the root font-size to 62.5% makes 1rem equal to 10px (assuming browser default of 16px), which makes mental math much easier. 1.6rem = 16px, 2.4rem = 24px, etc. This maintains accessibility (users can still zoom) while providing a convenient calculation system."
+            question: "When should you use single colon vs double colon syntax?",
+            answer: "Use single colon for pseudo-classes (:hover, :focus) and double colon for pseudo-elements (::before, ::after). While most browsers support single colon for pseudo-elements for backward compatibility, the double colon syntax is the modern standard defined in CSS3. Always use double colon for pseudo-elements in new code."
         }
     ]
 },
 {
-    id: "css-small-properties",
-    title: "Small but Powerful CSS Properties",
+    id: "css-transitions",
+    title: "CSS Transitions - Smooth Animations",
     content: `
-        <h3>Cursor Property:</h3>
-        <p>Controls the mouse cursor appearance when hovering over an element.</p>
+        <h3>Transition Properties:</h3>
         <ul>
-            <li><strong>pointer</strong>: Hand cursor for clickable elements</li>
-            <li><strong>default</strong>: Default arrow cursor</li>
-            <li><strong>text</strong>: I-beam for selectable text</li>
-            <li><strong>move</strong>: Indicates draggable element</li>
-            <li><strong>not-allowed</strong>: Shows action is disabled</li>
-            <li><strong>wait</strong>: Loading/processing state</li>
-            <li><strong>grab/grabbing</strong>: Drag and drop interactions</li>
+            <li><strong>transition-property</strong>: Which properties to animate</li>
+            <li><strong>transition-duration</strong>: How long animation takes</li>
+            <li><strong>transition-timing-function</strong>: Animation speed curve</li>
+            <li><strong>transition-delay</strong>: When to start animation</li>
+            <li><strong>transition</strong>: Shorthand for all properties</li>
         </ul>
         
-        <h3>Scroll Behavior:</h3>
-        <p>Controls smooth scrolling for the entire page or specific elements.</p>
+        <h3>Animatable Properties:</h3>
         <ul>
-            <li><strong>scroll-behavior: smooth</strong>: Enables smooth scrolling</li>
-            <li><strong>scroll-behavior: auto</strong>: Default instant scrolling</li>
-            <li><strong>scroll-padding</strong>: Offset for scroll targets</li>
-            <li><strong>scroll-margin</strong>: Margin for scroll snapping</li>
+            <li>Colors (color, background-color, border-color)</li>
+            <li>Dimensions (width, height, padding, margin)</li>
+            <li>Transforms (translate, rotate, scale, skew)</li>
+            <li>Opacity and visibility</li>
+            <li>Position (top, right, bottom, left)</li>
+            <li>Shadows (box-shadow, text-shadow)</li>
         </ul>
         
-        <h3>Other Useful Properties:</h3>
+        <h3>Timing Functions:</h3>
         <ul>
-            <li><strong>pointer-events</strong>: Control mouse interaction with elements</li>
-            <li><strong>user-select</strong>: Control text selection behavior</li>
-            <li><strong>visibility</strong>: Hide elements while preserving space</li>
-            <li><strong>opacity</strong>: Control element transparency</li>
-            <li><strong>resize</strong>: Allow users to resize elements</li>
-            <li><strong>overflow</strong>: Control content overflow behavior</li>
+            <li><strong>ease</strong>: Slow start, fast, slow end (default)</li>
+            <li><strong>linear</strong>: Constant speed</li>
+            <li><strong>ease-in</strong>: Slow start</li>
+            <li><strong>ease-out</strong>: Slow end</li>
+            <li><strong>ease-in-out</strong>: Slow start and end</li>
+            <li><strong>cubic-bezier()</strong>: Custom timing function</li>
+            <li><strong>steps()</strong>: Discrete steps animation</li>
+        </ul>
+        
+        <h3>Best Practices:</h3>
+        <ul>
+            <li>Use transitions for simple state changes</li>
+            <li>Keep durations between 200-500ms for interactions</li>
+            <li>Use appropriate timing functions</li>
+            <li>Test performance on mobile devices</li>
+            <li>Consider prefers-reduced-motion</li>
         </ul>
 
         <br><hr><br>
         <div dir="rtl">
-            <h3>خاصية المؤشر:</h3>
-            <p>تتحكم في مظهر مؤشر الفأرة عند التمرير فوق عنصر.</p>
+            <h3>خصائص الانتقال:</h3>
             <ul>
-                <li><strong>pointer</strong>: مؤشر يد للعناصر القابلة للنقر</li>
-                <li><strong>default</strong>: مؤشر السهم الافتراضي</li>
-                <li><strong>text</strong>: I-beam للنص القابل للتحديد</li>
-                <li><strong>move</strong>: يشير إلى عنصر قابل للسحب</li>
-                <li><strong>not-allowed</strong>: يظهر أن الإجراء معطل</li>
-                <li><strong>wait</strong>: حالة التحميل/المعالجة</li>
-                <li><strong>grab/grabbing</strong>: تفاعلات السحب والإفلات</li>
+                <li><strong>transition-property</strong>: أي الخصائص يتم تحريكها</li>
+                <li><strong>transition-duration</strong>: كم من الوقت تستغرق الرسوم المتحركة</li>
+                <li><strong>transition-timing-function</strong>: منحنى سرعة الرسوم المتحركة</li>
+                <li><strong>transition-delay</strong>: متى تبدأ الرسوم المتحركة</li>
+                <li><strong>transition</strong>: اختصار لجميع الخصائص</li>
             </ul>
             
-            <h3>سلوك التمرير:</h3>
-            <p>يتحكم في التمرير السلس للصفحة بأكملها أو عناصر محددة.</p>
+            <h3>الخصائص القابلة للتحريك:</h3>
             <ul>
-                <li><strong>scroll-behavior: smooth</strong>: يمكّن التمرير السلس</li>
-                <li><strong>scroll-behavior: auto</strong>: التمرير الفوري الافتراضي</li>
-                <li><strong>scroll-padding</strong>: إزاحة لأهداف التمرير</li>
-                <li><strong>scroll-margin</strong>: هامش للالتقاط التمرير</li>
+                <li>الألوان (color, background-color, border-color)</li>
+                <li>الأبعاد (width, height, padding, margin)</li>
+                <li>التحويلات (translate, rotate, scale, skew)</li>
+                <li>الشفافية والرؤية</li>
+                <li>الموضع (top, right, bottom, left)</li>
+                <li>الظلال (box-shadow, text-shadow)</li>
             </ul>
             
-            <h3>خصائص مفيدة أخرى:</h3>
+            <h3>دوال التوقيت:</h3>
             <ul>
-                <li><strong>pointer-events</strong>: التحكم في تفاعل الفأرة مع العناصر</li>
-                <li><strong>user-select</strong>: التحكم في سلوك تحديد النص</li>
-                <li><strong>visibility</strong>: إخفاء العناصر مع الحفاظ على المساحة</li>
-                <li><strong>opacity</strong>: التحكم في شفافية العنصر</li>
-                <li><strong>resize</strong>: السماح للمستخدمين بتغيير حجم العناصر</li>
-                <li><strong>overflow</strong>: التحكم في سلوك تجاوز المحتوى</li>
+                <li><strong>ease</strong>: بداية بطيئة، سريعة، نهاية بطيئة (افتراضي)</li>
+                <li><strong>linear</strong>: سرعة ثابتة</li>
+                <li><strong>ease-in</strong>: بداية بطيئة</li>
+                <li><strong>ease-out</strong>: نهاية بطيئة</li>
+                <li><strong>ease-in-out</strong>: بداية ونهاية بطيئة</li>
+                <li><strong>cubic-bezier()</strong>: دالة توقيت مخصصة</li>
+                <li><strong>steps()</strong>: رسوم متحركة بخطوات منفصلة</li>
+            </ul>
+            
+            <h3>أفضل الممارسات:</h3>
+            <ul>
+                <li>استخدم الانتقالات لتغييرات الحالة البسيطة</li>
+                <li>احتفظ بالمدة بين 200-500 مللي ثانية للتفاعلات</li>
+                <li>استخدم دوال التوقيت المناسبة</li>
+                <li>اختبر الأداء على أجهزة الجوال</li>
+                <li>ضع في الاعتبار prefers-reduced-motion</li>
             </ul>
         </div>
     `,
     examples: [
         {
-            title: "Small Properties Implementation",
+            title: "Basic Transition Examples",
             content: `
                 <pre class="code-block">
-/* Cursor Examples */
-.clickable {
-    cursor: pointer;
+/* Simple hover transition */
+.button {
+    background: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-.draggable {
-    cursor: grab;
+.button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.draggable:active {
-    cursor: grabbing;
+/* Multiple properties with different durations */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.5s ease;
 }
 
-.text-selectable {
-    cursor: text;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background-color: #f8f9fa;
 }
 
-.disabled-element {
-    cursor: not-allowed;
-    opacity: 0.6;
+/* Color transitions */
+.color-transition {
+    background: #ff6b6b;
+    color: white;
+    padding: 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-.loading {
-    cursor: wait;
+.color-transition:hover {
+    background: #4ecdc4;
+    color: #333;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
+/* Delayed transitions */
+.delayed-element {
+    opacity: 0.7;
+    transition: opacity 0.3s ease 0.2s;
 }
 
-/* Specific element smooth scroll */
-.scroll-container {
-    scroll-behavior: smooth;
-    height: 300px;
-    overflow-y: auto;
+.delayed-element:hover {
+    opacity: 1;
 }
 
-/* Scroll padding for fixed headers */
-.scroll-target {
-    scroll-margin-top: 80px; /* Account for fixed header */
+/* Different timing functions */
+.timing-examples {
+    width: 100px;
+    height: 100px;
+    background: #007bff;
+    margin: 10px;
+    transition: transform 1s;
 }
 
-/* Pointer Events */
-.click-through {
-    pointer-events: none;
+.ease { transition-timing-function: ease; }
+.linear { transition-timing-function: linear; }
+.ease-in { transition-timing-function: ease-in; }
+.ease-out { transition-timing-function: ease-out; }
+.ease-in-out { transition-timing-function: ease-in-out; }
+
+.timing-examples:hover {
+    transform: translateX(200px);
 }
 
-.interactive {
-    pointer-events: auto;
+/* Custom cubic-bezier */
+.custom-timing {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* User Select */
-.non-selectable {
-    user-select: none;
+.custom-timing:hover {
+    transform: scale(1.1);
+}
+                </pre>
+            `
+        },
+        {
+            title: "Advanced Transition Techniques",
+            content: `
+                <pre class="code-block">
+/* Menu slide transition */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    transition: right 0.3s ease;
 }
 
-.text-selectable {
-    user-select: text;
+.mobile-menu.open {
+    right: 0;
 }
 
-.select-all {
-    user-select: all;
+/* Accordion transition */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
-/* Visibility vs Display */
-.hidden-visible {
-    visibility: hidden; /* Space preserved */
+.accordion-item.active .accordion-content {
+    max-height: 500px;
 }
 
-.hidden-display {
-    display: none; /* Space not preserved */
+/* Loading bar transition */
+.loading-bar {
+    width: 0%;
+    height: 4px;
+    background: #007bff;
+    transition: width 2s ease;
 }
 
-/* Opacity */
-.transparent {
-    opacity: 0.5;
+.loading-bar.active {
+    width: 100%;
 }
 
-.fade-in {
+/* Staggered transitions */
+.stagger-item {
     opacity: 0;
-    animation: fadeIn 1s ease forwards;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
+.stagger-item:nth-child(1) { transition-delay: 0.1s; }
+.stagger-item:nth-child(2) { transition-delay: 0.2s; }
+.stagger-item:nth-child(3) { transition-delay: 0.3s; }
+
+.stagger-container:hover .stagger-item {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Resize Property */
-.resizable {
-    resize: both;
-    overflow: auto;
-    min-height: 100px;
-    min-width: 100px;
+/* Toggle switch */
+.toggle-switch {
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 15px;
+    position: relative;
+    transition: background-color 0.3s ease;
 }
 
-.resizable-horizontal {
-    resize: horizontal;
-    overflow: auto;
-    min-width: 100px;
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.resizable-vertical {
-    resize: vertical;
-    overflow: auto;
-    min-height: 100px;
+.toggle-switch.active {
+    background: #007bff;
 }
 
-/* Overflow Examples */
-.overflow-hidden {
+.toggle-switch.active::after {
+    transform: translateX(30px);
+}
+
+/* Progress bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
     overflow: hidden;
 }
 
-.overflow-scroll {
-    overflow: scroll;
-}
-
-.overflow-auto {
-    overflow: auto;
-}
-
-.overflow-x-hidden {
-    overflow-x: hidden;
-}
-
-.overflow-y-scroll {
-    overflow-y: scroll;
-}
-
-/* Custom Scrollbars */
-.custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #3498db #f1f1f1;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #3498db;
-    border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #2980b9;
-}
-
-/* Scroll Snap */
-.scroll-snap-container {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 400px;
-}
-
-.scroll-snap-item {
-    scroll-snap-align: start;
+.progress-fill {
+    width: 0%;
     height: 100%;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    transition: width 0.5s ease;
+}
+
+/* Morphing button */
+.morph-button {
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.morph-button.loading {
+    padding: 12px 12px;
+    border-radius: 50%;
+    width: 44px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* Transform transitions */
+.transform-example {
+    width: 100px;
+    height: 100px;
+    background: #007bff;
+    transition: transform 0.5s ease;
+}
+
+.transform-example:hover {
+    transform: 
+        translate(20px, 10px)
+        rotate(15deg)
+        scale(1.2);
+}
+
+/* Complex property transitions */
+.complex-transition {
+    background: #ff6b6b;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 
+        background 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-radius 0.5s ease;
+}
+
+.complex-transition:hover {
+    background: #4ecdc4;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border-radius: 20px;
 }
                 </pre>
             `
@@ -452,33 +678,340 @@ html {
     ],
     practices: [
         {
-            title: "Small Properties Practice",
+            title: "CSS Transitions Practice",
             content: `
-                <p>Practice with small but powerful CSS properties:</p>
+                <p>Practice with CSS transitions:</p>
                 <ol>
-                    <li>Create interactive buttons with appropriate cursor states</li>
-                    <li>Implement smooth scrolling for anchor links</li>
-                    <li>Build a component that uses container queries for responsive design</li>
-                    <li>Create a resizable textarea or div element</li>
-                    <li>Style custom scrollbars for specific containers</li>
-                    <li>Implement scroll snapping for a image gallery</li>
-                    <li>Create elements with different pointer-events behaviors</li>
-                    <li>Build a fade-in animation using opacity property</li>
+                    <li>Create interactive buttons with multiple transition properties</li>
+                    <li>Build a mobile navigation menu with slide transitions</li>
+                    <li>Design loading animations with progress bars</li>
+                    <li>Create accordion components with smooth height transitions</li>
+                    <li>Experiment with different timing functions for various effects</li>
+                    <li>Build a toggle switch with smooth state changes</li>
+                    <li>Create staggered animations for list items</li>
+                    <li>Design morphing buttons that change shape</li>
                 </ol>
             `
         }
     ],
     questions: [
         {
-            question: "What's the difference between display: none and visibility: hidden?",
-            answer: "display: none completely removes the element from the document flow and it takes no space. visibility: hidden hides the element but it still occupies space in the layout. display: none also affects accessibility as screen readers typically skip these elements, while visibility: hidden elements are still accessible to screen readers."
-        },
-        {
-            question: "How does scroll-behavior: smooth improve user experience?",
-            answer: "scroll-behavior: smooth creates animated scrolling transitions instead of instant jumps, which provides visual context and reduces disorientation. It's particularly useful for single-page applications, anchor links, and navigation within long pages. However, it should be used judiciously as some users may prefer reduced motion for accessibility reasons."
+            question: "What's the difference between CSS transitions and animations?",
+            answer: "Transitions are for simple state changes between two states (like hover) and need a trigger. Animations are more complex, can have multiple keyframes, run automatically, loop, and offer more control. Use transitions for simple interactions and animations for complex sequences or when you need more control over the animation flow."
         }
     ]
+},
+{
+    id: "css-transforms",
+    title: "CSS Transforms - 2D & 3D Transformations",
+    content: `
+        <h3>What are CSS Transforms?</h3>
+        <p>CSS transforms allow you to manipulate elements in 2D and 3D space, including rotation, scaling, skewing, and translation.</p>
+        
+        <h3>2D Transform Functions:</h3>
+        <ul>
+            <li><strong>translate(x, y)</strong>: Move element along X and Y axes</li>
+            <li><strong>rotate(angle)</strong>: Rotate element by specified angle</li>
+            <li><strong>scale(x, y)</strong>: Scale element horizontally and vertically</li>
+            <li><strong>skew(x-angle, y-angle)</strong>: Skew element along X and Y axes</li>
+            <li><strong>matrix(a, b, c, d, e, f)</strong>: Complex transformations using matrix</li>
+        </ul>
+        
+        <h3>3D Transform Functions:</h3>
+        <ul>
+            <li><strong>translate3d(x, y, z)</strong>: Move element in 3D space</li>
+            <li><strong>rotate3d(x, y, z, angle)</strong>: Rotate around 3D vector</li>
+            <li><strong>scale3d(x, y, z)</strong>: Scale in 3D space</li>
+            <li><strong>perspective(depth)</strong>: Set perspective for 3D transforms</li>
+        </ul>
+        
+        <h3>Transform Properties:</h3>
+        <ul>
+            <li><strong>transform-origin</strong>: Change the origin point of transformations</li>
+            <li><strong>transform-style</strong>: preserve-3d or flat for nested 3D elements</li>
+            <li><strong>perspective</strong>: Set perspective for 3D transformations</li>
+            <li><strong>backface-visibility</strong>: Control visibility of back face in 3D</li>
+        </ul>
+        
+        <h3>Common Use Cases:</h3>
+        <ul>
+            <li>Hover effects and animations</li>
+            <li>3D card flips and transitions</li>
+            <li>Interactive UI elements</li>
+            <li>Image galleries and carousels</li>
+            <li>Loading animations and spinners</li>
+        </ul>
+
+        <br><hr><br>
+        <div dir="rtl">
+            <h3>ما هي تحويلات CSS؟</h3>
+            <p>تسمح تحويلات CSS بمعالجة العناصر في الفضاء ثنائي وثلاثي الأبعاد، بما في ذلك التدوير، التحجيم، الانحراف، والانتقال.</p>
+            
+            <h3>دوال التحويل ثنائية الأبعاد:</h3>
+            <ul>
+                <li><strong>translate(x, y)</strong>: تحريك العنصر على طول المحورين X و Y</li>
+                <li><strong>rotate(angle)</strong>: تدوير العنصر بزاوية محددة</li>
+                <li><strong>scale(x, y)</strong>: تحجيم العنصر أفقيًا وعموديًا</li>
+                <li><strong>skew(x-angle, y-angle)</strong>: انحراف العنصر على طول المحورين X و Y</li>
+                <li><strong>matrix(a, b, c, d, e, f)</strong>: تحويلات معقدة باستخدام المصفوفة</li>
+            </ul>
+            
+            <h3>دوال التحويل ثلاثية الأبعاد:</h3>
+            <ul>
+                <li><strong>translate3d(x, y, z)</strong>: تحريك العنصر في الفضاء ثلاثي الأبعاد</li>
+                <li><strong>rotate3d(x, y, z, angle)</strong>: التدوير حول متجه ثلاثي الأبعاد</li>
+                <li><strong>scale3d(x, y, z)</strong>: التحجيم في الفضاء ثلاثي الأبعاد</li>
+                <li><strong>perspective(depth)</strong>: ضبط المنظور للتحويلات ثلاثية الأبعاد</li>
+            </ul>
+            
+            <h3>خصائص التحويل:</h3>
+            <ul>
+                <li><strong>transform-origin</strong>: تغيير نقطة الأصل للتحويلات</li>
+                <li><strong>transform-style</strong>: preserve-3d أو flat للعناصر ثلاثية الأبعاد المتداخلة</li>
+                <li><strong>perspective</strong>: ضبط المنظور للتحويلات ثلاثية الأبعاد</li>
+                <li><strong>backface-visibility</strong>: التحكم في رؤوية الوجه الخلفي في ثلاثي الأبعاد</li>
+            </ul>
+            
+            <h3>حالات الاستخدام الشائعة:</h3>
+            <ul>
+                <li>تأثيرات التحويم والرسوم المتحركة</li>
+                <li>قلب البطاقات ثلاثية الأبعاد والانتقالات</li>
+                <li>عناصر واجهة المستخدم التفاعلية</li>
+                <li>معارض الصور والدوائر</li>
+                <li>رسوم التحميل المتحركة والدوائر</li>
+            </ul>
+        </div>
+    `,
+    examples: [
+        {
+            title: "2D Transform Examples",
+            content: `
+                <pre class="code-block">
+/* Basic 2D Transforms */
+.translate {
+    transform: translate(50px, 100px);
 }
+
+.rotate {
+    transform: rotate(45deg);
+}
+
+.scale {
+    transform: scale(1.5);
+}
+
+.scale-x {
+    transform: scaleX(2);
+}
+
+.scale-y {
+    transform: scaleY(0.5);
+}
+
+.skew {
+    transform: skew(30deg, 20deg);
+}
+
+/* Multiple transforms */
+.multiple {
+    transform: translate(50px, 50px) rotate(45deg) scale(1.2);
+}
+
+/* Transform origin */
+.origin-center {
+    transform-origin: center;
+    transform: rotate(45deg);
+}
+
+.origin-top-left {
+    transform-origin: top left;
+    transform: rotate(45deg);
+}
+
+.origin-custom {
+    transform-origin: 20% 80%;
+    transform: rotate(45deg);
+}
+
+/* Hover effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.1);
+}
+
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(15deg);
+}
+
+/* Button animations */
+.button {
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+                </pre>
+            `
+        },
+        {
+            title: "3D Transform Examples",
+            content: `
+                <pre class="code-block">
+/* 3D Transform Basics */
+.translate-3d {
+    transform: translate3d(50px, 100px, 50px);
+}
+
+.rotate-3d {
+    transform: rotate3d(1, 1, 1, 45deg);
+}
+
+.scale-3d {
+    transform: scale3d(1.5, 1.5, 1.5);
+}
+
+/* 3D Card Flip */
+.card-container {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+/* 3D Cube */
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(25deg) rotateY(-25deg);
+}
+
+.cube-face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.front  { transform: rotateY(0deg) translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Perspective examples */
+.perspective-500 {
+    perspective: 500px;
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.perspective-origin {
+    perspective: 500px;
+    perspective-origin: 25% 75%;
+}
+
+/* 3D Hover Effects */
+.flip-on-hover {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-on-hover:hover {
+    transform: rotateY(180deg);
+}
+
+/* Loading Spinner with transforms */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+                </pre>
+            `
+        }
+    ],
+    practices: [
+        {
+            title: "CSS Transforms Practice",
+            content: `
+                <p>Practice with CSS transforms:</p>
+                <ol>
+                    <li>Create interactive buttons with hover transform effects</li>
+                    <li>Build a 3D card flip animation for a product card</li>
+                    <li>Design a loading spinner using rotate transforms</li>
+                    <li>Create an image gallery with scale and rotate hover effects</li>
+                    <li>Build a 3D cube using multiple transform functions</li>
+                    <li>Implement a flip animation for login/signup forms</li>
+                    <li>Create a parallax scrolling effect with translateZ</li>
+                    <li>Design a menu that slides in with 3D transforms</li>
+                </ol>
+            `
+        }
+    ],
+    questions: [
+        {
+            question: "What's the difference between translate() and position: relative with top/left?",
+            answer: "translate() uses the GPU for smoother animations and doesn't affect document flow or other elements. position: relative affects the document flow and can cause layout shifts. translate() is more performant for animations and doesn't trigger layout recalculations."
+        },
+        {
+            question: "When should you use transform-style: preserve-3d?",
+            answer: "Use transform-style: preserve-3d when you have nested elements that need to maintain their 3D positioning relative to their parent. This is essential for creating complex 3D scenes where child elements should exist in the same 3D space as their parent, like in 3D cubes or card flips with multiple layers."
+        },
+        {
+            question: "How does perspective work in CSS 3D transforms?",
+            answer: "Perspective creates the illusion of depth by making elements closer to the viewer appear larger and elements farther away appear smaller. The perspective value represents the distance between the viewer and the z=0 plane. Lower values create more dramatic 3D effects, while higher values create subtler effects."
+        }
+    ]
+},
     ]
 };
 
