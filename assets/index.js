@@ -77,16 +77,16 @@ const lectures = [
         title: "Pseudo-elements, CSS Transitions, CSS Transforms",
         description: "Pseudo-elements & Pseudo-classes - Advanced Selectors, CSS Transitions - Smooth Animations, CSS Transforms - 2D & 3D Transformations",
         image: "./assets/images/logos/CSS.webp",
-        status: "in-progress",
+        status: "completed",
         content: "CSS"
     },
     {
         id: "css-6",
         number: 10,
-        title: "Pseudo-elements, CSS Transitions, CSS Transforms",
-        description: "Pseudo-elements & Pseudo-classes - Advanced Selectors, CSS Transitions - Smooth Animations, CSS Transforms - 2D & 3D Transformations",
+        title: "CSS Transforms, Responsive Design & Animations",
+        description: "CSS Transforms - 2D & 3D Transformations, Width, Height & Responsive Properties, Responsive Design & Animations",
         image: "./assets/images/logos/CSS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "CSS"
     },
     {

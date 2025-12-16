@@ -6,701 +6,6 @@ const courseData = {
         center: "Ousos"
     },
     topics: [
-         {
-    id: "pseudo-elements-classes",
-    title: "Pseudo-elements & Pseudo-classes - Advanced Selectors",
-    content: `
-        <h3>Pseudo-classes (State-based):</h3>
-        <p>Select elements based on their state or position</p>
-        <ul>
-            <li><strong>:hover</strong> - When mouse is over element</li>
-            <li><strong>:focus</strong> - When element has keyboard focus</li>
-            <li><strong>:active</strong> - While element is being activated</li>
-            <li><strong>:visited</strong> - Links that have been visited</li>
-            <li><strong>:first-child</strong> - First child of its parent</li>
-            <li><strong>:last-child</strong> - Last child of its parent</li>
-            <li><strong>:nth-child(n)</strong> - nth child (2, 3, even, odd, 3n)</li>
-            <li><strong>:nth-of-type(n)</strong> - nth of specific type</li>
-            <li><strong>:not(selector)</strong> - Elements that don't match selector</li>
-            <li><strong>:checked</strong> - Checked radio/checkbox</li>
-            <li><strong>:disabled</strong> - Disabled form elements</li>
-        </ul>
-        
-        <h3>Pseudo-elements (Virtual elements):</h3>
-        <p>Style specific parts of an element</p>
-        <ul>
-            <li><strong>::before</strong> - Insert content before element</li>
-            <li><strong>::after</strong> - Insert content after element</li>
-            <li><strong>::first-letter</strong> - Style first letter of text</li>
-            <li><strong>::first-line</strong> - Style first line of text</li>
-            <li><strong>::selection</strong> - Style highlighted text</li>
-            <li><strong>::placeholder</strong> - Style input placeholder text</li>
-        </ul>
-        
-        <h3>Common Use Cases:</h3>
-        <ul>
-            <li>Interactive states (hover, focus)</li>
-            <li>Styling lists and tables</li>
-            <li>Creating decorative elements</li>
-            <li>Typography enhancements</li>
-            <li>Form styling</li>
-        </ul>
-
-        <br><hr><br>
-        <div dir="rtl">
-            <h3>الفئات الزائفة (مبنية على الحالة):</h3>
-            <p>تحديد العناصر بناءً على حالتها أو موقعها</p>
-            <ul>
-                <li><strong>:hover</strong> - عندما يكون الفأرة فوق العنصر</li>
-                <li><strong>:focus</strong> - عندما يكون العنصر لديه تركيز لوحة المفاتيح</li>
-                <li><strong>:active</strong> - أثناء تنشيط العنصر</li>
-                <li><strong>:visited</strong> - الروابط التي تمت زيارتها</li>
-                <li><strong>:first-child</strong> - الابن الأول لوالده</li>
-                <li><strong>:last-child</strong> - الابن الأخير لوالده</li>
-                <li><strong>:nth-child(n)</strong> - الابن النوني (2, 3, even, odd, 3n)</li>
-                <li><strong>:nth-of-type(n)</strong> - النوني من نوع محدد</li>
-                <li><strong>:not(selector)</strong> - العناصر التي لا تطابق المحدد</li>
-                <li><strong>:checked</strong> - زر الراديو/مربع الاختيار المحدد</li>
-                <li><strong>:disabled</strong> - عناصر النموذج المعطلة</li>
-            </ul>
-            
-            <h3>العناصر الزائفة (عناصر افتراضية):</h3>
-            <p>تنسيق أجزاء محددة من العنصر</p>
-            <ul>
-                <li><strong>::before</strong> - إدراج محتوى قبل العنصر</li>
-                <li><strong>::after</strong> - إدراج محتوى بعد العنصر</li>
-                <li><strong>::first-letter</strong> - تنسيق الحرف الأول للنص</li>
-                <li><strong>::first-line</strong> - تنسيق السطر الأول للنص</li>
-                <li><strong>::selection</strong> - تنسيق النص المحدد</li>
-                <li><strong>::placeholder</strong> - تنسيق نص العنصر النائب للإدخال</li>
-            </ul>
-            
-            <h3>حالات الاستخدام الشائعة:</h3>
-            <ul>
-                <li>الحالات التفاعلية (hover, focus)</li>
-                <li>تنسيق القوائم والجداول</li>
-                <li>إنشاء عناصر زخرفية</li>
-                <li>تحسينات الطباعة</li>
-                <li>تنسيق النماذج</li>
-            </ul>
-        </div>
-    `,
-    examples: [
-        {
-            title: "Pseudo-class Examples",
-            content: `
-                <pre class="code-block">
-/* Interactive states */
-.button {
-    background: #007bff;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.button:active {
-    transform: translateY(0);
-}
-
-.button:focus {
-    outline: 3px solid rgba(0,123,255,0.3);
-    outline-offset: 2px;
-}
-
-/* Link states */
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:visited {
-    color: #6f42c1;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Child selectors */
-.list-item:first-child {
-    font-weight: bold;
-    border-top: 2px solid #007bff;
-}
-
-.list-item:last-child {
-    border-bottom: 2px solid #007bff;
-}
-
-.list-item:nth-child(odd) {
-    background: #f8f9fa;
-}
-
-.list-item:nth-child(even) {
-    background: white;
-}
-
-.list-item:nth-child(3n) {
-    color: #e74c3c;
-}
-
-/* Form states */
-input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
-}
-
-input:disabled {
-    background: #f8f9fa;
-    color: #6c757d;
-    cursor: not-allowed;
-}
-
-input:checked + label {
-    font-weight: bold;
-    color: #28a745;
-}
-
-/* Negation */
-.card:not(.featured) {
-    opacity: 0.7;
-}
-
-.button:not(:last-child) {
-    margin-right: 10px;
-}
-                </pre>
-            `
-        },
-        {
-            title: "Pseudo-element Examples",
-            content: `
-                <pre class="code-block">
-/* Before and After */
-.decorative-heading {
-    position: relative;
-    text-align: center;
-}
-
-.decorative-heading::before,
-.decorative-heading::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 100px;
-    height: 2px;
-    background: #007bff;
-}
-
-.decorative-heading::before {
-    left: 0;
-}
-
-.decorative-heading::after {
-    right: 0;
-}
-
-/* Icon with ::before */
-.button-with-icon::before {
-    content: "→";
-    margin-right: 8px;
-    font-weight: bold;
-}
-
-/* Tooltip with ::after */
-.tooltip {
-    position: relative;
-}
-
-.tooltip:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    white-space: nowrap;
-    font-size: 14px;
-}
-
-/* First letter styling */
-.article-intro::first-letter {
-    font-size: 3em;
-    float: left;
-    line-height: 1;
-    margin-right: 8px;
-    color: #007bff;
-    font-weight: bold;
-}
-
-/* First line styling */
-.article-lead::first-line {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #2c3e50;
-}
-
-/* Selection styling */
-::selection {
-    background: #007bff;
-    color: white;
-}
-
-::-moz-selection {
-    background: #007bff;
-    color: white;
-}
-
-/* Placeholder styling */
-input::placeholder {
-    color: #6c757d;
-    font-style: italic;
-}
-
-/* Custom bullets with ::before */
-.custom-list {
-    list-style: none;
-    padding: 0;
-}
-
-.custom-list li::before {
-    content: "▸";
-    color: #007bff;
-    font-weight: bold;
-    margin-right: 8px;
-}
-
-/* Quote styling with ::before and ::after */
-.blockquote::before {
-    content: "“";
-    font-size: 4em;
-    color: #007bff;
-    line-height: 0;
-    vertical-align: -0.4em;
-    margin-right: 10px;
-}
-
-.blockquote::after {
-    content: "”";
-    font-size: 4em;
-    color: #007bff;
-    line-height: 0;
-    vertical-align: -0.4em;
-    margin-left: 10px;
-}
-                </pre>
-            `
-        }
-    ],
-    practices: [
-        {
-            title: "Pseudo-classes & Elements Practice",
-            content: `
-                <p>Practice with pseudo-classes and pseudo-elements:</p>
-                <ol>
-                    <li>Create interactive buttons with hover, focus, and active states</li>
-                    <li>Style a navigation menu with different states for current page</li>
-                    <li>Build a striped table using nth-child selectors</li>
-                    <li>Create decorative headings with ::before and ::after</li>
-                    <li>Style form elements with :focus, :valid, and :invalid states</li>
-                    <li>Add custom icons to buttons using ::before</li>
-                    <li>Create a custom-styled blockquote with quotation marks</li>
-                    <li>Build a tooltip system using ::after</li>
-                </ol>
-            `
-        }
-    ],
-    questions: [
-        {
-            question: "What's the difference between pseudo-classes and pseudo-elements?",
-            answer: "Pseudo-classes (single colon) select elements based on their state (:hover, :focus, :first-child). Pseudo-elements (double colon) style specific parts of an element (::before, ::after, ::first-letter). Pseudo-classes target existing elements in specific states, while pseudo-elements create virtual elements that don't exist in the DOM."
-        },
-        {
-            question: "When should you use single colon vs double colon syntax?",
-            answer: "Use single colon for pseudo-classes (:hover, :focus) and double colon for pseudo-elements (::before, ::after). While most browsers support single colon for pseudo-elements for backward compatibility, the double colon syntax is the modern standard defined in CSS3. Always use double colon for pseudo-elements in new code."
-        }
-    ]
-},
-{
-    id: "css-transitions",
-    title: "CSS Transitions - Smooth Animations",
-    content: `
-        <h3>Transition Properties:</h3>
-        <ul>
-            <li><strong>transition-property</strong>: Which properties to animate</li>
-            <li><strong>transition-duration</strong>: How long animation takes</li>
-            <li><strong>transition-timing-function</strong>: Animation speed curve</li>
-            <li><strong>transition-delay</strong>: When to start animation</li>
-            <li><strong>transition</strong>: Shorthand for all properties</li>
-        </ul>
-        
-        <h3>Animatable Properties:</h3>
-        <ul>
-            <li>Colors (color, background-color, border-color)</li>
-            <li>Dimensions (width, height, padding, margin)</li>
-            <li>Transforms (translate, rotate, scale, skew)</li>
-            <li>Opacity and visibility</li>
-            <li>Position (top, right, bottom, left)</li>
-            <li>Shadows (box-shadow, text-shadow)</li>
-        </ul>
-        
-        <h3>Timing Functions:</h3>
-        <ul>
-            <li><strong>ease</strong>: Slow start, fast, slow end (default)</li>
-            <li><strong>linear</strong>: Constant speed</li>
-            <li><strong>ease-in</strong>: Slow start</li>
-            <li><strong>ease-out</strong>: Slow end</li>
-            <li><strong>ease-in-out</strong>: Slow start and end</li>
-            <li><strong>cubic-bezier()</strong>: Custom timing function</li>
-            <li><strong>steps()</strong>: Discrete steps animation</li>
-        </ul>
-        
-        <h3>Best Practices:</h3>
-        <ul>
-            <li>Use transitions for simple state changes</li>
-            <li>Keep durations between 200-500ms for interactions</li>
-            <li>Use appropriate timing functions</li>
-            <li>Test performance on mobile devices</li>
-            <li>Consider prefers-reduced-motion</li>
-        </ul>
-
-        <br><hr><br>
-        <div dir="rtl">
-            <h3>خصائص الانتقال:</h3>
-            <ul>
-                <li><strong>transition-property</strong>: أي الخصائص يتم تحريكها</li>
-                <li><strong>transition-duration</strong>: كم من الوقت تستغرق الرسوم المتحركة</li>
-                <li><strong>transition-timing-function</strong>: منحنى سرعة الرسوم المتحركة</li>
-                <li><strong>transition-delay</strong>: متى تبدأ الرسوم المتحركة</li>
-                <li><strong>transition</strong>: اختصار لجميع الخصائص</li>
-            </ul>
-            
-            <h3>الخصائص القابلة للتحريك:</h3>
-            <ul>
-                <li>الألوان (color, background-color, border-color)</li>
-                <li>الأبعاد (width, height, padding, margin)</li>
-                <li>التحويلات (translate, rotate, scale, skew)</li>
-                <li>الشفافية والرؤية</li>
-                <li>الموضع (top, right, bottom, left)</li>
-                <li>الظلال (box-shadow, text-shadow)</li>
-            </ul>
-            
-            <h3>دوال التوقيت:</h3>
-            <ul>
-                <li><strong>ease</strong>: بداية بطيئة، سريعة، نهاية بطيئة (افتراضي)</li>
-                <li><strong>linear</strong>: سرعة ثابتة</li>
-                <li><strong>ease-in</strong>: بداية بطيئة</li>
-                <li><strong>ease-out</strong>: نهاية بطيئة</li>
-                <li><strong>ease-in-out</strong>: بداية ونهاية بطيئة</li>
-                <li><strong>cubic-bezier()</strong>: دالة توقيت مخصصة</li>
-                <li><strong>steps()</strong>: رسوم متحركة بخطوات منفصلة</li>
-            </ul>
-            
-            <h3>أفضل الممارسات:</h3>
-            <ul>
-                <li>استخدم الانتقالات لتغييرات الحالة البسيطة</li>
-                <li>احتفظ بالمدة بين 200-500 مللي ثانية للتفاعلات</li>
-                <li>استخدم دوال التوقيت المناسبة</li>
-                <li>اختبر الأداء على أجهزة الجوال</li>
-                <li>ضع في الاعتبار prefers-reduced-motion</li>
-            </ul>
-        </div>
-    `,
-    examples: [
-        {
-            title: "Basic Transition Examples",
-            content: `
-                <pre class="code-block">
-/* Simple hover transition */
-.button {
-    background: #007bff;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* Multiple properties with different durations */
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: 
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background-color 0.5s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    background-color: #f8f9fa;
-}
-
-/* Color transitions */
-.color-transition {
-    background: #ff6b6b;
-    color: white;
-    padding: 20px;
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-.color-transition:hover {
-    background: #4ecdc4;
-    color: #333;
-}
-
-/* Delayed transitions */
-.delayed-element {
-    opacity: 0.7;
-    transition: opacity 0.3s ease 0.2s;
-}
-
-.delayed-element:hover {
-    opacity: 1;
-}
-
-/* Different timing functions */
-.timing-examples {
-    width: 100px;
-    height: 100px;
-    background: #007bff;
-    margin: 10px;
-    transition: transform 1s;
-}
-
-.ease { transition-timing-function: ease; }
-.linear { transition-timing-function: linear; }
-.ease-in { transition-timing-function: ease-in; }
-.ease-out { transition-timing-function: ease-out; }
-.ease-in-out { transition-timing-function: ease-in-out; }
-
-.timing-examples:hover {
-    transform: translateX(200px);
-}
-
-/* Custom cubic-bezier */
-.custom-timing {
-    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.custom-timing:hover {
-    transform: scale(1.1);
-}
-                </pre>
-            `
-        },
-        {
-            title: "Advanced Transition Techniques",
-            content: `
-                <pre class="code-block">
-/* Menu slide transition */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100vh;
-    background: white;
-    transition: right 0.3s ease;
-}
-
-.mobile-menu.open {
-    right: 0;
-}
-
-/* Accordion transition */
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.accordion-item.active .accordion-content {
-    max-height: 500px;
-}
-
-/* Loading bar transition */
-.loading-bar {
-    width: 0%;
-    height: 4px;
-    background: #007bff;
-    transition: width 2s ease;
-}
-
-.loading-bar.active {
-    width: 100%;
-}
-
-/* Staggered transitions */
-.stagger-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.stagger-item:nth-child(1) { transition-delay: 0.1s; }
-.stagger-item:nth-child(2) { transition-delay: 0.2s; }
-.stagger-item:nth-child(3) { transition-delay: 0.3s; }
-
-.stagger-container:hover .stagger-item {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Toggle switch */
-.toggle-switch {
-    width: 60px;
-    height: 30px;
-    background: #ccc;
-    border-radius: 15px;
-    position: relative;
-    transition: background-color 0.3s ease;
-}
-
-.toggle-switch::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 26px;
-    height: 26px;
-    background: white;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-.toggle-switch.active {
-    background: #007bff;
-}
-
-.toggle-switch.active::after {
-    transform: translateX(30px);
-}
-
-/* Progress bar */
-.progress-bar {
-    width: 100%;
-    height: 8px;
-    background: #f0f0f0;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, #007bff, #00d4ff);
-    transition: width 0.5s ease;
-}
-
-/* Morphing button */
-.morph-button {
-    padding: 12px 24px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.morph-button.loading {
-    padding: 12px 12px;
-    border-radius: 50%;
-    width: 44px;
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-    }
-}
-
-/* Transform transitions */
-.transform-example {
-    width: 100px;
-    height: 100px;
-    background: #007bff;
-    transition: transform 0.5s ease;
-}
-
-.transform-example:hover {
-    transform: 
-        translate(20px, 10px)
-        rotate(15deg)
-        scale(1.2);
-}
-
-/* Complex property transitions */
-.complex-transition {
-    background: #ff6b6b;
-    color: white;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: 
-        background 0.4s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-radius 0.5s ease;
-}
-
-.complex-transition:hover {
-    background: #4ecdc4;
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    border-radius: 20px;
-}
-                </pre>
-            `
-        }
-    ],
-    practices: [
-        {
-            title: "CSS Transitions Practice",
-            content: `
-                <p>Practice with CSS transitions:</p>
-                <ol>
-                    <li>Create interactive buttons with multiple transition properties</li>
-                    <li>Build a mobile navigation menu with slide transitions</li>
-                    <li>Design loading animations with progress bars</li>
-                    <li>Create accordion components with smooth height transitions</li>
-                    <li>Experiment with different timing functions for various effects</li>
-                    <li>Build a toggle switch with smooth state changes</li>
-                    <li>Create staggered animations for list items</li>
-                    <li>Design morphing buttons that change shape</li>
-                </ol>
-            `
-        }
-    ],
-    questions: [
-        {
-            question: "What's the difference between CSS transitions and animations?",
-            answer: "Transitions are for simple state changes between two states (like hover) and need a trigger. Animations are more complex, can have multiple keyframes, run automatically, loop, and offer more control. Use transitions for simple interactions and animations for complex sequences or when you need more control over the animation flow."
-        }
-    ]
-},
 {
     id: "css-transforms",
     title: "CSS Transforms - 2D & 3D Transformations",
@@ -1012,6 +317,481 @@ input::placeholder {
         }
     ]
 },
+{
+    id: "dimensions-responsive",
+    title: "Width, Height & Responsive Properties",
+    content: `
+        <h3>Basic Dimension Properties:</h3>
+        <ul>
+            <li><strong>width</strong>: Sets element width</li>
+            <li><strong>height</strong>: Sets element height</li>
+            <li><strong>min-width</strong>: Minimum allowed width</li>
+            <li><strong>max-width</strong>: Maximum allowed width</li>
+            <li><strong>min-height</strong>: Minimum allowed height</li>
+            <li><strong>max-height</strong>: Maximum allowed height</li>
+        </ul>
+        
+        <h3>Responsive Without Media Queries:</h3>
+        <ul>
+            <li><strong>min()</strong>: Uses smallest value from list</li>
+            <li><strong>max()</strong>: Uses largest value from list</li>
+            <li><strong>clamp()</strong>: Clamps value between min and max</li>
+            <li><strong>fit-content</strong>: Fits content while respecting min/max</li>
+            <li><strong>minmax()</strong>: Defines size range (CSS Grid)</li>
+            <li><strong>auto-fill/auto-fit</strong>: Automatic grid tracks</li>
+        </ul>
+        
+        <h3>Modern CSS Functions:</h3>
+        <ul>
+            <li><strong>clamp(min, preferred, max)</strong>: Responsive value in one line</li>
+            <li><strong>min(value1, value2, ...)</strong>: Returns smallest value</li>
+            <li><strong>max(value1, value2, ...)</strong>: Returns largest value</li>
+            <li><strong>calc()</strong>: Mathematical calculations</li>
+        </ul>
+        
+        <h3>Intrinsic Sizing Keywords:</h3>
+        <ul>
+            <li><strong>fit-content</strong>: Fits content while respecting constraints</li>
+            <li><strong>min-content</strong>: Minimum size based on content</li>
+            <li><strong>max-content</strong>: Maximum size based on content</li>
+            <li><strong>auto</strong>: Browser determines size</li>
+        </ul>
+        
+        <h3>Best Practices for Responsive Design:</h3>
+        <ul>
+            <li>Use max-width: 100% for images and containers</li>
+            <li>Set min-height instead of height for flexible containers</li>
+            <li>Use clamp() for fluid typography and spacing</li>
+            <li>Combine min() and max() for complex responsive logic</li>
+            <li>Use fit-content for elements that should shrink-wrap</li>
+        </ul>
+
+        <br><hr><br>
+        <div dir="rtl">
+            <h3>خصائص الأبعاد الأساسية:</h3>
+            <ul>
+                <li><strong>width</strong>: يحدد عرض العنصر</li>
+                <li><strong>height</strong>: يحدد ارتفاع العنصر</li>
+                <li><strong>min-width</strong>: الحد الأدنى المسموح به للعرض</li>
+                <li><strong>max-width</strong>: الحد الأقصى المسموح به للعرض</li>
+                <li><strong>min-height</strong>: الحد الأدنى المسموح به للارتفاع</li>
+                <li><strong>max-height</strong>: الحد الأقصى المسموح به للارتفاع</li>
+            </ul>
+            
+            <h3>التجاوب بدون استعلامات الوسائط:</h3>
+            <ul>
+                <li><strong>min()</strong>: يستخدم أصغر قيمة من القائمة</li>
+                <li><strong>max()</strong>: يستخدم أكبر قيمة من القائمة</li>
+                <li><strong>clamp()</strong>: يثبت القيمة بين الحد الأدنى والأقصى</li>
+                <li><strong>fit-content</strong>: يناسب المحتوى مع احترام الحدود الدنيا/القصوى</li>
+                <li><strong>minmax()</strong>: يحدد نطاق الحجم (شبكة CSS)</li>
+                <li><strong>auto-fill/auto-fit</strong>: مسارات الشبكة التلقائية</li>
+            </ul>
+            
+            <h3>دوال CSS الحديثة:</h3>
+            <ul>
+                <li><strong>clamp(min, preferred, max)</strong>: قيمة متجاوبة في سطر واحد</li>
+                <li><strong>min(value1, value2, ...)</strong>: يعيد أصغر قيمة</li>
+                <li><strong>max(value1, value2, ...)</strong>: يعيد أكبر قيمة</li>
+                <li><strong>calc()</strong>: العمليات الحسابية</li>
+            </ul>
+            
+            <h3>كلمات رئيسية لحجم الجوهر:</h3>
+            <ul>
+                <li><strong>fit-content</strong>: يناسب المحتوى مع احترام القيود</li>
+                <li><strong>min-content</strong>: الحد الأدنى للحجم بناءً على المحتوى</li>
+                <li><strong>max-content</strong>: الحد الأقصى للحجم بناءً على المحتوى</li>
+                <li><strong>auto</strong>: المتصفح يحدد الحجم</li>
+            </ul>
+            
+            <h3>أفضل الممارسات للتصميم المتجاوب:</h3>
+            <ul>
+                <li>استخدم max-width: 100% للصور والحاويات</li>
+                <li>اضبط min-height بدلاً من height للحاويات المرنة</li>
+                <li>استخدم clamp() للطباعة والتباعد السائل</li>
+                <li>اجمع min() و max() للمنطق المتجاوب المعقد</li>
+                <li>استخدم fit-content للعناصر التي يجب أن تنكمش حول المحتوى</li>
+            </ul>
+        </div>
+    `,
+    examples: [
+        {
+            title: "Responsive Dimension Examples",
+            content: `
+                <pre class="code-block">
+/* Basic responsive container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Fluid typography with clamp() */
+.fluid-heading {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.fluid-text {
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+}
+
+/* Using min() and max() for responsive logic */
+.responsive-card {
+    width: min(100%, 400px); /* Never exceeds 400px */
+    height: max(200px, 30vh); /* At least 200px, but 30vh if larger */
+}
+
+/* Complex responsive layout without media queries */
+.sidebar {
+    width: clamp(250px, 25vw, 300px);
+}
+
+.main-content {
+    width: min(800px, 100% - 2rem);
+}
+
+/* Intrinsic sizing */
+.intrinsic-width {
+    width: fit-content;
+    min-width: min-content;
+    max-width: max-content;
+}
+
+/* Responsive images */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.cover-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* CSS Grid with auto-fill for responsive layouts */
+.auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Flexbox with responsive items */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flex-item {
+    flex: 1 1 300px; /* Grow, shrink, basis */
+}
+
+/* Aspect ratio containers */
+.aspect-ratio-16-9 {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+.aspect-ratio-1-1 {
+    aspect-ratio: 1 / 1;
+    width: min(400px, 100%);
+}
+
+/* Complex clamp examples */
+.complex-sizing {
+    width: clamp(300px, 50vw, 600px);
+    height: clamp(200px, 40vh, 400px);
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* Container queries style with min/max */
+.component {
+    width: 100%;
+    max-width: 500px;
+}
+
+.component__inner {
+    padding: max(1rem, 5%);
+    font-size: min(1.6rem, 4vw);
+}
+
+/* Responsive spacing system */
+:root {
+    --space-xs: clamp(0.5rem, 1vw, 1rem);
+    --space-sm: clamp(1rem, 2vw, 1.5rem);
+    --space-md: clamp(1.5rem, 3vw, 2rem);
+    --space-lg: clamp(2rem, 4vw, 3rem);
+}
+
+.card {
+    padding: var(--space-md);
+    margin: var(--space-sm);
+}
+                </pre>
+            `
+        }
+    ],
+    practices: [
+        {
+            title: "Responsive Dimensions Practice",
+            content: `
+                <p>Practice with responsive dimensions and properties:</p>
+                <ol>
+                    <li>Create a responsive container system using clamp() and min()/max()</li>
+                    <li>Build a card component that scales intelligently without media queries</li>
+                    <li>Implement fluid typography across different screen sizes</li>
+                    <li>Create a responsive grid layout using auto-fill and minmax()</li>
+                    <li>Build a sidebar that adjusts its width based on viewport size</li>
+                    <li>Create responsive images that maintain aspect ratios</li>
+                    <li>Implement a spacing system using CSS custom properties and clamp()</li>
+                    <li>Build a component that uses intrinsic sizing keywords</li>
+                </ol>
+            `
+        }
+    ],
+    questions: [
+        {
+            question: "What's the difference between auto-fill and auto-fit in CSS Grid?",
+            answer: "auto-fill creates as many tracks as possible even if they're empty, while auto-fit collapses empty tracks and expands filled ones to take available space. Use auto-fill when you want consistent track sizes regardless of item count, and auto-fit when you want items to expand and fill available space."
+        },
+        {
+            question: "When should you use clamp() vs min()/max()?",
+            answer: "Use clamp() when you want a value that has a minimum, ideal, and maximum (like fluid typography). Use min() when you want to ensure a value doesn't exceed a certain limit. Use max() when you want to ensure a value doesn't go below a certain limit. They can be combined for complex responsive logic without media queries."
+        },
+        {
+            question: "How do intrinsic sizing keywords work?",
+            answer: "min-content uses the minimum size needed to contain the content (smallest possible). max-content uses the maximum size needed to contain content without wrapping. fit-content acts like min-content but won't shrink below min-width/max-width constraints. auto lets the browser decide based on context and available space."
+        }
+    ]
+},
+        {
+            id: "responsive-animations",
+            title: "Responsive Design & Animations",
+            content: `
+                <h3>Media Queries:</h3>
+                <ul>
+                    <li><strong>@media</strong>: Rule for conditional CSS</li>
+                    <li><strong>Logical operators</strong>: and, not, only</li>
+                    <li><strong>Media types</strong>: screen, print, speech</li>
+                    <li><strong>Media features</strong>: width, height, orientation, hover</li>
+                </ul>
+                
+                <h3>Common Breakpoints:</h3>
+                <ul>
+                    <li>Mobile: 320px - 480px</li>
+                    <li>Tablet: 481px - 768px</li>
+                    <li>Small screens: 769px - 1024px</li>
+                    <li>Large screens: 1025px+</li>
+                </ul>
+                
+                <h3>Viewport Meta Tag:</h3>
+                <pre class="code-block">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                </pre>
+                
+                <h3>Fluid Sizing with clamp():</h3>
+                <p>clamp(min, preferred, max) - responsive values in one line</p>
+                
+                <h3>CSS Animations:</h3>
+                <ul>
+                    <li><strong>@keyframes</strong>: Define animation sequence</li>
+                    <li><strong>animation-name</strong>: Reference to @keyframes</li>
+                    <li><strong>animation-duration</strong>: How long animation runs</li>
+                    <li><strong>animation-iteration-count</strong>: infinite, number</li>
+                    <li><strong>animation-direction</strong>: normal, reverse, alternate</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>استعلامات الوسائط:</h3>
+                    <ul>
+                        <li><strong>@media</strong>: قاعدة لـ CSS الشرطي</li>
+                        <li><strong>المشغلات المنطقية</strong>: and, not, only</li>
+                        <li><strong>أنواع الوسائط</strong>: screen, print, speech</li>
+                        <li><strong>ميزات الوسائط</strong>: width, height, orientation, hover</li>
+                    </ul>
+                    
+                    <h3>نقاط التوقف الشائعة:</h3>
+                    <ul>
+                        <li>الجوال: 320px - 480px</li>
+                        <li>اللوحي: 481px - 768px</li>
+                        <li>الشاشات الصغيرة: 769px - 1024px</li>
+                        <li>الشاشات الكبيرة: 1025px+</li>
+                    </ul>
+                    
+                    <h3>وسم Viewport Meta:</h3>
+                    <pre class="code-block" dir="ltr">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    </pre>
+                    
+                    <h3>تحديد الحجم السائل مع clamp():</h3>
+                    <p>clamp(min, preferred, max) - قيم متجاوبة في سطر واحد</p>
+                    
+                    <h3>رسوم CSS المتحركة:</h3>
+                    <ul>
+                        <li><strong>@keyframes</strong>: تعريف تسلسل الرسوم المتحركة</li>
+                        <li><strong>animation-name</strong>: المرجع إلى @keyframes</li>
+                        <li><strong>animation-duration</strong>: كم من الوقت تعمل الرسوم المتحركة</li>
+                        <li><strong>animation-iteration-count</strong>: infinite, number</li>
+                        <li><strong>animation-direction</strong>: normal, reverse, alternate</li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "Media Query Examples",
+                    content: `
+                        <pre class="code-block">
+/* Mobile first approach */
+.container {
+    padding: 10px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        padding: 40px;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #333;
+        color: white;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+/* Complex media query */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+                        </pre>
+                    `
+                },
+                {
+                    title: "Animations & Transforms Examples",
+                    content: `
+                        <pre class="code-block">
+/* Transitions */
+.button {
+    transition: all 0.3s ease;
+}
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Keyframes animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-element {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Transform examples */
+.transform-1 {
+    transform: scale(1.1);
+}
+
+.transform-2 {
+    transform: rotate(45deg);
+}
+
+.transform-3 {
+    transform: translate(50px, 100px);
+}
+
+.transform-4 {
+    transform: skew(10deg, 5deg);
+}
+
+/* Multiple transforms */
+.complex-transform {
+    transform: scale(1.1) rotate(5deg) translateX(10px);
+}
+
+/* Fluid typography with clamp */
+.fluid-text {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "Responsive & Animations Practice",
+                    content: `
+                        <p>Practice with responsive design and animations:</p>
+                        <ol>
+                            <li>Create a mobile-first responsive layout with 3 breakpoints</li>
+                            <li>Add smooth transitions to interactive elements</li>
+                            <li>Create a loading spinner using CSS animations</li>
+                            <li>Build a responsive navigation that transforms on mobile</li>
+                            <li>Use clamp() for fluid typography and spacing</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "What's the difference between transition and animation?",
+                    answer: "Transitions are for simple state changes (hover, focus) and need a trigger. Animations are more complex, can have multiple keyframes, run automatically, and offer more control. Use transitions for simple interactions, animations for complex sequences."
+                },
+                {
+                    question: "Why use mobile-first approach in media queries?",
+                    answer: "Mobile-first means styling for mobile first, then enhancing for larger screens. It's more efficient (less code to override), performs better, and aligns with progressive enhancement. Start with min-width queries going upward, rather than max-width going downward."
+                }
+            ]
+        },
 ]
 };
 
