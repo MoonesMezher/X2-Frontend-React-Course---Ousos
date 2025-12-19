@@ -83,19 +83,19 @@ const lectures = [
     {
         id: "css-6",
         number: 10,
-        title: "CSS Transforms, Responsive Design & Animations",
-        description: "CSS Transforms - 2D & 3D Transformations, Width, Height & Responsive Properties, Responsive Design & Animations",
+        title: "CSS Transforms, Responsive Design",
+        description: "CSS Transforms - 2D & 3D Transformations, Width, Height & Responsive Properties, Responsive Design",
         image: "./assets/images/logos/CSS.webp",
-        status: "in-progress",
+        status: "completed",
         content: "CSS"
     },
     {
         id: "css-7",
         number: 11,
-        title: "Responsive Design & Animations",
-        description: "Width, Height & Responsive Properties, Responsive Design & Animations",
+        title: "Animations & Guides & Advanced Level",
+        description: "Animations, Centering Elements - Complete Guide, Image Styling & Manipulation, Card Components - Modern Design Patterns, Hero Sections - Landing Page Masters, Navigation Systems - From Simple to Complex, Footer Design - Complete Website Closure, Form Styling - User-Friendly Inputs, CSS Methodologies & Architecture, CSS Performance Optimization, Cross-Browser Compatibility & Vendor Prefixes, Accessibility (A11y) Deep Dive",
         image: "./assets/images/logos/CSS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "CSS"
     },
     {
