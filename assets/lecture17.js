@@ -443,7 +443,7 @@ const updatedPerson = { ...person, age: 32 }; // Copy with updated age
                     answer: "Use arrays when you need an ordered collection of items, usually of the same type, and you need to maintain order. Use objects when you need to store key-value pairs representing properties of an entity, and the order doesn't matter. Arrays are for lists, objects are for things with properties."
                 }
             ]
-        },
+        }
     ]
 };
 

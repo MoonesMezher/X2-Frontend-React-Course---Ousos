@@ -472,6 +472,218 @@ console.log(5 !== "5");  // true
                 }
             ]
         },
+        {
+            id: "functions-scope",
+            title: "Functions and Scope",
+            content: `
+                <h3>What are Functions?</h3>
+                <p>Functions are reusable blocks of code that perform specific tasks. They help organize code, avoid repetition, and make programs easier to understand.</p>
+                
+                <h3>Function Declaration Types:</h3>
+                <ul>
+                    <li><strong>Function Declaration</strong>: function name() { }</li>
+                    <li><strong>Function Expression</strong>: const name = function() { }</li>
+                    <li><strong>Arrow Function</strong>: const name = () => { }</li>
+                    <li><strong>Immediately Invoked Function Expression (IIFE)</strong>: (function() { })()</li>
+                </ul>
+                
+                <h3>Function Parameters and Return Values:</h3>
+                <ul>
+                    <li><strong>Parameters</strong>: Variables listed in function definition</li>
+                    <li><strong>Arguments</strong>: Actual values passed to function</li>
+                    <li><strong>Return statement</strong>: Sends value back from function</li>
+                    <li><strong>Default parameters</strong>: Values used if no argument provided</li>
+                </ul>
+                
+                <h3>Understanding Scope:</h3>
+                <ul>
+                    <li><strong>Global Scope</strong>: Accessible everywhere in code</li>
+                    <li><strong>Function Scope</strong>: Accessible only within function</li>
+                    <li><strong>Block Scope</strong>: Accessible only within { } blocks (let/const)</li>
+                    <li><strong>Lexical Scope</strong>: Inner functions access outer function variables</li>
+                </ul>
+                
+                <h3>Advanced Function Concepts:</h3>
+                <ul>
+                    <li><strong>Callback Functions</strong>: Functions passed as arguments</li>
+                    <li><strong>Higher-Order Functions</strong>: Functions that take other functions as parameters</li>
+                    <li><strong>Closures</strong>: Functions that remember their lexical scope</li>
+                    <li><strong>Recursion</strong>: Functions that call themselves</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>ما هي الدوال؟</h3>
+                    <p>الدوال هي كتل كود قابلة لإعادة الاستخدام تؤدي مهام محددة. تساعد في تنظيم الكود، وتجنب التكرار، وتجعل البرامج أسهل للفهم.</p>
+                    
+                    <h3>أنواع تصريح الدوال:</h3>
+                    <ul>
+                        <li><strong>تصريح الدالة</strong>: function name() { }</li>
+                        <li><strong>تعبير الدالة</strong>: const name = function() { }</li>
+                        <li><strong>الدالة السهمية</strong>: const name = () => { }</li>
+                        <li><strong>تعبير الدالة المستدعى فوراً (IIFE)</strong>: (function() { })()</li>
+                    </ul>
+                    
+                    <h3>معاملات الدالة وقيم الإرجاع:</h3>
+                    <ul>
+                        <li><strong>المعاملات</strong>: المتغيرات المدرجة في تعريف الدالة</li>
+                        <li><strong>الوسيطات</strong>: القيم الفعلية الممررة للدالة</li>
+                        <li><strong>عبارة return</strong>: ترسل قيمة back من الدالة</li>
+                        <li><strong>المعاملات الافتراضية</strong>: القيم المستخدمة إذا لم يتم توفير وسيطة</li>
+                    </ul>
+                    
+                    <h3>فهم النطاق:</h3>
+                    <ul>
+                        <li><strong>النطاق العام</strong>: يمكن الوصول إليه في كل مكان في الكود</li>
+                        <li><strong>نطاق الدالة</strong>: يمكن الوصول إليه فقط داخل الدالة</li>
+                        <li><strong>نطاق الكتلة</strong>: يمكن الوصول إليه فقط داخل كتل { } (let/const)</li>
+                        <li><strong>النطاق المعجمي</strong>: الدوال الداخلية تصل إلى متغيرات الدالة الخارجية</li>
+                    </ul>
+                    
+                    <h3>مفاهيم الدوال المتقدمة:</h3>
+                    <ul>
+                        <li><strong>دوال الرد</strong>: الدوال الممررة كوسيطات</li>
+                        <li><strong>الدوال ذات الرتبة الأعلى</strong>: الدوال التي تأخذ دوال أخرى كمعاملات</li>
+                        <li><strong>الإغلاقات</strong>: الدوال التي تتذكر نطاقها المعجمي</li>
+                        <li><strong>التكرار</strong>: الدوال التي تستدعي نفسها</li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "Functions and Scope Examples",
+                    content: `
+                        <pre class="code-block">
+// Function declaration (hoisted - can be called before declaration)
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Function expression (not hoisted)
+const calculateArea = function(width, height) {
+    return width * height;
+};
+
+// Arrow function (not hoisted, no 'this' binding)
+const multiply = (a, b) => a * b;
+
+// Arrow function with multiple statements
+const createUser = (name, age) => {
+    const user = {
+        name: name,
+        age: age,
+        isAdult: age >= 18
+    };
+    return user;
+};
+
+// Default parameters
+function introduce(name = "Guest", age = 0) {
+    return \`I'm \${name} and I'm \${age} years old\`;
+}
+
+// Function with rest parameters
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+// Scope examples
+let globalVar = "I'm global";
+
+function scopeDemo() {
+    let functionVar = "I'm in function scope";
+    
+    if (true) {
+        let blockVar = "I'm in block scope";
+        console.log(globalVar);        // Accessible
+        console.log(functionVar);      // Accessible
+        console.log(blockVar);         // Accessible
+    }
+    
+    console.log(globalVar);            // Accessible
+    console.log(functionVar);          // Accessible
+    // console.log(blockVar);         // Error: not accessible
+}
+
+// Closure example
+function createCounter() {
+    let count = 0;
+    
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+// Callback function example
+function processUserInput(callback) {
+    const name = "John";
+    callback(name);
+}
+
+processUserInput(function(name) {
+    console.log("Hello, " + name);
+});
+
+// Higher-order function example
+function multiplyBy(factor) {
+    return function(number) {
+        return number * factor;
+    };
+}
+
+const double = multiplyBy(2);
+const triple = multiplyBy(3);
+
+console.log(double(5));  // 10
+console.log(triple(5));  // 15
+
+// Recursive function
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // 120
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "Functions Practice",
+                    content: `
+                        <p>Practice creating and using functions:</p>
+                        <ol>
+                            <li>Create functions using all declaration types (declaration, expression, arrow)</li>
+                            <li>Write functions that take parameters and return values</li>
+                            <li>Create functions with default parameters</li>
+                            <li>Practice scope by creating variables in different scopes</li>
+                            <li>Create a closure that maintains state</li>
+                            <li>Write a recursive function to solve a problem</li>
+                            <li>Create higher-order functions and use callbacks</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "What is hoisting in JavaScript?",
+                    answer: "Hoisting is JavaScript's behavior of moving declarations to the top of their scope before code execution. Function declarations are fully hoisted (can be called before declaration), while var variables are hoisted but initialized as undefined. let and const variables are hoisted but not initialized (temporal dead zone). Function expressions and arrow functions are not hoisted."
+                },
+                {
+                    question: "What are closures and why are they useful?",
+                    answer: "Closures are functions that remember the environment in which they were created, even after that environment has exited. They're useful for: 1) Creating private variables, 2) Maintaining state between function calls, 3) Implementing function factories, 4) Event handlers and callbacks that need access to outer scope variables."
+                }
+            ]
+        },
     ]
 };
 
