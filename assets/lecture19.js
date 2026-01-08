@@ -7,222 +7,6 @@ const courseData = {
     },
     topics: [
         {
-            id: "destructuring-falsy-truthy",
-            title: "Destructuring, Falsy & Truthy Values",
-            content: `
-                <h3>Destructuring Assignment</h3>
-                <p>Destructuring allows you to extract values from arrays or properties from objects into distinct variables.</p>
-                
-                <h3>Array Destructuring:</h3>
-                <ul>
-                    <li>Extract values by position</li>
-                    <li>Skip elements with empty commas</li>
-                    <li>Use default values</li>
-                    <li>Rest pattern to collect remaining elements</li>
-                    <li>Swap variables easily</li>
-                </ul>
-                
-                <h3>Object Destructuring:</h3>
-                <ul>
-                    <li>Extract properties by name</li>
-                    <li>Use different variable names</li>
-                    <li>Nested destructuring</li>
-                    <li>Default values for missing properties</li>
-                    <li>Rest properties</li>
-                </ul>
-                
-                <h3>Falsy and Truthy Values</h3>
-                <p>In JavaScript, values are inherently 'truthy' or 'falsy' when evaluated in a boolean context.</p>
-                
-                <h3>Falsy Values (become false):</h3>
-                <ul>
-                    <li><strong>false</strong>: The boolean false</li>
-                    <li><strong>0</strong>: The number zero</li>
-                    <li><strong>""</strong>: Empty string</li>
-                    <li><strong>null</strong>: No value</li>
-                    <li><strong>undefined</strong>: Variable not defined</li>
-                    <li><strong>NaN</strong>: Not a Number</li>
-                </ul>
-                
-                <h3>Truthy Values (become true):</h3>
-                <ul>
-                    <li>Everything that's not falsy!</li>
-                    <li><strong>true</strong>: The boolean true</li>
-                    <li><strong>1</strong>, any non-zero number</li>
-                    <li><strong>"hello"</strong>, any non-empty string</li>
-                    <li><strong>[]</strong>: Empty array</li>
-                    <li><strong>{}</strong>: Empty object</li>
-                    <li><strong>function(){}</strong>: Functions</li>
-                </ul>
-
-                <br><hr><br>
-                <div dir="rtl">
-                    <h3>التعيين بالتفكيك</h3>
-                    <p>يسمح التفكيك باستخراج القيم من المصفوفات أو الخصائص من الكائنات إلى متغيرات منفصلة.</p>
-                    
-                    <h3>تفكيك المصفوفات:</h3>
-                    <ul>
-                        <li>استخراج القيم حسب الموضع</li>
-                        <li>تخطي العناصر بفواصل فارغة</li>
-                        <li>استخدام القيم الافتراضية</li>
-                        <li>نمط الباقي لجمع العناصر المتبقية</li>
-                        <li>تبديل المتغيرات بسهولة</li>
-                    </ul>
-                    
-                    <h3>تفكيك الكائنات:</h3>
-                    <ul>
-                        <li>استخراج الخصائص حسب الاسم</li>
-                        <li>استخدام أسماء متغيرات مختلفة</li>
-                        <li>التفكيك المتداخل</li>
-                        <li>القيم الافتراضية للخصائص المفقودة</li>
-                        <li>خصائص الباقي</li>
-                    </ul>
-                    
-                    <h3>القيم الزائفة والحقيقية</h3>
-                    <p>في JavaScript، القيم تكون بشكل inherent 'حقيقية' أو 'زائفة' عند تقييمها في سياق منطقي.</p>
-                    
-                    <h3>القيم الزائفة (تصبح false):</h3>
-                    <ul>
-                        <li><strong>false</strong>: القيمة المنطقية false</li>
-                        <li><strong>0</strong>: الرقم صفر</li>
-                        <li><strong>""</strong>: نص فارغ</li>
-                        <li><strong>null</strong>: لا قيمة</li>
-                        <li><strong>undefined</strong>: متغير غير معرّف</li>
-                        <li><strong>NaN</strong>: ليس رقمًا</li>
-                    </ul>
-                    
-                    <h3>القيم الحقيقية (تصبح true):</h3>
-                    <ul>
-                        <li>كل شيء ليس زائفًا!</li>
-                        <li><strong>true</strong>: القيمة المنطقية true</li>
-                        <li><strong>1</strong>, أي رقم غير صفر</li>
-                        <li><strong>"hello"</strong>, أي نص غير فارغ</li>
-                        <li><strong>[]</strong>: مصفوفة فارغة</li>
-                        <li><strong>{}</strong>: كائن فارغ</li>
-                        <li><strong>function(){}</strong>: الدوال</li>
-                    </ul>
-                </div>
-            `,
-            examples: [
-                {
-                    title: "Destructuring and Truthy/Falsy Examples",
-                    content: `
-                        <pre class="code-block">
-// Array destructuring
-let colors = ["red", "green", "blue", "yellow"];
-let [firstColor, secondColor] = colors;
-console.log(firstColor);  // "red"
-console.log(secondColor); // "green"
-
-// Skipping elements
-let [,, thirdColor] = colors;
-console.log(thirdColor);  // "blue"
-
-// Default values
-let numbers = [1];
-let [a, b = 10] = numbers;
-console.log(a); // 1
-console.log(b); // 10
-
-// Rest pattern
-let [primary, ...otherColors] = colors;
-console.log(primary);     // "red"
-console.log(otherColors); // ["green", "blue", "yellow"]
-
-// Swapping variables
-let x = 1, y = 2;
-[x, y] = [y, x];
-console.log(x, y); // 2, 1
-
-// Object destructuring
-let person = {
-    name: "John",
-    age: 30,
-    city: "New York"
-};
-
-let { name, age } = person;
-console.log(name); // "John"
-console.log(age);  // 30
-
-// Different variable names
-let { name: personName, age: personAge } = person;
-console.log(personName); // "John"
-console.log(personAge);  // 30
-
-// Default values
-let { country = "USA" } = person;
-console.log(country); // "USA"
-
-// Nested destructuring
-let employee = {
-    id: 1,
-    info: {
-        firstName: "Jane",
-        lastName: "Doe"
-    }
-};
-
-let { info: { firstName, lastName } } = employee;
-console.log(firstName, lastName); // "Jane Doe"
-
-// Falsy values examples
-if (false) { console.log("This won't run"); }
-if (0) { console.log("This won't run"); }
-if ("") { console.log("This won't run"); }
-if (null) { console.log("This won't run"); }
-if (undefined) { console.log("This won't run"); }
-if (NaN) { console.log("This won't run"); }
-
-// Truthy values examples
-if (true) { console.log("This will run"); }
-if (1) { console.log("This will run"); }
-if ("hello") { console.log("This will run"); }
-if ([]) { console.log("This will run"); }
-if ({}) { console.log("This will run"); }
-if (function() {}) { console.log("This will run"); }
-
-// Practical truthy/falsy usage
-let userInput = "";
-let username = userInput || "Guest";
-console.log(username); // "Guest"
-
-let count = 0;
-let displayCount = count || "No items";
-console.log(displayCount); // "No items"
-                        </pre>
-                    `
-                }
-            ],
-            practices: [
-                {
-                    title: "Destructuring and Truthy/Falsy Practice",
-                    content: `
-                        <p>Practice destructuring and working with truthy/falsy values:</p>
-                        <ol>
-                            <li>Destructure arrays to extract specific elements</li>
-                            <li>Destructure objects to extract properties with different variable names</li>
-                            <li>Practice nested destructuring with complex objects</li>
-                            <li>Use default values in destructuring</li>
-                            <li>Test various values for truthiness in conditions</li>
-                            <li>Use logical operators with truthy/falsy values for default values</li>
-                            <li>Create a function that uses destructuring in parameters</li>
-                        </ol>
-                    `
-                }
-            ],
-            questions: [
-                {
-                    question: "Why are empty arrays and objects truthy?",
-                    answer: "Empty arrays ([]) and empty objects ({}) are truthy because they are objects, and all objects are truthy in JavaScript. This is by design - the only falsy values are specifically: false, 0, \"\", null, undefined, and NaN. Everything else, including all objects and arrays (even empty ones), is truthy."
-                },
-                {
-                    question: "What's the difference between destructuring and normal property access?",
-                    answer: "Destructuring provides a concise way to extract multiple values from arrays or objects into variables. It's more readable when you need multiple values, allows for default values, enables variable renaming, and supports nested extraction. Regular property access is better for single values or when you don't know which properties you'll need in advance."
-                }
-            ]
-        },
-        {
             id: "nullish-other-operators",
             title: "Nullish and Other Modern Operators",
             content: `
@@ -432,6 +216,552 @@ console.log("year" in car);    // false
                 {
                     question: "What's the difference between ?. and && for safe property access?",
                     answer: "Both can be used for safe property access, but ?. is more concise and readable. For example: user?.profile?.name vs user && user.profile && user.profile.name. The ?. operator also works with function calls and array access, and it's specifically designed for this purpose. However, && gives you more control and can be used for more complex conditions."
+                }
+            ]
+        },
+        {
+            id: "dom-manipulation",
+            title: "DOM Manipulation - Interacting with Web Pages",
+            content: `
+                <h3>What is the DOM?</h3>
+                <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.</p>
+                
+                <h3>DOM Tree Structure:</h3>
+                <ul>
+                    <li><strong>Document</strong>: The root of the DOM tree</li>
+                    <li><strong>Elements</strong>: HTML tags as nodes</li>
+                    <li><strong>Text Nodes</strong>: Text content within elements</li>
+                    <li><strong>Attributes</strong>: HTML attributes as nodes</li>
+                    <li><strong>Comments</strong>: HTML comments as nodes</li>
+                </ul>
+                
+                <h3>Selecting DOM Elements:</h3>
+                <ul>
+                    <li><strong>getElementById</strong>: Select by ID</li>
+                    <li><strong>getElementsByClassName</strong>: Select by class name</li>
+                    <li><strong>getElementsByTagName</strong>: Select by tag name</li>
+                    <li><strong>querySelector</strong>: Select first matching element</li>
+                    <li><strong>querySelectorAll</strong>: Select all matching elements</li>
+                </ul>
+                
+                <h3>Manipulating Elements:</h3>
+                <ul>
+                    <li><strong>textContent</strong>: Get/set text content</li>
+                    <li><strong>innerHTML</strong>: Get/set HTML content</li>
+                    <li><strong>innerText</strong>: Get/set visible text</li>
+                    <li><strong>setAttribute</strong>: Set element attributes</li>
+                    <li><strong>getAttribute</strong>: Get element attributes</li>
+                    <li><strong>classList</strong>: Add/remove/toggle CSS classes</li>
+                </ul>
+                
+                <h3>Creating and Modifying Elements:</h3>
+                <ul>
+                    <li><strong>createElement</strong>: Create new element</li>
+                    <li><strong>createTextNode</strong>: Create text node</li>
+                    <li><strong>appendChild</strong>: Add child element</li>
+                    <li><strong>removeChild</strong>: Remove child element</li>
+                    <li><strong>replaceChild</strong>: Replace child element</li>
+                    <li><strong>insertBefore</strong>: Insert element before another</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>ما هو الـ DOM؟</h3>
+                    <p>نموذج كائن المستند (DOM) هو واجهة برمجة لمستندات الويب. إنه يمثل الصفحة حتى تتمكن البرامج من تغيير هيكل المستند ونمطه ومحتواه.</p>
+                    
+                    <h3>هيكل شجرة الـ DOM:</h3>
+                    <ul>
+                        <li><strong>المستند</strong>: جذر شجرة الـ DOM</li>
+                        <li><strong>العناصر</strong>: علامات HTML كعقد</li>
+                        <li><strong>عقد النص</strong>: محتوى النص داخل العناصر</li>
+                        <li><strong>السمات</strong>: سمات HTML كعقد</li>
+                        <li><strong>التعليقات</strong>: تعليقات HTML كعقد</li>
+                    </ul>
+                    
+                    <h3>اختيار عناصر الـ DOM:</h3>
+                    <ul>
+                        <li><strong>getElementById</strong>: اختر بواسطة ID</li>
+                        <li><strong>getElementsByClassName</strong>: اختر بواسطة اسم الفئة</li>
+                        <li><strong>getElementsByTagName</strong>: اختر بواسطة اسم الوسم</li>
+                        <li><strong>querySelector</strong>: اختر أول عنصر مطابق</li>
+                        <li><strong>querySelectorAll</strong>: اختر كل العناصر المطابقة</li>
+                    </ul>
+                    
+                    <h3>معالجة العناصر:</h3>
+                    <ul>
+                        <li><strong>textContent</strong>: احصل/اضبط محتوى النص</li>
+                        <li><strong>innerHTML</strong>: احصل/اضبط محتوى HTML</li>
+                        <li><strong>innerText</strong>: احصل/اضبط النص المرئي</li>
+                        <li><strong>setAttribute</strong>: اضبط سمات العنصر</li>
+                        <li><strong>getAttribute</strong>: احصل على سمات العنصر</li>
+                        <li><strong>classList</strong>: أضف/أزل/بدل فئات CSS</li>
+                    </ul>
+                    
+                    <h3>إنشاء وتعديل العناصر:</h3>
+                    <ul>
+                        <li><strong>createElement</strong>: أنشئ عنصرًا جديدًا</li>
+                        <li><strong>createTextNode</strong>: أنشئ عقدة نص</li>
+                        <li><strong>appendChild</strong>: أضف عنصرًا فرعيًا</li>
+                        <li><strong>removeChild</strong>: أزل عنصرًا فرعيًا</li>
+                        <li><strong>replaceChild</strong>: استبدل عنصرًا فرعيًا</li>
+                        <li><strong>insertBefore</strong>: أدخل عنصرًا قبل آخر</li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "DOM Manipulation Examples",
+                    content: `
+                        <pre class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;DOM Manipulation&lt;/title&gt;
+    &lt;style&gt;
+        .highlight { background-color: yellow; }
+        .hidden { display: none; }
+        .error { color: red; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="container"&gt;
+        &lt;h1 id="main-title"&gt;Hello DOM&lt;/h1&gt;
+        &lt;p class="description"&gt;This is a paragraph&lt;/p&gt;
+        &lt;ul id="item-list"&gt;
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button id="click-btn"&gt;Click Me&lt;/button&gt;
+        &lt;div id="output"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        // Selecting elements
+        const title = document.getElementById('main-title');
+        const descriptions = document.getElementsByClassName('description');
+        const listItems = document.getElementsByTagName('li');
+        const button = document.querySelector('#click-btn');
+        const allParagraphs = document.querySelectorAll('p');
+
+        // Manipulating content
+        title.textContent = "Hello Updated DOM!";
+        title.innerHTML = "Hello &lt;em&gt;Updated&lt;/em&gt; DOM!";
+        
+        // Working with attributes
+        title.setAttribute('data-custom', 'value');
+        console.log(title.getAttribute('data-custom')); // "value"
+        
+        // Working with classes
+        title.classList.add('highlight');
+        title.classList.remove('highlight');
+        title.classList.toggle('highlight'); // Adds if not present, removes if present
+        
+        // Creating new elements
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph';
+        newParagraph.className = 'description';
+        
+        // Adding elements to DOM
+        document.getElementById('container').appendChild(newParagraph);
+        
+        // Creating and adding multiple elements
+        const newItem = document.createElement('li');
+        newItem.textContent = 'Item 3';
+        document.getElementById('item-list').appendChild(newItem);
+        
+        // Removing elements
+        // document.getElementById('item-list').removeChild(newItem);
+        
+        // Event handling
+        button.addEventListener('click', function() {
+            const output = document.getElementById('output');
+            output.innerHTML = 'Button was clicked!';
+            output.classList.add('highlight');
+            
+            // Create and add new element on click
+            const timeStamp = document.createElement('p');
+            timeStamp.textContent = 'Clicked at: ' + new Date().toLocaleTimeString();
+            output.appendChild(timeStamp);
+        });
+        
+        // Event delegation example
+        document.getElementById('item-list').addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+                event.target.classList.toggle('highlight');
+            }
+        });
+        
+        // Form handling example
+        const form = document.createElement('form');
+        form.innerHTML = \`
+            &lt;input type="text" id="name-input" placeholder="Enter your name"&gt;
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        \`;
+        
+        document.body.appendChild(form);
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const name = document.getElementById('name-input').value;
+            alert('Hello, ' + name);
+        });
+        
+        // Dynamic styling
+        const dynamicStyle = document.createElement('style');
+        dynamicStyle.textContent = \`
+            .dynamic-class { 
+                border: 2px solid blue; 
+                padding: 10px; 
+                margin: 5px;
+            }
+        \`;
+        document.head.appendChild(dynamicStyle);
+        
+        // Apply dynamic class
+        title.classList.add('dynamic-class');
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "DOM Manipulation Practice",
+                    content: `
+                        <p>Practice DOM manipulation techniques:</p>
+                        <ol>
+                            <li>Create a dynamic todo list that allows adding and removing items</li>
+                            <li>Build a color changer that changes background color when buttons are clicked</li>
+                            <li>Create a simple calculator with a visual interface</li>
+                            <li>Build an image gallery that shows different images when clicked</li>
+                            <li>Create a form validation system that shows error messages</li>
+                            <li>Build a dynamic table that can be sorted and filtered</li>
+                            <li>Create a modal/popup that appears when a button is clicked</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "What's the difference between textContent, innerHTML, and innerText?",
+                    answer: "textContent gets/sets all text content, including hidden text. innerHTML gets/sets HTML content, allowing you to insert HTML elements. innerText gets/sets only visible text and is aware of CSS styling. Use textContent for performance and security (avoids XSS attacks), innerHTML when you need to insert HTML, and avoid innerText due to performance issues."
+                },
+                {
+                    question: "What is event delegation and why is it useful?",
+                    answer: "Event delegation attaches a single event listener to a parent element instead of multiple listeners to child elements. Events bubble up from the target element to the parent. This improves performance (fewer listeners), works for dynamically added elements, and reduces memory usage. It's especially useful for lists where items are frequently added/removed."
+                }
+            ]
+        },
+        {
+            id: "events-forms",
+            title: "Events and Forms - User Interaction",
+            content: `
+                <h3>Understanding Events:</h3>
+                <p>Events are actions that happen in the browser, such as clicks, keyboard input, or page loading. JavaScript can respond to these events to create interactive web pages.</p>
+                
+                <h3>Common Event Types:</h3>
+                <ul>
+                    <li><strong>Mouse Events</strong>: click, dblclick, mousedown, mouseup, mousemove</li>
+                    <li><strong>Keyboard Events</strong>: keydown, keyup, keypress</li>
+                    <li><strong>Form Events</strong>: submit, change, input, focus, blur</li>
+                    <li><strong>Window Events</strong>: load, resize, scroll, beforeunload</li>
+                    <li><strong>Touch Events</strong>: touchstart, touchmove, touchend</li>
+                </ul>
+                
+                <h3>Event Handling Methods:</h3>
+                <ul>
+                    <li><strong>addEventListener</strong>: Modern way to attach events</li>
+                    <li><strong>removeEventListener</strong>: Remove event handlers</li>
+                    <li><strong>Inline event handlers</strong>: onclick=\"code\" (not recommended)</li>
+                    <li><strong>Event object properties</strong>: target, type, preventDefault(), stopPropagation()</li>
+                </ul>
+                
+                <h3>Working with Forms:</h3>
+                <ul>
+                    <li><strong>Form elements</strong>: input, textarea, select, button</li>
+                    <li><strong>Form validation</strong>: Client-side validation</li>
+                    <li><strong>Form submission</strong>: Handling form data</li>
+                    <li><strong>Form reset</strong>: Clearing form data</li>
+                    <li><strong>Form data access</strong>: Using FormData API</li>
+                </ul>
+                
+                <h3>Event Propagation:</h3>
+                <ul>
+                    <li><strong>Event Bubbling</strong>: Events bubble up from target to root</li>
+                    <li><strong>Event Capturing</strong>: Events capture down from root to target</li>
+                    <li><strong>Event Delegation</strong>: Handling events on parent elements</li>
+                    <li><strong>stopPropagation()</strong>: Stop event from propagating</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>فهم الأحداث:</h3>
+                    <p>الأحداث هي إجراءات تحدث في المتصفح، مثل النقرات، إدخال لوحة المفاتيح، أو تحميل الصفحة. يمكن لـ JavaScript الرد على هذه الأحداث لإنشاء صفحات ويب تفاعلية.</p>
+                    
+                    <h3>أنواع الأحداث الشائعة:</h3>
+                    <ul>
+                        <li><strong>أحداث الفأرة</strong>: click, dblclick, mousedown, mouseup, mousemove</li>
+                        <li><strong>أحداث لوحة المفاتيح</strong>: keydown, keyup, keypress</li>
+                        <li><strong>أحداث النماذج</strong>: submit, change, input, focus, blur</li>
+                        <li><strong>أحداث النافذة</strong>: load, resize, scroll, beforeunload</li>
+                        <li><strong>أحداث اللمس</strong>: touchstart, touchmove, touchend</li>
+                    </ul>
+                    
+                    <h3>طرق معالجة الأحداث:</h3>
+                    <ul>
+                        <li><strong>addEventListener</strong>: الطريقة الحديثة لإرفاق الأحداث</li>
+                        <li><strong>removeEventListener</strong>: أزل معالجي الأحداث</li>
+                        <li><strong>معالجي الأحداث المضمنين</strong>: onclick=\"code\" (غير موصى به)</li>
+                        <li><strong>خصائص كائن الحدث</strong>: target, type, preventDefault(), stopPropagation()</li>
+                    </ul>
+                    
+                    <h3>العمل مع النماذج:</h3>
+                    <ul>
+                        <li><strong>عناصر النموذج</strong>: input, textarea, select, button</li>
+                        <li><strong>التحقق من النموذج</strong>: التحقق من جانب العميل</li>
+                        <li><strong>إرسال النموذج</strong>: معالجة بيانات النموذج</li>
+                        <li><strong>إعادة تعيين النموذج</strong>: مسح بيانات النموذج</li>
+                        <li><strong>الوصول إلى بيانات النموذج</strong>: استخدام FormData API</li>
+                    </ul>
+                    
+                    <h3>انتشار الحدث:</h3>
+                    <ul>
+                        <li><strong>Event Bubbling</strong>: تنتقل الأحداث من الهدف إلى الجذر</li>
+                        <li><strong>Event Capturing</strong>: تلتقط الأحداث من الجذر إلى الهدف</li>
+                        <li><strong>تفويض الحدث</strong>: معالجة الأحداث على العناصر الأصل</li>
+                        <li><strong>stopPropagation()</strong>: أوقف الحدث من الانتشار</li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "Events and Forms Examples",
+                    content: `
+                        <pre class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Events and Forms&lt;/title&gt;
+    &lt;style&gt;
+        .error { color: red; font-size: 0.9em; }
+        .success { color: green; }
+        .hidden { display: none; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="app"&gt;
+        &lt;h1&gt;Event Handling Examples&lt;/h1&gt;
+        
+        &lt;!-- Mouse Events --&gt;
+        &lt;div id="mouse-area" style="border: 1px solid #ccc; padding: 20px; margin: 10px;"&gt;
+            &lt;p&gt;Mouse coordinates: &lt;span id="coordinates"&gt;0, 0&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Keyboard Events --&gt;
+        &lt;div style="margin: 10px;"&gt;
+            &lt;input type="text" id="key-input" placeholder="Type something..."&gt;
+            &lt;p&gt;Last key pressed: &lt;span id="key-display"&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Form Example --&gt;
+        &lt;form id="user-form"&gt;
+            &lt;div&gt;
+                &lt;label for="name"&gt;Name:&lt;/label&gt;
+                &lt;input type="text" id="name" name="name" required&gt;
+                &lt;span id="name-error" class="error hidden"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;div&gt;
+                &lt;label for="email"&gt;Email:&lt;/label&gt;
+                &lt;input type="email" id="email" name="email" required&gt;
+                &lt;span id="email-error" class="error hidden"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;div&gt;
+                &lt;label for="age"&gt;Age:&lt;/label&gt;
+                &lt;input type="number" id="age" name="age" min="0" max="120"&gt;
+            &lt;/div&gt;
+            
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+        
+        &lt;div id="form-output"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        // Mouse events
+        const mouseArea = document.getElementById('mouse-area');
+        const coordinates = document.getElementById('coordinates');
+        
+        mouseArea.addEventListener('mousemove', function(event) {
+            coordinates.textContent = \`\${event.clientX}, \${event.clientY}\`;
+        });
+        
+        mouseArea.addEventListener('click', function(event) {
+            this.style.backgroundColor = this.style.backgroundColor === 'lightblue' ? '' : 'lightblue';
+        });
+        
+        mouseArea.addEventListener('dblclick', function() {
+            this.style.backgroundColor = 'lightgreen';
+        });
+        
+        // Keyboard events
+        const keyInput = document.getElementById('key-input');
+        const keyDisplay = document.getElementById('key-display');
+        
+        keyInput.addEventListener('keydown', function(event) {
+            keyDisplay.textContent = \`Key: \${event.key}, Code: \${event.code}\`;
+        });
+        
+        keyInput.addEventListener('keyup', function() {
+            // Additional keyup logic if needed
+        });
+        
+        // Form handling
+        const userForm = document.getElementById('user-form');
+        const formOutput = document.getElementById('form-output');
+        
+        // Real-time validation
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        
+        nameInput.addEventListener('input', function() {
+            if (this.value.length < 2) {
+                nameError.textContent = 'Name must be at least 2 characters';
+                nameError.classList.remove('hidden');
+            } else {
+                nameError.classList.add('hidden');
+            }
+        });
+        
+        emailInput.addEventListener('blur', function() {
+            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            if (!emailRegex.test(this.value)) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.classList.remove('hidden');
+            } else {
+                emailError.classList.add('hidden');
+            }
+        });
+        
+        // Form submission
+        userForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            let isValid = true;
+            
+            if (!data.name || data.name.length < 2) {
+                nameError.textContent = 'Name is required and must be at least 2 characters';
+                nameError.classList.remove('hidden');
+                isValid = false;
+            }
+            
+            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            if (!data.email || !emailRegex.test(data.email)) {
+                emailError.textContent = 'Valid email is required';
+                emailError.classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Display success message
+                formOutput.innerHTML = \`
+                    &lt;div class="success"&gt;
+                        &lt;h3&gt;Form Submitted Successfully!&lt;/h3&gt;
+                        &lt;p&gt;Name: \${data.name}&lt;/p&gt;
+                        &lt;p&gt;Email: \${data.email}&lt;/p&gt;
+                        &lt;p&gt;Age: \${data.age || 'Not specified'}&lt;/p&gt;
+                    &lt;/div&gt;
+                \`;
+                
+                // Reset form
+                this.reset();
+                
+                // Clear errors
+                nameError.classList.add('hidden');
+                emailError.classList.add('hidden');
+            }
+        });
+        
+        // Event delegation example
+        document.addEventListener('click', function(event) {
+            if (event.target.matches('button')) {
+                console.log('Button clicked:', event.target.textContent);
+            }
+        });
+        
+        // Window events
+        window.addEventListener('resize', function() {
+            console.log('Window resized to:', window.innerWidth, 'x', window.innerHeight);
+        });
+        
+        window.addEventListener('scroll', function() {
+            console.log('Scrolled to:', window.scrollY);
+        });
+        
+        // Prevent context menu
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+            alert('Right-click is disabled on this page');
+        });
+        
+        // Custom events (advanced)
+        const customEvent = new CustomEvent('userRegistered', {
+            detail: { message: 'A new user has been registered' }
+        });
+        
+        // Dispatch custom event
+        document.addEventListener('userRegistered', function(event) {
+            console.log('Custom event received:', event.detail.message);
+        });
+        
+        // Trigger custom event after form submission
+        userForm.addEventListener('submit', function() {
+            setTimeout(() => {
+                document.dispatchEvent(customEvent);
+            }, 1000);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "Events and Forms Practice",
+                    content: `
+                        <p>Practice event handling and form manipulation:</p>
+                        <ol>
+                            <li>Create a drag-and-drop interface for reordering items</li>
+                            <li>Build a real-time character counter for text inputs</li>
+                            <li>Create a custom dropdown menu with keyboard navigation</li>
+                            <li>Build a form with complex validation rules</li>
+                            <li>Create a drawing application using mouse events</li>
+                            <li>Build a keyboard shortcut system for your application</li>
+                            <li>Create a file upload interface with preview functionality</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "What's the difference between event.preventDefault() and event.stopPropagation()?",
+                    answer: "event.preventDefault() prevents the default browser behavior for that event (like form submission or link navigation). event.stopPropagation() stops the event from bubbling up the DOM tree, preventing parent elements from receiving the event. Use preventDefault() when you want to handle the event completely yourself, and stopPropagation() when you want to contain the event to a specific element."
+                },
+                {
+                    question: "Why is event delegation important for dynamic content?",
+                    answer: "Event delegation allows you to handle events for elements that don't exist yet when the page loads. By attaching the event listener to a parent element that does exist, you can handle events from dynamically added child elements. This is more efficient than attaching individual event listeners to each new element and prevents memory leaks from forgotten event listeners."
                 }
             ]
         },

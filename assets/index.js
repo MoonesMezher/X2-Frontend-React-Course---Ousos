@@ -158,19 +158,19 @@ const lectures = [
     {
         id: "JS-3",
         number: 18,
-        title: "Arrays, Objects & Working with Strings, Numbers, and Booleans",
-        description: "Arrays and Objects - Data Structures, Common Array Methods, Iteration Methods, Objects - Key-Value Collections, Working with Objects, Working with Strings, Numbers, and Booleans",
+        title: "Arrays, Objects & Working with Strings, Numbers, and Booleans, Destructuring, Falsy & Truthy Values",
+        description: "Arrays and Objects - Data Structures, Common Array Methods, Iteration Methods, Objects - Key-Value Collections, Working with Objects, Working with Strings, Numbers, and Booleans, Destructuring, Falsy & Truthy Values",
         image: "./assets/images/logos/JS.webp",
-        status: "in-progress",
+        status: "completed",
         content: "JS"
     },
     {
         id: "JS-4",
         number: 19,
-        title: "Destructuring, Falsy & Truthy Values, Nullish and Other Modern Operators",
-        description: "Destructuring, Falsy & Truthy Values, Nullish and Other Modern Operators",
+        title: "Nullish and Other Modern Operators, DOM Manipulation - Interacting with Web Pages",
+        description: "Nullish and Other Modern Operators",
         image: "./assets/images/logos/JS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "JS"
     },
     {
