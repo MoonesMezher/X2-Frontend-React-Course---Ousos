@@ -7,6 +7,241 @@ const courseData = {
     },
     topics: [
         {
+            id: "dom-manipulation",
+            title: "DOM Manipulation - Interacting with Web Pages",
+            content: `
+                <h3>What is the DOM?</h3>
+                <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.</p>
+                
+                <h3>DOM Tree Structure:</h3>
+                <ul>
+                    <li><strong>Document</strong>: The root of the DOM tree</li>
+                    <li><strong>Elements</strong>: HTML tags as nodes</li>
+                    <li><strong>Text Nodes</strong>: Text content within elements</li>
+                    <li><strong>Attributes</strong>: HTML attributes as nodes</li>
+                    <li><strong>Comments</strong>: HTML comments as nodes</li>
+                </ul>
+                
+                <h3>Selecting DOM Elements:</h3>
+                <ul>
+                    <li><strong>getElementById</strong>: Select by ID</li>
+                    <li><strong>getElementsByClassName</strong>: Select by class name</li>
+                    <li><strong>getElementsByTagName</strong>: Select by tag name</li>
+                    <li><strong>querySelector</strong>: Select first matching element</li>
+                    <li><strong>querySelectorAll</strong>: Select all matching elements</li>
+                </ul>
+                
+                <h3>Manipulating Elements:</h3>
+                <ul>
+                    <li><strong>textContent</strong>: Get/set text content</li>
+                    <li><strong>innerHTML</strong>: Get/set HTML content</li>
+                    <li><strong>innerText</strong>: Get/set visible text</li>
+                    <li><strong>setAttribute</strong>: Set element attributes</li>
+                    <li><strong>getAttribute</strong>: Get element attributes</li>
+                    <li><strong>classList</strong>: Add/remove/toggle CSS classes</li>
+                </ul>
+                
+                <h3>Creating and Modifying Elements:</h3>
+                <ul>
+                    <li><strong>createElement</strong>: Create new element</li>
+                    <li><strong>createTextNode</strong>: Create text node</li>
+                    <li><strong>appendChild</strong>: Add child element</li>
+                    <li><strong>removeChild</strong>: Remove child element</li>
+                    <li><strong>replaceChild</strong>: Replace child element</li>
+                    <li><strong>insertBefore</strong>: Insert element before another</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>ما هو الـ DOM؟</h3>
+                    <p>نموذج كائن المستند (DOM) هو واجهة برمجة لمستندات الويب. إنه يمثل الصفحة حتى تتمكن البرامج من تغيير هيكل المستند ونمطه ومحتواه.</p>
+                    
+                    <h3>هيكل شجرة الـ DOM:</h3>
+                    <ul>
+                        <li><strong>المستند</strong>: جذر شجرة الـ DOM</li>
+                        <li><strong>العناصر</strong>: علامات HTML كعقد</li>
+                        <li><strong>عقد النص</strong>: محتوى النص داخل العناصر</li>
+                        <li><strong>السمات</strong>: سمات HTML كعقد</li>
+                        <li><strong>التعليقات</strong>: تعليقات HTML كعقد</li>
+                    </ul>
+                    
+                    <h3>اختيار عناصر الـ DOM:</h3>
+                    <ul>
+                        <li><strong>getElementById</strong>: اختر بواسطة ID</li>
+                        <li><strong>getElementsByClassName</strong>: اختر بواسطة اسم الفئة</li>
+                        <li><strong>getElementsByTagName</strong>: اختر بواسطة اسم الوسم</li>
+                        <li><strong>querySelector</strong>: اختر أول عنصر مطابق</li>
+                        <li><strong>querySelectorAll</strong>: اختر كل العناصر المطابقة</li>
+                    </ul>
+                    
+                    <h3>معالجة العناصر:</h3>
+                    <ul>
+                        <li><strong>textContent</strong>: احصل/اضبط محتوى النص</li>
+                        <li><strong>innerHTML</strong>: احصل/اضبط محتوى HTML</li>
+                        <li><strong>innerText</strong>: احصل/اضبط النص المرئي</li>
+                        <li><strong>setAttribute</strong>: اضبط سمات العنصر</li>
+                        <li><strong>getAttribute</strong>: احصل على سمات العنصر</li>
+                        <li><strong>classList</strong>: أضف/أزل/بدل فئات CSS</li>
+                    </ul>
+                    
+                    <h3>إنشاء وتعديل العناصر:</h3>
+                    <ul>
+                        <li><strong>createElement</strong>: أنشئ عنصرًا جديدًا</li>
+                        <li><strong>createTextNode</strong>: أنشئ عقدة نص</li>
+                        <li><strong>appendChild</strong>: أضف عنصرًا فرعيًا</li>
+                        <li><strong>removeChild</strong>: أزل عنصرًا فرعيًا</li>
+                        <li><strong>replaceChild</strong>: استبدل عنصرًا فرعيًا</li>
+                        <li><strong>insertBefore</strong>: أدخل عنصرًا قبل آخر</li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "DOM Manipulation Examples",
+                    content: `
+                        <pre class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;DOM Manipulation&lt;/title&gt;
+    &lt;style&gt;
+        .highlight { background-color: yellow; }
+        .hidden { display: none; }
+        .error { color: red; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="container"&gt;
+        &lt;h1 id="main-title"&gt;Hello DOM&lt;/h1&gt;
+        &lt;p class="description"&gt;This is a paragraph&lt;/p&gt;
+        &lt;ul id="item-list"&gt;
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button id="click-btn"&gt;Click Me&lt;/button&gt;
+        &lt;div id="output"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        // Selecting elements
+        const title = document.getElementById('main-title');
+        const descriptions = document.getElementsByClassName('description');
+        const listItems = document.getElementsByTagName('li');
+        const button = document.querySelector('#click-btn');
+        const allParagraphs = document.querySelectorAll('p');
+
+        // Manipulating content
+        title.textContent = "Hello Updated DOM!";
+        title.innerHTML = "Hello &lt;em&gt;Updated&lt;/em&gt; DOM!";
+        
+        // Working with attributes
+        title.setAttribute('data-custom', 'value');
+        console.log(title.getAttribute('data-custom')); // "value"
+        
+        // Working with classes
+        title.classList.add('highlight');
+        title.classList.remove('highlight');
+        title.classList.toggle('highlight'); // Adds if not present, removes if present
+        
+        // Creating new elements
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph';
+        newParagraph.className = 'description';
+        
+        // Adding elements to DOM
+        document.getElementById('container').appendChild(newParagraph);
+        
+        // Creating and adding multiple elements
+        const newItem = document.createElement('li');
+        newItem.textContent = 'Item 3';
+        document.getElementById('item-list').appendChild(newItem);
+        
+        // Removing elements
+        // document.getElementById('item-list').removeChild(newItem);
+        
+        // Event handling
+        button.addEventListener('click', function() {
+            const output = document.getElementById('output');
+            output.innerHTML = 'Button was clicked!';
+            output.classList.add('highlight');
+            
+            // Create and add new element on click
+            const timeStamp = document.createElement('p');
+            timeStamp.textContent = 'Clicked at: ' + new Date().toLocaleTimeString();
+            output.appendChild(timeStamp);
+        });
+        
+        // Event delegation example
+        document.getElementById('item-list').addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+                event.target.classList.toggle('highlight');
+            }
+        });
+        
+        // Form handling example
+        const form = document.createElement('form');
+        form.innerHTML = \`
+            &lt;input type="text" id="name-input" placeholder="Enter your name"&gt;
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        \`;
+        
+        document.body.appendChild(form);
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const name = document.getElementById('name-input').value;
+            alert('Hello, ' + name);
+        });
+        
+        // Dynamic styling
+        const dynamicStyle = document.createElement('style');
+        dynamicStyle.textContent = \`
+            .dynamic-class { 
+                border: 2px solid blue; 
+                padding: 10px; 
+                margin: 5px;
+            }
+        \`;
+        document.head.appendChild(dynamicStyle);
+        
+        // Apply dynamic class
+        title.classList.add('dynamic-class');
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "DOM Manipulation Practice",
+                    content: `
+                        <p>Practice DOM manipulation techniques:</p>
+                        <ol>
+                            <li>Create a dynamic todo list that allows adding and removing items</li>
+                            <li>Build a color changer that changes background color when buttons are clicked</li>
+                            <li>Create a simple calculator with a visual interface</li>
+                            <li>Build an image gallery that shows different images when clicked</li>
+                            <li>Create a form validation system that shows error messages</li>
+                            <li>Build a dynamic table that can be sorted and filtered</li>
+                            <li>Create a modal/popup that appears when a button is clicked</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "What's the difference between textContent, innerHTML, and innerText?",
+                    answer: "textContent gets/sets all text content, including hidden text. innerHTML gets/sets HTML content, allowing you to insert HTML elements. innerText gets/sets only visible text and is aware of CSS styling. Use textContent for performance and security (avoids XSS attacks), innerHTML when you need to insert HTML, and avoid innerText due to performance issues."
+                },
+                {
+                    question: "What is event delegation and why is it useful?",
+                    answer: "Event delegation attaches a single event listener to a parent element instead of multiple listeners to child elements. Events bubble up from the target element to the parent. This improves performance (fewer listeners), works for dynamically added elements, and reduces memory usage. It's especially useful for lists where items are frequently added/removed."
+                }
+            ]
+        },
+        {
             id: "events-forms",
             title: "Events and Forms - User Interaction",
             content: `

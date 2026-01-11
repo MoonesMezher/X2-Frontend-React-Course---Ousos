@@ -167,6 +167,16 @@ const lectures = [
     {
         id: "JS-4",
         number: 19,
+        title: "Problem Solving",
+        description: "Solve 10 Methods",
+        image: "./assets/images/logos/JS.webp",
+        status: "completed",
+        hidden: true,
+        content: "JS"
+    },
+    {
+        id: "JS-5",
+        number: 20,
         title: "Nullish and Other Modern Operators, DOM Manipulation - Interacting with Web Pages",
         description: "Nullish and Other Modern Operators",
         image: "./assets/images/logos/JS.webp",
@@ -174,8 +184,8 @@ const lectures = [
         content: "JS"
     },
     {
-        id: "JS-5",
-        number: 20,
+        id: "JS-6",
+        number: 21,
         title: "DOM Manipulation - Interacting with Web Pages",
         description: "What is the DOM, DOM Tree Structure, Selecting DOM Elements, Manipulating Elements, Creating and Modifying Elements, Events and Forms - User Interaction",
         image: "./assets/images/logos/JS.webp",
@@ -183,8 +193,8 @@ const lectures = [
         content: "JS"
     },
     {
-        id: "JS-6",
-        number: 21,
+        id: "JS-7",
+        number: 22,
         title: "Events and Forms - User Interaction",
         description: "Understanding Events, Common Event Types, Event Handling Methods, Working with Forms, Event Propagation",
         image: "./assets/images/logos/JS.webp",
@@ -192,8 +202,8 @@ const lectures = [
         content: "JS"
     },
     {
-        id: "JS-7",
-        number: 22,
+        id: "JS-8",
+        number: 23,
         title: "BOM",
         description: "Browser Object Model (BOM), Window Object, Other BOM Objects",
         image: "./assets/images/logos/JS.webp",
@@ -201,8 +211,8 @@ const lectures = [
         content: "JS."
     },
     {
-        id: "JS-8",
-        number: 23,
+        id: "JS-9",
+        number: 24,
         title: " Asynchronous JavaScript",
         description: "Asynchronous JavaScript, Async Techniques, Working with Time, Fetch, JSON, and Async Data Handling",
         image: "./assets/images/logos/JS.webp",
@@ -211,7 +221,7 @@ const lectures = [
     },
     {
         id: "GIT",
-        number: 24,
+        number: 25,
         title: "Git & Github",
         description: "Git Basics - Version Control Fundamentals, GitHub & Git Hosting Platforms, Terminal & Command Line Essentials, Git Setup & Configuration, Git Workflow & Areas - Understanding Git's Architecture, Essential Git Commands & Daily Workflow",
         image: "./assets/images/logos/github.webp",
@@ -220,7 +230,7 @@ const lectures = [
     },
     {
         id: "GIT",
-        number: 25,
+        number: 26,
         title: "Branching in Git & Serverless Deployment",
         description: "Git Branching & Merging Strategies, README Files & Markdown Documentation, Gitignore Files - Ignoring Files in Git, Serverless Deployment - Deploy Frontend Projects to Production",
         image: "./assets/images/logos/github.webp",
@@ -229,7 +239,7 @@ const lectures = [
     },
     {
         id: "REACT",
-        number: 26,
+        number: 27,
         title: "React Fundamentals: Setup, Components, and JSX",
         description: "React Introduction - What is React and Why Choose It?, Modern React Setup & Development Environment, React Fundamentals: Components, JSX & Props, State Management & Event Handling",
         image: "./assets/images/logos/React.webp",
@@ -238,7 +248,7 @@ const lectures = [
     },
     {
         id: "react-setup-components",
-        number: 27,
+        number: 28,
         title: "React Hooks",
         description: "Creating a React app with Create React App or Vite, functional components, JSX syntax (expressions, attributes, fragments), rendering lists, and props for data passing",
         image: "./assets/images/logos/React.webp",
@@ -247,7 +257,7 @@ const lectures = [
     },
     {
         id: "react-state-effects",
-        number: 28,
+        number: 29,
         title: "React State Management and Hooks: useState & useEffect",
         description: "Local state with useState (initializers, updaters), rules of hooks; useEffect for side effects (fetching data, subscriptions), dependencies, cleanup, and lifecycle simulation",
         image: "./assets/images/logos/React.webp",
@@ -256,7 +266,7 @@ const lectures = [
     },
     {
         id: "react-events-forms",
-        number: 29,
+        number: 30,
         title: "React Events, Forms, and Conditional Rendering",
         description: "Event handling in React (onClick, onChange), controlled components for forms, validation, conditional rendering (&&, ternary), and keys in lists",
         image: "./assets/images/logos/React.webp",
@@ -265,7 +275,7 @@ const lectures = [
     },
     {
         id: "react-advanced-hooks",
-        number: 30,
+        number: 31,
         title: "React Advanced Hooks: useReducer, useMemo, useCallback, and Custom Hooks",
         description: "Complex state logic with useReducer (actions, dispatchers); performance optimization using useMemo for computed values and useCallback for stable functions; creating reusable custom hooks for logic extraction",
         image: "./assets/images/logos/React.webp",
@@ -274,7 +284,7 @@ const lectures = [
     },
     {
         id: "react-router-context",
-        number: 31,
+        number: 32,
         title: "React Router, Context API, and Advanced Patterns",
         description: "Installing/configuring React Router (Routes, Route, Link, useParams/useNavigate); Context API for global state (createContext, Provider, useContext); integrating with Tailwind for styling",
         image: "./assets/images/logos/React.webp",
@@ -283,7 +293,7 @@ const lectures = [
     },
     {
         id: "zustand-state",
-        number: 32,
+        number: 33,
         title: "State Management with Zustand",
         description: "Installing Zustand, creating stores (create), selectors (useStore), actions/updates, persistence, and combining with React hooks for scalable global state without prop drilling",
         image: "./assets/images/logos/zus.png",
@@ -292,7 +302,7 @@ const lectures = [
     },
     {
         id: "axios-deployment-ai",
-        number: 33,
+        number: 34,
         title: "Real-World Tools: Axios, Deployment to Render, and AI Integration",
         description: "Using Axios for API requests (interceptors, auth); building/deploying React apps to Render (environment vars, CI/CD with GitHub); leveraging AI tools (e.g., GitHub Copilot, ChatGPT) for code generation, debugging, and problem-solving in frontend development",
         image: "./assets/images/logos/hosting.webp",
