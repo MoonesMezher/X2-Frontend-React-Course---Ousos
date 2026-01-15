@@ -177,19 +177,19 @@ const lectures = [
     {
         id: "JS-5",
         number: 20,
-        title: "Nullish and Other Modern Operators, DOM Manipulation - Interacting with Web Pages",
-        description: "Nullish and Other Modern Operators",
+        title: "Nullish and Other Modern Operators, DOM Manipulation - Interacting with Web Pages - Events",
+        description: "Nullish and Other Modern Operators, What is the DOM, DOM Tree Structure, Selecting DOM Elements, Manipulating Elements, Creating and Modifying Elements, Events and Forms - User Interaction",
         image: "./assets/images/logos/JS.webp",
-        status: "in-progress",
+        status: "completed",
         content: "JS"
     },
     {
         id: "JS-6",
         number: 21,
-        title: "DOM Manipulation - Interacting with Web Pages",
-        description: "What is the DOM, DOM Tree Structure, Selecting DOM Elements, Manipulating Elements, Creating and Modifying Elements, Events and Forms - User Interaction",
+        title: "Events and Forms - User Interaction - BOM",
+        description: "Understanding Events, Common Event Types, Event Handling Methods, Working with Forms, Event Propagation, Browser Object Model (BOM), Window Object, Other BOM Objects",
         image: "./assets/images/logos/JS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "JS"
     },
     {
