@@ -186,19 +186,19 @@ const lectures = [
     {
         id: "JS-6",
         number: 21,
-        title: "Events and Forms - User Interaction - BOM",
-        description: "Understanding Events, Common Event Types, Event Handling Methods, Working with Forms, Event Propagation, Browser Object Model (BOM), Window Object, Other BOM Objects",
+        title: "Events and Forms - User Interaction",
+        description: "Understanding Events, Common Event Types, Event Handling Methods, Working with Forms, Event Propagation",
         image: "./assets/images/logos/JS.webp",
-        status: "in-progress",
+        status: "completed",
         content: "JS"
     },
     {
         id: "JS-7",
         number: 22,
-        title: "Events and Forms - User Interaction",
+        title: "Events and Forms - User Interaction - BOM",
         description: "Understanding Events, Common Event Types, Event Handling Methods, Working with Forms, Event Propagation",
         image: "./assets/images/logos/JS.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "JS"
     },
     {
