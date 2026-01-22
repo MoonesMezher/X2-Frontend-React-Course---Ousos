@@ -1,351 +1,1025 @@
 // Course data structure
 const courseData = {
     courseInfo: {
-        name: "Complete JavaScript Mastery - Frontend Foundations",
+        name: "Complete Git Mastery - Version Control Fundamentals",
         coach: "Moones Mezher",
         center: "Ousos"
     },
     topics: [
         {
-            id: "bom-async",
-            title: "BOM and Asynchronous JavaScript",
+            id: "git-basics",
+            title: "Git Basics - Version Control Fundamentals",
             content: `
-                <h3>Browser Object Model (BOM):</h3>
-                <p>The Browser Object Model (BOM) allows JavaScript to interact with the browser. It includes objects like window, navigator, history, location, and screen.</p>
+                <h3>What is Git?</h3>
+                <p>Git is a distributed version control system that helps track changes in your code and collaborate with other developers.</p>
                 
-                <h3>Window Object:</h3>
+                <h3>Key Features of Git:</h3>
                 <ul>
-                    <li><strong>Global object</strong>: All global variables and functions become properties of window</li>
-                    <li><strong>Window methods</strong>: alert(), confirm(), prompt()</li>
-                    <li><strong>Timing events</strong>: setTimeout(), setInterval(), clearTimeout(), clearInterval()</li>
-                    <li><strong>Window properties</strong>: innerWidth, innerHeight, location, history</li>
+                    <li><strong>Distributed Version Control</strong>: Every developer has full project history</li>
+                    <li><strong>Free & Open Source</strong>: Created by Linus Torvalds, completely free</li>
+                    <li><strong>CLI & GUI Options</strong>: Can be used via command line or graphical interface</li>
+                    <li><strong>Branching & Merging</strong>: Powerful branching model for parallel development</li>
                 </ul>
                 
-                <h3>Other BOM Objects:</h3>
+                <h3>Why Use Git?</h3>
                 <ul>
-                    <li><strong>navigator</strong>: Browser information (name, version, platform)</li>
-                    <li><strong>screen</strong>: User's screen information (width, height, color depth)</li>
-                    <li><strong>history</strong>: Browser history navigation (back(), forward(), go())</li>
-                    <li><strong>location</strong>: Current URL information and navigation</li>
-                </ul>
-                
-                <h3>Asynchronous JavaScript:</h3>
-                <p>Asynchronous programming allows JavaScript to perform time-consuming operations without blocking the main thread.</p>
-                
-                <h3>Async Techniques:</h3>
-                <ul>
-                    <li><strong>Callbacks</strong>: Functions passed as arguments to be called later</li>
-                    <li><strong>Promises</strong>: Objects representing eventual completion/failure of async operations</li>
-                    <li><strong>Async/Await</strong>: Syntactic sugar for working with promises</li>
-                    <li><strong>Fetch API</strong>: Modern way to make HTTP requests</li>
-                </ul>
-                
-                <h3>Working with Time:</h3>
-                <ul>
-                    <li><strong>Date object</strong>: Working with dates and times</li>
-                    <li><strong>setTimeout</strong>: Execute code after delay</li>
-                    <li><strong>setInterval</strong>: Execute code repeatedly at intervals</li>
-                    <li><strong>requestAnimationFrame</strong>: For smooth animations</li>
+                    <li><strong>Track Changes</strong>: See who changed what and when</li>
+                    <li><strong>Collaborate Efficiently</strong>: Multiple developers can work together</li>
+                    <li><strong>Backup & Restore</strong>: Never lose your work</li>
+                    <li><strong>Experiment Safely</strong>: Try new features without breaking main code</li>
                 </ul>
 
                 <br><hr><br>
                 <div dir="rtl">
-                    <h3>نموذج كائن المتصفح (BOM):</h3>
-                    <p>يسمح نموذج كائن المتصفح (BOM) لـ JavaScript بالتفاعل مع المتصفح كائنات مثل window, navigator, history, location, و screen.</p>
+                    <h3>ما هو Git؟</h3>
+                    <p>Git هو نظام تحكم في النسخ الموزع يساعد في تتبع التغييرات في الكود الخاص بك والتعاون مع المطورين الآخرين.</p>
                     
-                    <h3>كائن النافذة:</h3>
+                    <h3>الميزات الرئيسية لـ Git:</h3>
                     <ul>
-                        <li><strong>الكائن العام</strong>: جميع المتغيرات والدوال العامة تصبح خصائص للنافذة</li>
-                        <li><strong>طرق النافذة</strong>: alert(), confirm(), prompt()</li>
-                        <li><strong>أحداث التوقيت</strong>: setTimeout(), setInterval(), clearTimeout(), clearInterval()</li>
-                        <li><strong>خصائص النافذة</strong>: innerWidth, innerHeight, location, history</li>
+                        <li><strong>نظام تحكم في النسخ الموزع</strong>: كل مطور لديه تاريخ المشروع الكامل</li>
+                        <li><strong>مجاني ومفتوح المصدر</strong>: تم إنشاؤه بواسطة Linus Torvalds، مجاني تمامًا</li>
+                        <li><strong>خيارات CLI و GUI</strong>: يمكن استخدامه عبر سطر الأوامر أو الواجهة الرسومية</li>
+                        <li><strong>التفرع والدمج</strong>: نموذج تفرع قوي للتطوير المتوازي</li>
                     </ul>
                     
-                    <h3>كائنات BOM الأخرى:</h3>
+                    <h3>لماذا نستخدم Git؟</h3>
                     <ul>
-                        <li><strong>navigator</strong>: معلومات المتصفح (الاسم، الإصدار، المنصة)</li>
-                        <li><strong>screen</strong>: معلومات شاشة المستخدم (العرض، الارتفاع، عمق اللون)</li>
-                        <li><strong>history</strong>: التنقل في سجل المتصفح (back(), forward(), go())</li>
-                        <li><strong>location</strong>: معلومات URL الحالية والتنقل</li>
-                    </ul>
-                    
-                    <h3>JavaScript غير المتزامنة:</h3>
-                    <p>تسمح البرمجة غير المتزامنة لـ JavaScript بتنفيذ العمليات التي تستغرق وقتًا طويلاً دون حجب الخيط الرئيسي.</p>
-                    
-                    <h3>تقنيات غير متزامنة:</h3>
-                    <ul>
-                        <li><strong>Callback functions</strong>: الدوال الممررة كوسيطات ليتم استدعاؤها لاحقًا</li>
-                        <li><strong>الوعود (Promises)</strong>: كائنات تمثل اكتمال/فشل العمليات غير المتزامنة</li>
-                        <li><strong>Async/Await</strong>: سكر نحوي للعمل مع الوعود</li>
-                        <li><strong>Fetch API</strong>: الطريقة الحديثة لعمل طلبات HTTP</li>
-                    </ul>
-                    
-                    <h3>العمل مع الوقت:</h3>
-                    <ul>
-                        <li><strong>كائن التاريخ</strong>: العمل مع التواريخ والأوقات</li>
-                        <li><strong>setTimeout</strong>: نفذ الكود بعد تأخير</li>
-                        <li><strong>setInterval</strong>: نفذ الكود بشكل متكرر على فترات</li>
-                        <li><strong>requestAnimationFrame</strong>: للرسوم المتحركة السلسة</li>
+                        <li><strong>تتبع التغييرات</strong>: اعرف من غير ماذا ومتى</li>
+                        <li><strong>التعاون بكفاءة</strong>: يمكن لعدة مطورين العمل معًا</li>
+                        <li><strong>النسخ الاحتياطي والاستعادة</strong>: لا تفقد عملك أبدًا</li>
+                        <li><strong>التجربة بأمان</strong>: جرب ميزات جديدة دون كسر الكود الرئيسي</li>
                     </ul>
                 </div>
             `,
             examples: [
                 {
-                    title: "BOM and Async Examples",
+                    title: "Git Basic Workflow Example",
                     content: `
                         <pre class="code-block">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;BOM and Async&lt;/title&gt;
-    &lt;style&gt;
-        .box { 
-            width: 100px; 
-            height: 100px; 
-            background: blue; 
-            margin: 10px; 
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;BOM and Asynchronous JavaScript&lt;/h1&gt;
-    
-    &lt;div&gt;
-        &lt;button onclick="showBrowserInfo()"&gt;Show Browser Info&lt;/button&gt;
-        &lt;button onclick="showScreenInfo()"&gt;Show Screen Info&lt;/button&gt;
-        &lt;button onclick="startTimer()"&gt;Start Timer&lt;/button&gt;
-        &lt;button onclick="stopTimer()"&gt;Stop Timer&lt;/button&gt;
-        &lt;button onclick="fetchData()"&gt;Fetch Data&lt;/button&gt;
-    &lt;/div&gt;
-    
-    &lt;div id="output" style="margin: 20px; padding: 10px; border: 1px solid #ccc;"&gt;&lt;/div&gt;
-    
-    &lt;div id="animation-box" class="box"&gt;&lt;/div&gt;
+# Initialize a new Git repository
+git init
 
-    &lt;script&gt;
-        const output = document.getElementById('output');
-        
-        // Window object examples
-        function showBrowserInfo() {
-            output.innerHTML = \`
-                &lt;h3&gt;Browser Information&lt;/h3&gt;
-                &lt;p&gt;User Agent: \${navigator.userAgent}&lt;/p&gt;
-                &lt;p&gt;Platform: \${navigator.platform}&lt;/p&gt;
-                &lt;p&gt;Language: \${navigator.language}&lt;/p&gt;
-                &lt;p&gt;Cookies Enabled: \${navigator.cookieEnabled}&lt;/p&gt;
-                &lt;p&gt;Window Size: \${window.innerWidth} x \${window.innerHeight}&lt;/p&gt;
-            \`;
-        }
-        
-        function showScreenInfo() {
-            output.innerHTML = \`
-                &lt;h3&gt;Screen Information&lt;/h3&gt;
-                &lt;p&gt;Screen Size: \${screen.width} x \${screen.height}&lt;/p&gt;
-                &lt;p&gt;Available Screen: \${screen.availWidth} x \${screen.availHeight}&lt;/p&gt;
-                &lt;p&gt;Color Depth: \${screen.colorDepth} bits&lt;/p&gt;
-                &lt;p&gt;Pixel Depth: \${screen.pixelDepth} bits&lt;/p&gt;
-            \`;
-        }
-        
-        // Timing functions
-        let timerId;
-        let counter = 0;
-        
-        function startTimer() {
-            output.innerHTML = 'Timer started...';
-            timerId = setInterval(() => {
-                counter++;
-                output.innerHTML = \`Timer: \${counter} seconds\`;
-            }, 1000);
-        }
-        
-        function stopTimer() {
-            clearInterval(timerId);
-            output.innerHTML = \`Timer stopped at \${counter} seconds\`;
-            counter = 0;
-        }
-        
-        // setTimeout example
-        setTimeout(() => {
-            console.log('This runs after 2 seconds');
-        }, 2000);
-        
-        // Window methods
-        function showConfirm() {
-            const shouldDelete = confirm('Are you sure you want to delete this item?');
-            if (shouldDelete) {
-                output.innerHTML = 'Item deleted!';
-            } else {
-                output.innerHTML = 'Deletion cancelled.';
-            }
-        }
-        
-        function showPrompt() {
-            const userName = prompt('Please enter your name:', 'Guest');
-            if (userName) {
-                output.innerHTML = \`Hello, \${userName}!\`;
-            }
-        }
-        
-        // Location object
-        function showLocationInfo() {
-            output.innerHTML = \`
-                &lt;h3&gt;Location Information&lt;/h3&gt;
-                &lt;p&gt;URL: \${location.href}&lt;/p&gt;
-                &lt;p&gt;Host: \${location.host}&lt;/p&gt;
-                &lt;p&gt;Path: \${location.pathname}&lt;/p&gt;
-                &lt;p&gt;Protocol: \${location.protocol}&lt;/p&gt;
-            \`;
-        }
-        
-        // History object
-        function goBack() {
-            history.back();
-        }
-        
-        function goForward() {
-            history.forward();
-        }
-        
-        // Async JavaScript with Promises
-        function fetchData() {
-            output.innerHTML = 'Fetching data...';
-            
-            // Using Fetch API (returns a Promise)
-            fetch('https://jsonplaceholder.typicode.com/posts/1')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    output.innerHTML = \`
-                        &lt;h3&gt;Fetched Data&lt;/h3&gt;
-                        &lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; \${data.title}&lt;/p&gt;
-                        &lt;p&gt;&lt;strong&gt;Body:&lt;/strong&gt; \${data.body}&lt;/p&gt;
-                    \`;
-                })
-                .catch(error => {
-                    output.innerHTML = \`Error: \${error.message}\`;
-                });
-        }
-        
-        // Async/await version
-        async function fetchDataAsync() {
-            try {
-                output.innerHTML = 'Fetching data with async/await...';
-                const response = await fetch('https://jsonplaceholder.typicode.com/posts/2');
-                
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                
-                const data = await response.json();
-                output.innerHTML = \`
-                    &lt;h3&gt;Fetched Data (Async/Await)&lt;/h3&gt;
-                    &lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; \${data.title}&lt;/p&gt;
-                    &lt;p&gt;&lt;strong&gt;Body:&lt;/strong&gt; \${data.body}&lt;/p&gt;
-                \`;
-            } catch (error) {
-                output.innerHTML = \`Error: \${error.message}\`;
-            }
-        }
-        
-        // Working with Date object
-        function showCurrentTime() {
-            const now = new Date();
-            output.innerHTML = \`
-                &lt;h3&gt;Current Date and Time&lt;/h3&gt;
-                &lt;p&gt;Full Date: \${now.toString()}&lt;/p&gt;
-                &lt;p&gt;ISO Format: \${now.toISOString()}&lt;/p&gt;
-                &lt;p&gt;Locale String: \${now.toLocaleString()}&lt;/p&gt;
-                &lt;p&gt;Year: \${now.getFullYear()}&lt;/p&gt;
-                &lt;p&gt;Month: \${now.getMonth() + 1}&lt;/p&gt;
-                &lt;p&gt;Day: \${now.getDate()}&lt;/p&gt;
-                &lt;p&gt;Hours: \${now.getHours()}&lt;/p&gt;
-                &lt;p&gt;Minutes: \${now.getMinutes()}&lt;/p&gt;
-            \`;
-        }
-        
-        // Animation with requestAnimationFrame
-        const box = document.getElementById('animation-box');
-        let position = 0;
-        let direction = 1;
-        
-        function animate() {
-            position += 2 * direction;
-            box.style.transform = \`translateX(\${position}px)\`;
-            
-            if (position > 200 || position < 0) {
-                direction *= -1; // Reverse direction
-            }
-            
-            requestAnimationFrame(animate);
-        }
-        
-        // Start animation
-        animate();
-        
-        // Local Storage (part of Web Storage API)
-        function saveToLocalStorage() {
-            const data = {
-                name: 'John Doe',
-                age: 30,
-                preferences: { theme: 'dark', language: 'en' }
-            };
-            
-            localStorage.setItem('userData', JSON.stringify(data));
-            output.innerHTML = 'Data saved to localStorage!';
-        }
-        
-        function loadFromLocalStorage() {
-            const savedData = localStorage.getItem('userData');
-            if (savedData) {
-                const data = JSON.parse(savedData);
-                output.innerHTML = \`
-                    &lt;h3&gt;Data from localStorage&lt;/h3&gt;
-                    &lt;pre&gt;\${JSON.stringify(data, null, 2)}&lt;/pre&gt;
-                \`;
-            } else {
-                output.innerHTML = 'No data found in localStorage';
-            }
-        }
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+# Check the status of your repository
+git status
+
+# Add files to staging area
+git add filename.txt
+git add .  # Add all files
+
+# Commit changes with a message
+git commit -m "Initial commit with basic project structure"
+
+# Check commit history
+git log
+git log --oneline  # Compact view
+
+# See what files have changed
+git diff
                         </pre>
                     `
                 }
             ],
             practices: [
                 {
-                    title: "BOM and Async Practice",
+                    title: "Git Basics Practice",
                     content: `
-                        <p>Practice BOM operations and asynchronous JavaScript:</p>
+                        <p>Practice these Git fundamentals:</p>
                         <ol>
-                            <li>Create a countdown timer that shows minutes and seconds</li>
-                            <li>Build a stopwatch with start, stop, and reset functionality</li>
-                            <li>Create a weather app that fetches data from a public API</li>
-                            <li>Build a simple game using requestAnimationFrame for smooth animation</li>
-                            <li>Create a todo app that saves data to localStorage</li>
-                            <li>Build a currency converter that fetches real-time exchange rates</li>
-                            <li>Create a random quote generator that fetches quotes from an API</li>
+                            <li>Create a new Git repository for a practice project</li>
+                            <li>Make several commits with meaningful messages</li>
+                            <li>Practice using git status and git log frequently</li>
+                            <li>Create and switch between multiple branches</li>
+                            <li>Experiment with undoing changes using git reset</li>
+                            <li>Practice merging branches together</li>
+                            <li>Set up a GitHub account and push your repository</li>
                         </ol>
                     `
                 }
             ],
             questions: [
                 {
-                    question: "What's the difference between localStorage and sessionStorage?",
-                    answer: "localStorage persists data even when the browser is closed and reopened, with no expiration time. sessionStorage persists data only for the duration of the page session (until the browser tab is closed). Both are specific to the origin (protocol + domain + port), but localStorage is shared across tabs/windows from the same origin, while sessionStorage is isolated per tab."
+                    question: "What's the difference between Git and GitHub?",
+                    answer: "Git is the version control software that runs locally on your computer, while GitHub is a cloud-based hosting service for Git repositories. Git manages version control, while GitHub provides collaboration features like pull requests, issue tracking, and project management tools. You can use Git without GitHub, but GitHub enhances Git with social and collaboration features."
                 },
                 {
-                    question: "How do Promises improve over callback functions?",
-                    answer: "Promises provide better error handling through .catch() method, avoid callback hell (pyramid of doom), allow chaining multiple async operations with .then(), and provide methods for working with multiple promises (Promise.all, Promise.race). They make async code more readable and maintainable compared to nested callbacks."
+                    question: "Why is Git considered a 'distributed' version control system?",
+                    answer: "Git is distributed because every developer has a complete copy of the entire project history on their local machine. This differs from centralized systems where there's one central server. This distribution allows developers to work offline, commit changes locally, and only sync with remote repositories when needed, making the system more robust and flexible."
                 }
             ]
+        },
+        {
+            id: "github-platforms",
+            title: "GitHub & Git Hosting Platforms",
+            content: `
+                <h3>What is GitHub?</h3>
+                <p>GitHub is a cloud-based platform for hosting Git repositories with powerful collaboration features.</p>
+                
+                <h3>GitHub Features:</h3>
+                <ul>
+                    <li><strong>Repository Hosting</strong>: Store your Git repositories in the cloud</li>
+                    <li><strong>Pull Requests</strong>: Code review and collaboration workflow</li>
+                    <li><strong>Issue Tracking</strong>: Bug reports and feature requests</li>
+                    <li><strong>Project Management</strong>: Kanban boards and project organization</li>
+                    <li><strong>CI/CD Integration</strong>: Automated testing and deployment</li>
+                </ul>
+                
+                <h3>Alternative Platforms:</h3>
+                <ul>
+                    <li><strong>GitLab</strong>: Self-hosted alternative with built-in CI/CD</li>
+                    <li><strong>Bitbucket</strong>: Good for small teams with free private repos</li>
+                    <li><strong>Azure DevOps</strong>: Microsoft's enterprise solution</li>
+                    <li><strong>SourceForge</strong>: Older platform for open source projects</li>
+                </ul>
+                
+                <h3>Key Differences:</h3>
+                <ul>
+                    <li><strong>Git</strong>: The version control tool itself</li>
+                    <li><strong>GitHub</strong>: A service that hosts Git repositories</li>
+                    <li><strong>Standalone Usage</strong>: You can use Git without any hosting service</li>
+                    <li><strong>Enhanced Collaboration</strong>: GitHub adds team features to Git</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>ما هو GitHub؟</h3>
+                    <p>GitHub هو منصة مستندة إلى السحابة لاستضافة مستودعات Git مع ميزات تعاون قوية.</p>
+                    
+                    <h3>ميزات GitHub:</h3>
+                    <ul>
+                        <li><strong>استضافة المستودعات</strong>: خزن مستودعات Git الخاصة بك في السحابة</li>
+                        <li><strong>طلبات السحب</strong>: مراجعة الكود وسير عمل التعاون</li>
+                        <li><strong>تتبع المشكلات</strong>: تقارير الأخطاء وطلبات الميزات</li>
+                        <li><strong>إدارة المشاريع</strong>: لوحات Kanban وتنظيم المشاريع</li>
+                        <li><strong>تكامل CI/CD</strong>: الاختبار الآلي والنشر</li>
+                    </ul>
+                    
+                    <h3>المنصات البديلة:</h3>
+                    <ul>
+                        <li><strong>GitLab</strong>: بديل ذاتي الاستضافة مع CI/CD مدمج</li>
+                        <li><strong>Bitbucket</strong>: جيد للفرق الصغيرة مع مستودعات خاصة مجانية</li>
+                        <li><strong>Azure DevOps</strong>: حل Microsoft للمؤسسات</li>
+                        <li><strong>SourceForge</strong>: منصة أقدم للمشاريع مفتوحة المصدر</li>
+                    </ul>
+                    
+                    <h3>الاختلافات الرئيسية:</h3>
+                    <ul>
+                        <li><strong>Git</strong>: أداة التحكم في النسخ نفسها</li>
+                        <li><strong>GitHub</strong>: خدمة تستضيف مستودعات Git</li>
+                        <li><strong>الاستخدام المنفرد</strong>: يمكنك استخدام Git بدون أي خدمة استضافة</li>
+                        <li><strong>التعاون المعزز</strong>: يضيف GitHub ميزات الفريق إلى Git</li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "GitHub Workflow Examples",
+                    content: `
+                        <pre class="code-block">
+# Clone a repository from GitHub
+git clone https://github.com/username/repository-name.git
+
+# Add remote repository
+git remote add origin https://github.com/username/repo.git
+
+# Push to GitHub
+git push -u origin main
+
+# Pull latest changes
+git pull origin main
+
+# Fork a repository (on GitHub website)
+# 1. Click "Fork" button on GitHub
+# 2. Clone your forked version
+git clone https://github.com/your-username/repo-name.git
+
+# Create pull request (on GitHub)
+# 1. Make changes and push to your fork
+# 2. Click "Pull Request" on GitHub
+# 3. Select base repository and your branch
+
+# Working with issues
+# Create, assign, and close issues through GitHub interface
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "GitHub Platform Practice",
+                    content: `
+                        <p>Practice using GitHub and Git hosting platforms:</p>
+                        <ol>
+                            <li>Create a GitHub account and set up your profile</li>
+                            <li>Create a new repository and push your local project</li>
+                            <li>Practice forking repositories and creating pull requests</li>
+                            <li>Create and manage issues in your repositories</li>
+                            <li>Set up a README.md file with proper documentation</li>
+                            <li>Explore GitHub Projects for task management</li>
+                            <li>Try creating a GitHub Pages site from your repository</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "When should I use a fork vs. a branch?",
+                    answer: "Use a fork when you want to contribute to someone else's project and don't have write access to their repository. Fork creates a copy under your account. Use a branch when you have write access to the repository and want to work on a new feature or fix within the same project. Branches are for collaboration within the same repository, while forks are for cross-repository collaboration."
+                },
+                {
+                    question: "What are the benefits of using pull requests?",
+                    answer: "Pull requests enable code review, discussion, and quality control before changes are merged. They provide a formal process for proposing changes, allow multiple reviewers to comment on specific lines of code, run automated tests, and ensure that changes meet project standards before being integrated into the main codebase."
+                }
+            ]
+        },
+        {
+            id: "terminal-cli",
+            title: "Terminal & Command Line Essentials",
+            content: `
+                <h3>Understanding Your Development Environment</h3>
+                <p>The terminal and command line are essential tools for developers to interact with their computer and development tools.</p>
+                
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>Terminal</strong>: The window where we type commands</li>
+                    <li><strong>Shell</strong>: The program that runs inside the terminal and executes commands</li>
+                    <li><strong>CLI vs GUI</strong>: Command Line Interface vs Graphical User Interface</li>
+                    <li><strong>Flags</strong>: Options that start with - or -- to modify command behavior</li>
+                    <li><strong>Arguments</strong>: Additional information provided to commands</li>
+                    <li><strong>Paths</strong>: Absolute (full path from root) vs Relative (from current directory)</li>
+                </ul>
+                
+                <h3>Common Terminal Setups:</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>System</th>
+                            <th>Terminal</th>
+                            <th>Shell</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Windows 11</td>
+                            <td>Windows Terminal</td>
+                            <td>PowerShell</td>
+                        </tr>
+                        <tr>
+                            <td>Mac/Linux</td>
+                            <td>Terminal</td>
+                            <td>ZSH/BASH</td>
+                        </tr>
+                        <tr>
+                            <td>Git Bash</td>
+                            <td>MinTTY</td>
+                            <td>BASH</td>
+                        </tr>
+                        <tr>
+                            <td>WSL</td>
+                            <td>Windows Terminal</td>
+                            <td>BASH</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Essential Commands:</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Meaning</th>
+                            <th>Examples & Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>pwd</td>
+                            <td>Print working directory</td>
+                            <td>Shows current full path</td>
+                        </tr>
+                        <tr>
+                            <td>ls</td>
+                            <td>List directory contents</td>
+                            <td>ls -a (show hidden), ls -l (detailed)</td>
+                        </tr>
+                        <tr>
+                            <td>cd [path]</td>
+                            <td>Change directory</td>
+                            <td>cd .. (up), cd ~ (home), cd / (root)</td>
+                        </tr>
+                        <tr>
+                            <td>mkdir</td>
+                            <td>Create directory</td>
+                            <td>mkdir project-folder</td>
+                        </tr>
+                        <tr>
+                            <td>touch</td>
+                            <td>Create file</td>
+                            <td>touch index.html</td>
+                        </tr>
+                        <tr>
+                            <td>cp</td>
+                            <td>Copy files/dirs</td>
+                            <td>cp file1 file2, cp -r dir1 dir2</td>
+                        </tr>
+                        <tr>
+                            <td>mv</td>
+                            <td>Move/rename</td>
+                            <td>mv old.txt new.txt</td>
+                        </tr>
+                        <tr>
+                            <td>rm</td>
+                            <td>Remove files</td>
+                            <td>rm file.txt, rm -r folder/</td>
+                        </tr>
+                        <tr>
+                            <td>cat</td>
+                            <td>View file content</td>
+                            <td>cat README.md</td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td>Print text</td>
+                            <td>echo 'Hello' > file.txt</td>
+                        </tr>
+                        <tr>
+                            <td>grep</td>
+                            <td>Search text</td>
+                            <td>grep 'error' log.txt</td>
+                        </tr>
+                        <tr>
+                            <td>find</td>
+                            <td>Find files</td>
+                            <td>find . -name '*.js'</td>
+                        </tr>
+                        <tr>
+                            <td>clear</td>
+                            <td>Clear terminal</td>
+                            <td>Clears screen, history remains</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>فهم بيئة التطوير الخاصة بك</h3>
+                    <p>الطرفية وسطر الأوامر هما أداتان أساسيتان للمطورين للتفاعل مع الكمبيوتر وأدوات التطوير.</p>
+                    
+                    <h3>المفاهيم الرئيسية:</h3>
+                    <ul>
+                        <li><strong>الطرفية (Terminal)</strong>: النافذة التي نكتب فيها الأوامر</li>
+                        <li><strong>الصدفة (Shell)</strong>: البرنامج الذي يعمل داخل الطرفية وينفذ الأوامر</li>
+                        <li><strong>CLI مقابل GUI</strong>: واجهة سطر الأوامر مقابل الواجهة الرسومية</li>
+                        <li><strong>العلامات (Flags)</strong>: خيارات تبدأ بـ - أو -- لتعديل سلوك الأمر</li>
+                        <li><strong>المعطيات (Arguments)</strong>: معلومات إضافية مقدمة للأوامر</li>
+                        <li><strong>المسارات (Paths)</strong>: مطلق (مسار كامل من الجذر) مقابل نسبي (من الدليل الحالي)</li>
+                    </ul>
+                    
+                    <h3>إعدادات الطرفية الشائعة:</h3>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>النظام</th>
+                                <th>الطرفية</th>
+                                <th>الصدفة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Windows 11</td>
+                                <td>Windows Terminal</td>
+                                <td>PowerShell</td>
+                            </tr>
+                            <tr>
+                                <td>Mac/Linux</td>
+                                <td>Terminal</td>
+                                <td>ZSH/BASH</td>
+                            </tr>
+                            <tr>
+                                <td>Git Bash</td>
+                                <td>MinTTY</td>
+                                <td>BASH</td>
+                            </tr>
+                            <tr>
+                                <td>WSL</td>
+                                <td>Windows Terminal</td>
+                                <td>BASH</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "Command Line Examples",
+                    content: `
+                        <pre class="code-block">
+# Navigation examples
+pwd                          # /c/Users/YourName/Projects
+ls -la                       # List all files including hidden
+cd Documents                 # Change to Documents directory
+cd ..                        # Go up one directory
+cd ~                         # Go to home directory
+
+# File operations
+mkdir my-project             # Create new directory
+touch index.html style.css   # Create multiple files
+cp file1.txt file2.txt       # Copy file1 to file2
+mv old-name.txt new-name.txt # Rename file
+rm unwanted-file.txt         # Remove file
+
+# File content operations
+cat README.md                # Display file content
+echo "# My Project" > README.md  # Create file with content
+echo "New line" >> README.md     # Append to file
+
+# Search and filter
+grep "TODO" src/*.js         # Find TODO in JavaScript files
+find . -name "*.html"        # Find all HTML files
+ls -la | grep "May"          # List files created in May
+
+# Combining commands
+mkdir new-project && cd new-project  # Create and enter directory
+cat file.txt | wc -l         # Count lines in file
+
+# Windows specific (PowerShell)
+Get-Location                 # Like pwd
+Get-ChildItem                # Like ls
+New-Item -ItemType Directory -Name "new-folder"
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "Command Line Practice",
+                    content: `
+                        <p>Practice these command line exercises:</p>
+                        <ol>
+                            <li>Navigate through different directories using cd command</li>
+                            <li>Create a project structure with multiple folders and files</li>
+                            <li>Practice copying, moving, and renaming files</li>
+                            <li>Use grep to search for specific text in files</li>
+                            <li>Create and modify files using echo and cat</li>
+                            <li>Practice using different flags with common commands</li>
+                            <li>Set up command aliases for frequently used commands</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "What's the difference between absolute and relative paths?",
+                    answer: "Absolute paths start from the root directory and provide the complete path (e.g., /home/user/projects/index.html). Relative paths start from the current working directory (e.g., ./images/photo.jpg or ../documents/file.txt). Absolute paths are unambiguous but longer, while relative paths are shorter but depend on the current directory. Use ../ to go up one directory and ./ for the current directory."
+                },
+                {
+                    question: "Why do developers prefer CLI over GUI for many tasks?",
+                    answer: "CLI is often faster for repetitive tasks, can be automated with scripts, uses fewer system resources, allows precise control, works well over remote connections, and enables piping and combining commands. While GUI is more intuitive for beginners, CLI provides power users with efficiency, automation capabilities, and better integration into development workflows."
+                }
+            ]
+        },
+        {
+            id: "git-setup-config",
+            title: "Git Setup & Configuration",
+            content: `
+                <h3>Getting Started with Git</h3>
+                <p>Proper setup and configuration are essential for an efficient Git workflow.</p>
+                
+                <h3>Installation Steps:</h3>
+                <ul>
+                    <li><strong>Create GitHub Account</strong>: Sign up at github.com</li>
+                    <li><strong>Install Git</strong>:
+                        <ul>
+                            <li>Windows: Download from git-scm.com/downloads</li>
+                            <li>macOS: Use Homebrew (brew.sh) or download from git-scm.com</li>
+                            <li>Linux: Use package manager (sudo apt-get install git)</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Verification Commands:</h3>
+                <pre class="code-block">
+git --version              # Check Git installation
+git config --global --list # View current configuration
+                </pre>
+                
+                <h3>Essential Configuration:</h3>
+                <pre class="code-block">
+# Set user information (required for commits)
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Set default branch name
+git config --global init.defaultBranch main
+
+# Set default editor (VS Code example)
+git config --global core.editor "code --wait"
+
+# Set line ending handling (Windows)
+git config --global core.autocrlf true
+
+# Set line ending handling (macOS/Linux)
+git config --global core.autocrlf input
+
+# Create command aliases for efficiency
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+
+# Enable colorful output
+git config --global color.ui auto
+                </pre>
+                
+                <h3>Common Configurations:</h3>
+                <ul>
+                    <li><strong>core.autocrlf</strong>: Handle line endings appropriately for your OS</li>
+                    <li><strong>merge.tool</strong>: Configure default merge tool for conflict resolution</li>
+                    <li><strong>alias</strong>: Create shortcuts for frequently used commands</li>
+                    <li><strong>push.default</strong>: Set default push behavior</li>
+                    <li><strong>pull.rebase</strong>: Configure pull to use rebase instead of merge</li>
+                </ul>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>بدء الاستخدام مع Git</h3>
+                    <p>الإعداد والتكوين المناسبان ضروريان لسير عمل Git فعال.</p>
+                    
+                    <h3>خطوات التثبيت:</h3>
+                    <ul>
+                        <li><strong>إنشاء حساب GitHub</strong>: سجل في github.com</li>
+                        <li><strong>تثبيت Git</strong>:
+                            <ul>
+                                <li>Windows: حمّل من git-scm.com/downloads</li>
+                                <li>macOS: استخدم Homebrew (brew.sh) أو حمّل من git-scm.com</li>
+                                <li>Linux: استخدم مدير الحزم (sudo apt-get install git)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "Git Configuration Examples",
+                    content: `
+                        <pre class="code-block">
+# View all configuration (global and local)
+git config --list
+
+# View specific configuration level
+git config --global --list    # Global (user-wide) settings
+git config --local --list     # Repository-specific settings
+git config --system --list    # System-wide settings
+
+# Set configuration for specific repository only
+git config user.name "Project Specific Name"
+git config user.email "project@example.com"
+
+# Useful aliases for daily work
+git config --global alias.lg "log --oneline --graph --decorate --all"
+git config --global alias.last "log -1 HEAD"
+git config --global alias.unstage "reset HEAD --"
+git config --global alias.undo "reset --soft HEAD~1"
+
+# Configure merge tool (example for VSCode)
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd "code --wait $MERGED"
+
+# Configure diff tool
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+# Set default behavior
+git config --global push.default simple
+git config --global pull.rebase false
+
+# Configure credential helper (saves login info)
+git config --global credential.helper store
+
+# Verify your configuration
+git config --global --list | grep -E "(user|alias|core)"
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "Git Setup Practice",
+                    content: `
+                        <p>Practice setting up and configuring Git:</p>
+                        <ol>
+                            <li>Install Git on your system and verify the installation</li>
+                            <li>Configure your global user name and email address</li>
+                            <li>Set up your preferred text editor for commit messages</li>
+                            <li>Create useful command aliases for your workflow</li>
+                            <li>Configure line ending handling for your operating system</li>
+                            <li>Set up credential helper to remember your passwords</li>
+                            <li>Create both global and repository-specific configurations</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "What's the difference between global, local, and system Git configuration?",
+                    answer: "Global configuration (~/.gitconfig) applies to all repositories for the current user. Local configuration (.git/config) applies only to the specific repository and overrides global settings. System configuration (/etc/gitconfig) applies to all users on the system and is overridden by both global and local settings. Use global for personal preferences, local for project-specific settings, and system for organization-wide defaults."
+                },
+                {
+                    question: "Why is it important to set user.name and user.email in Git?",
+                    answer: "Git uses the user.name and user.email to identify who made each commit. This information is permanently stored in the commit history and is essential for collaboration, accountability, and tracking changes. Without proper configuration, commits may show up as anonymous or with incorrect information, making it difficult to identify who made specific changes or to contact contributors."
+                }
+            ]
+        },
+        {
+    id: "git-workflow-areas",
+    title: "Git Workflow & Areas - Understanding Git's Architecture",
+    content: `
+        <h3>Understanding Git's Architecture</h3>
+        <p>Git organizes your work into four main areas that represent different stages of the version control process.</p>
+        
+        <h3>Four Main Areas:</h3>
+        <ul>
+            <li><strong>Working Directory</strong>: Your actual project files where you make changes</li>
+            <li><strong>Staging Area (Index)</strong>: Prepares changes for commit with selective inclusion</li>
+            <li><strong>Local Repository</strong>: Complete project history with all commits and branches</li>
+            <li><strong>Remote Repository</strong>: Shared repository for collaboration and backup</li>
+        </ul>
+        
+        <h3>Working Directory:</h3>
+        <ul>
+            <li><strong>Your actual project files</strong>: All the files you see in your project folder</li>
+            <li><strong>Where you make changes</strong>: Edit, create, and delete files here</li>
+            <li><strong>Untracked by Git initially</strong>: New files aren't tracked until you add them</li>
+            <li><strong>Modified files</strong>: Changes that haven't been staged yet</li>
+        </ul>
+        
+        <h3>Staging Area (Index):</h3>
+        <ul>
+            <li><strong>Prepares changes for commit</strong>: Select which changes to include in next commit</li>
+            <li><strong>Selective inclusion of changes</strong>: Choose specific files or even specific parts of files</li>
+            <li><strong>Intermediate between working directory and repository</strong>: Holding area for changes</li>
+            <li><strong>Review before committing</strong>: See exactly what will be committed</li>
+        </ul>
+        
+        <h3>Local Repository:</h3>
+        <ul>
+            <li><strong>Complete project history</strong>: Every commit ever made in this project</li>
+            <li><strong>All commits and branches</strong>: Full version control metadata</li>
+            <li><strong>Stores metadata in .git folder</strong>: Hidden folder containing all repository data</li>
+            <li><strong>Fast local operations</strong>: All history operations happen locally</li>
+        </ul>
+        
+        <h3>Remote Repository:</h3>
+        <ul>
+            <li><strong>Shared repository (GitHub, etc.)</strong>: Central location for team collaboration</li>
+            <li><strong>Collaboration point for teams</strong>: Where team members share their work</li>
+            <li><strong>Backup and distribution center</strong>: Safeguard against local data loss</li>
+            <li><strong>Source of truth</strong>: Official project version</li>
+        </ul>
+        
+        <h3>Typical Workflow:</h3>
+        <ol>
+            <li><strong>Modify files in Working Directory</strong>: Make changes to your project files</li>
+            <li><strong>Stage changes with git add</strong>: Select changes to include in next commit</li>
+            <li><strong>Commit changes with git commit</strong>: Save changes to local repository with a message</li>
+            <li><strong>Push changes with git push</strong>: Share commits with remote repository</li>
+        </ol>
+
+        <br><hr><br>
+        <div dir="rtl">
+            <h3>فهم بنية Git</h3>
+            <p>ينظم Git عملك في أربع مناطق رئيسية تمثل مراحل مختلفة من عملية التحكم في النسخ.</p>
+            
+            <h3>المناطق الأربع الرئيسية:</h3>
+            <ul>
+                <li><strong>دليل العمل</strong>: ملفات مشروعك الفعلية حيث تجري التغييرات</li>
+                <li><strong>منطقة التجهيز</strong>: تعد التغييرات للإيداع مع الإدراج الانتقائي</li>
+                <li><strong>المستودع المحلي</strong>: تاريخ المشروع الكامل مع جميع الإيداعات والفروع</li>
+                <li><strong>المستودع البعيد</strong>: مستودع مشترك للتعاون والنسخ الاحتياطي</li>
+            </ul>
+            
+            <h3>دليل العمل:</h3>
+            <ul>
+                <li><strong>ملفات مشروعك الفعلية</strong>: جميع الملفات التي تراها في مجلد مشروعك</li>
+                <li><strong>حيث تجري التغييرات</strong>: عدل وأنشئ واحذف الملفات هنا</li>
+                <li><strong>غير متعقب من قبل Git في البداية</strong>: الملفات الجديدة لا يتم تتبعها حتى تضيفها</li>
+                <li><strong>الملفات المعدلة</strong>: التغييرات التي لم يتم تجهيزها بعد</li>
+            </ul>
+            
+            <h3>منطقة التجهيز:</h3>
+            <ul>
+                <li><strong>تجهيز التغييرات للإيداع</strong>: اختر التغييرات المطلوب تضمينها في الإيداع التالي</li>
+                <li><strong>الإدراج الانتقائي للتغييرات</strong>: اختر ملفات محددة أو حتى أجزاء محددة من الملفات</li>
+                <li><strong>وسيط بين دليل العمل والمستودع</strong>: منطقة انتظار للتغييرات</li>
+                <li><strong>مراجعة قبل الإيداع</strong>: انظر بالضبط ما سيتم إيداعه</li>
+            </ul>
+            
+            <h3>المستودع المحلي:</h3>
+            <ul>
+                <li><strong>تاريخ المشروع الكامل</strong>: كل إيداع تم إجراؤه في هذا المشروع</li>
+                <li><strong>جميع الإيداعات والفروع</strong>: بيانات التحكم في النسخ الكاملة</li>
+                <li><strong>يخزن البيانات الوصفية في مجلد .git</strong>: المجلد المخفي الذي يحتوي على جميع بيانات المستودع</li>
+                <li><strong>عمليات محلية سريعة</strong>: جميع عمليات التاريخ تحدث محليًا</li>
+            </ul>
+            
+            <h3>المستودع البعيد:</h3>
+            <ul>
+                <li><strong>مستودع مشترك (GitHub، إلخ)</strong>: موقع مركزي للتعاون بين الفرق</li>
+                <li><strong>نقطة التعاون للفرق</strong>: حيث يشارك أعضاء الفريق عملهم</li>
+                <li><strong>مركز النسخ الاحتياطي والتوزيع</strong>: الحماية ضد فقدان البيانات المحلي</li>
+                <li><strong>مصدر الحقيقة</strong>: النسخة الرسمية للمشروع</li>
+            </ul>
+            
+            <h3>سير العمل النموذجي:</h3>
+            <ol>
+                <li><strong>تعديل الملفات في دليل العمل</strong>: إجراء تغييرات على ملفات مشروعك</li>
+                <li><strong>تجهيز التغييرات باستخدام git add</strong>: اختر التغييرات المطلوب تضمينها في الإيداع التالي</li>
+                <li><strong>إيداع التغييرات باستخدام git commit</strong>: احفظ التغييرات في المستودع المحلي مع رسالة</li>
+                <li><strong>دفع التغييرات باستخدام git push</strong>: شارك الإيداعات مع المستودع البعيد</li>
+            </ol>
+        </div>
+    `,
+    examples: [
+        {
+            title: "Git Workflow Examples",
+            content: `
+                <pre class="code-block">
+# Example 1: Complete workflow from start to finish
+
+# Initialize new repository
+mkdir my-project
+cd my-project
+git init
+
+# Create and modify files in Working Directory
+echo "# My Project" > README.md
+touch index.html style.css
+
+# Check status (shows untracked files in Working Directory)
+git status
+# Output: Untracked files: README.md, index.html, style.css
+
+# Stage files (move from Working Directory to Staging Area)
+git add README.md
+git add index.html style.css
+# Or stage all files: git add .
+
+# Check status again (shows files ready to commit)
+git status
+# Output: Changes to be committed: new file: README.md, etc.
+
+# Commit changes (move from Staging Area to Local Repository)
+git commit -m "Initial project setup with basic files"
+
+# Add remote repository (connect to Remote Repository)
+git remote add origin https://github.com/username/my-project.git
+
+# Push changes (send from Local Repository to Remote Repository)
+git push -u origin main
+
+# Example 2: Making changes to existing project
+
+# Modify files in Working Directory
+echo "New feature" >> feature.txt
+edit index.html  # Make some changes
+
+# Check what changed (Working Directory vs Local Repository)
+git diff
+
+# Stage specific changes (selective staging)
+git add feature.txt
+git add index.html
+
+# Check staged changes (Staging Area vs Local Repository)
+git diff --staged
+
+# Commit the staged changes
+git commit -m "Add new feature and update homepage"
+
+# Push to remote
+git push origin main
+
+# Example 3: Working with multiple areas simultaneously
+
+# File states across different areas:
+# - file1.txt: Modified in Working Directory, not staged
+# - file2.txt: Modified in Working Directory and staged
+# - file3.txt: Committed in Local Repository, not modified
+# - file4.txt: New file in Working Directory, not tracked
+
+git status
+# Shows different states clearly
+
+# Stage only some changes from a file
+git add -p  # Interactive staging
+
+# Unstage a file (move from Staging Area back to Working Directory)
+git reset HEAD file2.txt
+
+# Discard changes in Working Directory (revert to last commit)
+git checkout -- file1.txt
+
+# Example 4: Checking differences between areas
+
+# Working Directory vs Staging Area
+git diff
+
+# Staging Area vs Local Repository (last commit)
+git diff --staged
+
+# Working Directory vs Local Repository (both unstaged and staged)
+git diff HEAD
+
+# Between Local Repository and Remote Repository
+git fetch
+git diff main origin/main
+                </pre>
+            `
         }
+    ],
+    practices: [
+        {
+            title: "Git Workflow Practice",
+            content: `
+                <p>Practice understanding and using Git's different areas:</p>
+                <ol>
+                    <li>Create a new repository and practice moving files through all four areas</li>
+                    <li>Intentionally make changes and use git status to see file states</li>
+                    <li>Practice selective staging using git add with specific files</li>
+                    <li>Use git diff to see differences between different areas</li>
+                    <li>Practice moving changes between stages (add, reset, checkout)</li>
+                    <li>Create a visual diagram of Git's four areas and the commands that move between them</li>
+                    <li>Practice the complete workflow: modify → stage → commit → push</li>
+                </ol>
+            `
+        }
+    ],
+    questions: [
+        {
+            question: "What's the purpose of the staging area and why is it useful?",
+            answer: "The staging area allows you to selectively choose which changes to include in your next commit. This is useful for: grouping related changes together, breaking large changes into logical commits, reviewing changes before committing, and avoiding committing temporary or debug code. It gives you fine-grained control over what gets recorded in your project history."
+        },
+        {
+            question: "What's the difference between git reset, git checkout, and git revert?",
+            answer: "git reset moves changes from the staging area back to the working directory (--mixed) or discards them completely (--hard). git checkout discards changes in the working directory by restoring files from the staging area or repository. git revert creates a new commit that undoes the changes from a previous commit. Use reset to unstage changes, checkout to discard uncommitted changes, and revert to safely undo committed changes in shared repositories."
+        }
+    ]
+},
+        {
+            id: "git-commands-workflow",
+            title: "Essential Git Commands & Daily Workflow",
+            content: `
+                <h3>Daily Git Command Toolkit</h3>
+                <p>Master the essential Git commands that you'll use every day in your development workflow.</p>
+                
+                <h3>Repository Operations:</h3>
+                <pre class="code-block">
+git init                    # Initialize new repository
+git clone [url]            # Clone existing repository
+git status                 # Check repository status
+git remote -v              # Show remote repositories
+                </pre>
+                
+                <h3>Basic Workflow Commands:</h3>
+                <pre class="code-block">
+git add [files]            # Stage specific files
+git add .                  # Stage all changes
+git add -A                 # Stage all changes (including deletions)
+git add -p                 # Stage changes interactively
+
+git reset [files]          # Unstage specific files
+git reset                  # Unstage all files
+
+git commit -m "message"    # Commit with message
+git commit -am "message"   # Add and commit in one step (tracked files only)
+
+git push origin main       # Push to remote repository
+git pull origin main       # Pull latest changes from remote
+git fetch                  # Download remote updates without merging
+                </pre>
+                
+                <h3>History & Inspection Commands:</h3>
+                <pre class="code-block">
+git log                    # Show commit history
+git log --oneline          # Compact history view
+git log --graph --oneline --decorate --all  # Visual history
+git show [commit]          # Show commit details and changes
+git diff                   # Show unstaged changes
+git diff --staged          # Show staged changes
+git blame [file]           # Show who changed each line
+git shortlog               # Show commit summary by author
+                </pre>
+                
+                <h3>Daily Workflow Pattern:</h3>
+                <ol>
+                    <li><code>git status</code> - Check what's changed</li>
+                    <li><code>git add .</code> - Stage your changes</li>
+                    <li><code>git commit -m "description"</code> - Commit changes</li>
+                    <li><code>git pull origin main</code> - Get latest changes</li>
+                    <li><code>git push origin main</code> - Share your changes</li>
+                </ol>
+
+                <br><hr><br>
+                <div dir="rtl">
+                    <h3>أدوات أوامر Git اليومية</h3>
+                    <p>أتقن أوامر Git الأساسية التي ستستخدمها كل يوم في سير عمل التطوير الخاص بك.</p>
+                    
+                    <h3>نمط سير العمل اليومي:</h3>
+                    <ol>
+                        <li><code>git status</code> - تحقق مما تغير</li>
+                        <li><code>git add .</code> - أضف تغييراتك للمرحلة</li>
+                        <li><code>git commit -m "description"</code> - احفظ التغييرات</li>
+                        <li><code>git pull origin main</code> - احصل على أحدث التغييرات</li>
+                        <li><code>git push origin main</code> - شارك تغييراتك</li>
+                    </ol>
+                </div>
+            `,
+            examples: [
+                {
+                    title: "Complete Workflow Example",
+                    content: `
+                        <pre class="code-block">
+# Start a new project
+mkdir my-project
+cd my-project
+git init
+git status
+
+# Create initial files
+touch index.html style.js README.md
+git add .
+git commit -m "Initial project structure"
+
+# Connect to GitHub and push
+git remote add origin https://github.com/username/my-project.git
+git push -u origin main
+
+# Daily work example
+# Make changes to files...
+echo "&lt;h1&gt;Hello World&lt;/h1&gt;" > index.html
+
+# Check what changed
+git status
+git diff
+
+# Stage and commit changes
+git add index.html
+git commit -m "Add basic HTML structure"
+
+# Get latest changes from team
+git pull origin main
+
+# Push your work
+git push origin main
+
+# View history
+git log --oneline --graph
+
+# Working with specific files
+git add index.html style.js    # Stage specific files
+git reset style.js             # Unstage one file
+git commit -m "Update HTML structure"
+
+# Interactive staging (choose parts to stage)
+git add -p
+
+# Amend last commit (if you forgot something)
+git add forgotten-file.js
+git commit --amend -m "Complete initial structure"
+
+# Force push after amend (use carefully)
+git push --force-with-lease origin main
+                        </pre>
+                    `
+                }
+            ],
+            practices: [
+                {
+                    title: "Git Commands Practice",
+                    content: `
+                        <p>Practice these essential Git commands:</p>
+                        <ol>
+                            <li>Initialize a new repository and make multiple commits</li>
+                            <li>Practice using git status and git diff frequently</li>
+                            <li>Use different git log formats to view history</li>
+                            <li>Stage files selectively using git add with specific paths</li>
+                            <li>Practice pulling and pushing to a remote repository</li>
+                            <li>Use git show to examine specific commits</li>
+                            <li>Experiment with amending commits and force pushing</li>
+                        </ol>
+                    `
+                }
+            ],
+            questions: [
+                {
+                    question: "What's the difference between git pull and git fetch?",
+                    answer: "git fetch downloads the latest changes from the remote repository but doesn't merge them into your working directory. It updates your remote tracking branches. git pull does a git fetch followed by git merge, automatically integrating the remote changes into your current branch. Use git fetch when you want to review changes before merging, and git pull when you're ready to immediately incorporate updates."
+                },
+                {
+                    question: "When should I use git commit --amend?",
+                    answer: "Use git commit --amend to modify the most recent commit. This is useful for: adding forgotten files to the last commit, correcting commit messages, or making small changes to the last commit without creating a new commit. However, avoid amending commits that have already been pushed to a shared repository, as it rewrites history and can cause conflicts for other developers."
+                }
+            ]
+        },
     ]
 };
 
