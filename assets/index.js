@@ -216,7 +216,7 @@ const lectures = [
         title: "Git & Github",
         description: "Git Basics - Version Control Fundamentals, GitHub & Git Hosting Platforms, Terminal & Command Line Essentials, Git Setup & Configuration, Git Workflow & Areas - Understanding Git's Architecture, Essential Git Commands & Daily Workflow",
         image: "./assets/images/logos/github.webp",
-        status: "in-progress",
+        status: "completed",
         content: "GIT"
     },
     {
@@ -225,7 +225,7 @@ const lectures = [
         title: "Branching in Git & Serverless Deployment",
         description: "Git Branching & Merging Strategies, README Files & Markdown Documentation, Gitignore Files - Ignoring Files in Git, Serverless Deployment - Deploy Frontend Projects to Production",
         image: "./assets/images/logos/github.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "GIT"
     },
     {
