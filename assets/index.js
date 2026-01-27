@@ -225,81 +225,74 @@ const lectures = [
         title: "Branching in Git & Serverless Deployment",
         description: "Git Branching & Merging Strategies, README Files & Markdown Documentation, Gitignore Files - Ignoring Files in Git, Serverless Deployment - Deploy Frontend Projects to Production",
         image: "./assets/images/logos/github.webp",
-        status: "in-progress",
+        status: "completed",
         content: "GIT"
     },
     {
         id: "REACT",
         number: 26,
         title: "React Fundamentals: Setup, Components, and JSX",
-        description: "React Introduction - What is React and Why Choose It?, Modern React Setup & Development Environment, React Fundamentals: Components, JSX & Props, State Management & Event Handling",
+        description: "React Introduction - What is React and Why Choose It?, Modern React Setup & Development Environment, React Fundamentals: Components, JSX & Props",
         image: "./assets/images/logos/React.webp",
-        status: "not-started",
-        content: "Full content for GitHub and collaboration..."
+        status: "in-progress",
+        content: "REACT"
     },
     {
-        id: "react-setup-components",
+        id: "REACT",
         number: 27,
-        title: "React Hooks",
-        description: "Creating a React app with Create React App or Vite, functional components, JSX syntax (expressions, attributes, fragments), rendering lists, and props for data passing",
+        title: "React Hooks (useState, useEffect)",
+        description: "State Management & Event Handling, React Hooks: useEffect & Side Effects",
         image: "./assets/images/logos/React.webp",
         status: "not-started",
-        content: "Full content for React setup and components..."
+        content: "REACT"
     },
     {
-        id: "react-state-effects",
+        id: "REACT",
+        number: 28,
+        title: "Advanced Hooks & React Router",
+        description: "Advanced Hooks & Performance Optimization, React Router & Navigation",
+        image: "./assets/images/logos/React.webp",
+        status: "not-started",
+        content: "REACT"
+    },
+    {
+        id: "API",
         number: 29,
-        title: "React State Management and Hooks: useState & useEffect",
-        description: "Local state with useState (initializers, updaters), rules of hooks; useEffect for side effects (fetching data, subscriptions), dependencies, cleanup, and lifecycle simulation",
-        image: "./assets/images/logos/React.webp",
+        title: "Understanding APIs and Web Communication",
+        description: "APIs and JSON Data Format, Backend Role (Server), Frontend Role (User Interface), Request Components, Response Components",
+        image: "./assets/images/logos/API.webp",
         status: "not-started",
-        content: "Full content for React state and effects..."
+        content: "API"
     },
     {
-        id: "react-events-forms",
-        number: 29,
-        title: "React Events, Forms, and Conditional Rendering",
-        description: "Event handling in React (onClick, onChange), controlled components for forms, validation, conditional rendering (&&, ternary), and keys in lists",
-        image: "./assets/images/logos/React.webp",
-        status: "not-started",
-        content: "Full content for React events and forms..."
-    },
-    {
-        id: "react-advanced-hooks",
+        id: "REACT",
         number: 30,
-        title: "React Advanced Hooks: useReducer, useMemo, useCallback, and Custom Hooks",
-        description: "Complex state logic with useReducer (actions, dispatchers); performance optimization using useMemo for computed values and useCallback for stable functions; creating reusable custom hooks for logic extraction",
+        title: "Context API, and State Management System, External Libraries",
+        description: "Context API for global state (createContext, Provider, useContext), State Management wit Zustand, External Libraries & Ecosystem",
         image: "./assets/images/logos/React.webp",
         status: "not-started",
-        content: "Full content for React advanced hooks..."
+        content: "REACT"
     },
     {
-        id: "react-router-context",
+        id: "PROJECT",
         number: 31,
-        title: "React Router, Context API, and Advanced Patterns",
-        description: "Installing/configuring React Router (Routes, Route, Link, useParams/useNavigate); Context API for global state (createContext, Provider, useContext); integrating with Tailwind for styling",
-        image: "./assets/images/logos/React.webp",
+        title: "Final Project - Part 1",
+        description: "",
+        image: "./assets/images/logos/project.webp",
+        hidden: true,
         status: "not-started",
-        content: "Full content for React Router and Context..."
+        content: "PROJECT"
     },
     {
-        id: "zustand-state",
+        id: "PROJECT",
         number: 32,
-        title: "State Management with Zustand",
-        description: "Installing Zustand, creating stores (create), selectors (useStore), actions/updates, persistence, and combining with React hooks for scalable global state without prop drilling",
-        image: "./assets/images/logos/zus.png",
+        title: "Final Project - Part 2",
+        description: "",
+        image: "./assets/images/logos/project.webp",
+        hidden: true,
         status: "not-started",
-        content: "Full content for Zustand..."
+        content: "PROJECT"
     },
-    {
-        id: "axios-deployment-ai",
-        number: 33,
-        title: "Real-World Tools: Axios, Deployment to Render, and AI Integration",
-        description: "Using Axios for API requests (interceptors, auth); building/deploying React apps to Render (environment vars, CI/CD with GitHub); leveraging AI tools (e.g., GitHub Copilot, ChatGPT) for code generation, debugging, and problem-solving in frontend development",
-        image: "./assets/images/logos/hosting.webp",
-        status: "not-started",
-        content: "Full content for Axios, deployment, and AI..."
-    }
 ];
 
 // DOM Elements
