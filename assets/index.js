@@ -259,24 +259,33 @@ const lectures = [
     {
         id: "REACT",
         number: 29,
-        title: "useEffect, Advanced Hooks & React Router",
-        description: "React Hooks: useEffect, Advanced Hooks & Performance Optimization, React Router & Navigation",
+        title: "useEffect, Advanced Hooks",
+        description: "React Hooks: useEffect, Advanced Hooks & Performance Optimization",
         image: "./assets/images/logos/React.webp",
-        status: "in-progress",
+        status: "completed",
+        content: "REACT"
+    },
+    {
+        id: "REACT",
+        number: 30,
+        title: "React Router",
+        description: "React Router & Navigation",
+        image: "./assets/images/logos/React.webp",
+        status: "completed",
         content: "REACT"
     },
     {
         id: "API",
-        number: 30,
+        number: 31,
         title: "Understanding APIs and Web Communication",
         description: "APIs and JSON Data Format, Backend Role (Server), Frontend Role (User Interface), Request Components, Response Components",
         image: "./assets/images/logos/API.webp",
-        status: "not-started",
+        status: "in-progress",
         content: "API"
     },
     {
         id: "REACT",
-        number: 31,
+        number: 32,
         title: "Context API, and State Management System, External Libraries",
         description: "Context API for global state (createContext, Provider, useContext), State Management wit Zustand, External Libraries & Ecosystem",
         image: "./assets/images/logos/React.webp",
@@ -285,7 +294,7 @@ const lectures = [
     },
     {
         id: "PROJECT",
-        number: 32,
+        number: 33,
         title: "Final Project - Part 1",
         description: "",
         image: "./assets/images/logos/project.webp",
@@ -295,7 +304,7 @@ const lectures = [
     },
     {
         id: "PROJECT",
-        number: 33,
+        number: 34,
         title: "Final Project - Part 2",
         description: "",
         image: "./assets/images/logos/project.webp",
