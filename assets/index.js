@@ -280,7 +280,7 @@ const lectures = [
         title: "Understanding APIs and Web Communication",
         description: "APIs and JSON Data Format, Backend Role (Server), Frontend Role (User Interface), Request Components, Response Components",
         image: "./assets/images/logos/API.webp",
-        status: "in-progress",
+        status: "completed",
         content: "API"
     },
     {
@@ -289,7 +289,7 @@ const lectures = [
         title: "Context API, and State Management System, External Libraries",
         description: "Context API for global state (createContext, Provider, useContext), State Management wit Zustand, External Libraries & Ecosystem",
         image: "./assets/images/logos/React.webp",
-        status: "not-started",
+        status: "completed",
         content: "REACT"
     },
     {
@@ -299,7 +299,7 @@ const lectures = [
         description: "",
         image: "./assets/images/logos/project.webp",
         hidden: true,
-        status: "not-started",
+        status: "in-progress",
         content: "PROJECT"
     },
     {
