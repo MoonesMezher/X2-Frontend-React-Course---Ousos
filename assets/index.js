@@ -295,21 +295,31 @@ const lectures = [
     {
         id: "PROJECT",
         number: 33,
-        title: "Final Project - Part 1",
+        title: "Anime Project - Part 1",
         description: "",
         image: "./assets/images/logos/project.webp",
         hidden: true,
-        status: "in-progress",
+        status: "completed",
         content: "PROJECT"
     },
     {
         id: "PROJECT",
         number: 34,
-        title: "Final Project - Part 2",
+        title: "Anime Project - Part 2",
         description: "",
         image: "./assets/images/logos/project.webp",
         hidden: true,
-        status: "not-started",
+        status: "completed",
+        content: "PROJECT"
+    },
+    {
+        id: "PROJECT",
+        number: 35,
+        title: "Anime Project - Part 3",
+        description: "",
+        image: "./assets/images/logos/project.webp",
+        hidden: true,
+        status: "in-progress",
         content: "PROJECT"
     },
 ];
